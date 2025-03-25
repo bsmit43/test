@@ -8,55 +8,90 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <style>
         
-        body{font-family:'Source Sans Pro', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
-        h1,h2,h3,h4,h5,h6{font-family:'Playfair Display', serif}
+        body{font-family:'Manrope', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
+        h1,h2,h3,h4,h5,h6{font-family:'Manrope', sans-serif}
         section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
         header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}
+        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}[data-animate="stagger"]>*{opacity:0;transform:translateY(15px);transition:opacity .5s,transform .5s;transition-delay:calc(var(--child-index,0)*.1s)}[data-animate="stagger"].visible>*{opacity:1;transform:translateY(0)}
         .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
         ::-webkit-scrollbar{width:8px;height:8px}
         ::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:hsl(13, 87%, 40%);border-radius:4px}
-        ::-webkit-scrollbar-thumb:hover{background:hsl(13, 87%, 30%)}
-        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(13, 87%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
+        ::-webkit-scrollbar-thumb{background:hsl(99, 77%, 40%);border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:hsl(99, 77%, 30%)}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(99, 77%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
         @media print{[data-animate]{opacity:1;transform:none}}
     
-        /* Custom Styles (optional, but useful for unique elements) */
-        .hero-gradient {
-            background: linear-gradient(to right, rgba(56, 142, 60, 0.8), rgba(255, 235, 204, 0.8)); /* Green and Cream Gradient */
+        /* Custom Styles (optional - can be in a separate CSS file) */
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Navy to Light Blue */
         }
-        .icon-green {
-            color: #388e3c; /* Green Accent Color */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+    /* Custom Styles (optional - can be added directly in HTML as well) */
+    .gradient-blue-navy {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6); /* Navy to Light Blue */
+    }
+    .gradient-yellow-blue {
+      background: linear-gradient(to right, #facc15, #60a5fa); /* Yellow to Light Blue */
+    }
+    .custom-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  
+        /* Custom Styles - keep these consistent across all pages */
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Navy to Light Blue Gradient */
+        }
+        .text-primary {
+            color: #1e3a8a; /* Navy */
+        }
+        .text-secondary {
+            color: #3b82f6; /* Light Blue */
+        }
+        .bg-secondary {
+            background-color: #3b82f6; /* Light Blue */
+        }
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
         }
     
       </style>
     </head>
     <body>
-      <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
-        <div>
-          <a href="#" class="flex items-center">
-            <span class="sr-only">Test Automotive</span>
-            <img class="h-8 w-auto sm:h-10" src="/api/placeholder/40/40" alt="Test Automotive Logo">
-            <span class="ml-2 text-xl font-bold text-white">Test Automotive</span>
-          </a>
-        </div>
-        <div class="hidden md:block">
-          <a href="#" class="ml-10 text-base font-medium text-white hover:text-gray-300">Inventory</a>
-          <a href="#" class="ml-10 text-base font-medium text-white hover:text-gray-300">Services</a>
-          <a href="#" class="ml-10 text-base font-medium text-white hover:text-gray-300">Financing</a>
-          <a href="#" class="ml-10 text-base font-medium text-white hover:text-gray-300">Contact</a>
-        </div>
-        <div class="md:hidden">
-          <!-- Mobile menu button -->
-          <button type="button" class="bg-green-600 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-800 focus:ring-white" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!-- Heroicon name: outline/menu -->
-            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
+      <nav class="relative z-10 py-6">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center flex-shrink-0 text-white">
+                        <span class="font-semibold text-xl tracking-tight">Test Bank</span>
+                    </div>
+                    <div class="block lg:hidden">
+                        <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded text-blue-200 border-blue-400 hover:text-white hover:border-white">
+                            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="hidden lg:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down">Home</a>
+                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="100">Services</a>
+                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="200">About Us</a>
+                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="300">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="lg:hidden hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                </div>
+            </div>
+        </nav>
       <header class="bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div class="container mx-auto px-4 py-12">
           <h1 class="text-3xl font-bold">test - About test</h1>
@@ -69,61 +104,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - test Automotive Retail</title>
+    <title>About Us - Test Commercial Banking</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Custom Styles to ensure consistency with the homepage */
-        .text-cream {
-            color: #F5F5DC; /* Cream color */
+        /* Custom Styles for Consistent Look */
+        .bg-gradient-custom {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6); /* Navy to Light Blue Gradient */
         }
 
-        .bg-cream {
-            background-color: #F5F5DC; /* Cream background */
-        }
-
-        .bg-primary-green {
-            background-color: #38A3A5; /* Primary Green */
-        }
-
-        .text-primary-green {
-            color: #38A3A5; /* Primary Green */
-        }
-
-        .bg-secondary-green {
-            background-color: #699E4A; /* Secondary Green */
-        }
-
-        .text-secondary-green {
-            color: #699E4A; /* Secondary Green */
-        }
-
-        .hover\:scale-105 {
-            transition: transform 0.3s ease-in-out;
-        }
-        .data-animate {
-            transition: all 0.5s ease-in-out;
+        .text-shadow-md {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
-<body class="font-sans antialiased min-h-screen bg-gray-100 text-gray-900">
+<body class="font-sans bg-gray-50">
 
-    <!-- Header (Consistent with Homepage) -->
-    <header class="bg-gradient-to-r from-primary-green to-secondary-green text-cream py-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4">
+    <!-- Header (Identical to Homepage) -->
+    <header class="bg-gradient-custom text-white py-6 md:py-8 lg:py-12">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
             <div class="flex items-center justify-between">
-                <a href="/" class="text-2xl font-bold">test Automotive</a>
-
-                <nav class="hidden md:flex space-x-6">
-                    <a href="/" class="hover:text-cream transition duration-300">Home</a>
-                    <a href="/about.html" class="hover:text-cream transition duration-300">About Us</a>
-                    <a href="#" class="hover:text-cream transition duration-300">Inventory</a>
-                    <a href="#" class="hover:text-cream transition duration-300">Services</a>
-                    <a href="#" class="hover:text-cream transition duration-300">Contact</a>
+                <a href="/" class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400">
+                    Test Banking
+                </a>
+                <nav class="hidden md:flex space-x-4 lg:space-x-6">
+                    <a href="/" class="hover:text-yellow-300">Home</a>
+                    <a href="/about" class="hover:text-yellow-300">About Us</a>
+                    <a href="#" class="hover:text-yellow-300">Services</a>
+                    <a href="#" class="hover:text-yellow-300">Loans</a>
+                    <a href="#" class="hover:text-yellow-300">Contact</a>
                 </nav>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-cream focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-yellow-300 focus:outline-none">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -131,217 +141,309 @@
             </div>
 
             <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden bg-primary-green mt-2 py-2 rounded-md shadow-md">
-                <a href="/" class="block px-4 py-2 text-cream hover:bg-secondary-green transition duration-300">Home</a>
-                <a href="/about.html" class="block px-4 py-2 text-cream hover:bg-secondary-green transition duration-300">About Us</a>
-                <a href="#" class="block px-4 py-2 text-cream hover:bg-secondary-green transition duration-300">Inventory</a>
-                <a href="#" class="block px-4 py-2 text-cream hover:bg-secondary-green transition duration-300">Services</a>
-                <a href="#" class="block px-4 py-2 text-cream hover:bg-secondary-green transition duration-300">Contact</a>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="/" class="block py-2 px-4 text-white hover:bg-blue-700">Home</a>
+                <a href="/about" class="block py-2 px-4 text-white hover:bg-blue-700">About Us</a>
+                <a href="#" class="block py-2 px-4 text-white hover:bg-blue-700">Services</a>
+                <a href="#" class="block py-2 px-4 text-white hover:bg-blue-700">Loans</a>
+                <a href="#" class="block py-2 px-4 text-white hover:bg-blue-700">Contact</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-
-        <!-- Hero Section -->
-        <section class="relative py-24 bg-cover bg-center" style="background-image: url(/images/g23b5690b6771e76dcef78fa63c2f348a660d2f545a5391f95dec735a0c195279dc5acc4f85636787a32cacbfac54fdecf96);">
-            <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60"></div>
-            <div class="container mx-auto px-4 relative z-10 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-cream mb-4" data-animate="fade-in">About test Automotive</h1>
-                <p class="text-lg text-cream mb-8" data-animate="fade-in" data-animate-delay="200">Your trusted partner for quality vehicles and exceptional service.</p>
-            </div>
-        </section>
-
-        <!-- Company History Section -->
-        <section class="py-16 bg-cream">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-primary-green mb-6 text-center" data-animate="slide-in-bottom">Our History</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="md:order-2" data-animate="fade-in">
-                        <img src="/images/g5eef45d71ca73f0f6da3017eacf90afc421b155b89368f171fde16e2b364663ca68245dea3fac77b7473e54a02256a788b7" alt="Classic Cars" class="rounded-lg shadow-md">
-                    </div>
-                    <div class="md:order-1" data-animate="fade-in" data-animate-delay="200">
-                        <p class="text-gray-700 mb-4">test Automotive was founded in 1978 by John test with a simple vision: to provide the community with reliable vehicles and honest service. Starting as a small family-owned dealership, we quickly gained a reputation for integrity and customer satisfaction.</p>
-                        <p class="text-gray-700 mb-4">Over the years, we have expanded our inventory to include a wide range of new and used cars, trucks, and SUVs. We have also invested in state-of-the-art service facilities and a team of highly trained technicians to ensure that our customers receive the best possible care.</p>
-                        <p class="text-gray-700">Today, test Automotive remains committed to the values that have guided us since the beginning. We are proud to be a part of the community, and we look forward to serving you for many years to come.</p>
-                    </div>
+    <!-- About Us Section -->
+    <section class="py-12 md:py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 text-center">About Test Commercial Banking</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="Team Meeting" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        At Test Commercial Banking, our mission is to empower businesses of all sizes to achieve their financial goals through tailored solutions, expert guidance, and unwavering commitment. We strive to be a trusted partner, fostering long-term relationships built on integrity, transparency, and mutual success.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-700 mt-6 mb-4">Our Values</h3>
+                    <ul class="list-disc list-inside text-gray-600 leading-relaxed">
+                        <li><strong>Integrity:</strong> We uphold the highest ethical standards in all our interactions.</li>
+                        <li><strong>Customer Focus:</strong> We prioritize understanding and meeting our clients' needs.</li>
+                        <li><strong>Innovation:</strong> We embrace creativity and continuous improvement to deliver cutting-edge solutions.</li>
+                        <li><strong>Collaboration:</strong> We foster a collaborative environment both internally and with our clients.</li>
+                        <li><strong>Excellence:</strong> We are committed to delivering exceptional service and results.</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Mission and Values Section -->
-        <section class="py-16 bg-secondary-green text-cream">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold mb-6 text-center" data-animate="slide-in-bottom">Our Mission & Values</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div data-animate="fade-in">
-                        <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
-                        <p class="mb-4">To provide our customers with a seamless and enjoyable car buying experience, offering high-quality vehicles, exceptional service, and transparent pricing.</p>
-                    </div>
-                    <div data-animate="fade-in" data-animate-delay="200">
-                        <h3 class="text-2xl font-semibold mb-4">Our Values</h3>
-                        <ul class="list-disc list-inside">
-                            <li><strong>Integrity:</strong> We conduct our business with honesty, transparency, and ethical principles.</li>
-                            <li><strong>Customer Focus:</strong> We prioritize customer satisfaction and strive to exceed expectations.</li>
-                            <li><strong>Quality:</strong> We offer only the highest quality vehicles and services.</li>
-                            <li><strong>Community:</strong> We are committed to supporting and giving back to the community we serve.</li>
-                            <li><strong>Innovation:</strong> We embrace innovation and continuously seek ways to improve our processes and offerings.</li>
-                        </ul>
-                    </div>
+    <!-- Company History Section -->
+    <section class="py-12 md:py-16 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 text-center">Our History</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Founded on Trust and Innovation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Test Commercial Banking was founded in 1985 with a vision to provide personalized financial solutions to businesses in our community. From humble beginnings, we have grown into a leading commercial bank, serving clients across the region.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mt-4">
+                        Over the years, we have adapted to the evolving financial landscape, embracing technological advancements and expanding our range of services to meet the changing needs of our clients. Our commitment to innovation and customer satisfaction has been the driving force behind our success.
+                    </p>
+                </div>
+                <div>
+                    <ul class="list-none">
+                        <li class="mb-4">
+                            <h4 class="text-xl font-semibold text-gray-700">1985: Founding of Test Commercial Banking</h4>
+                            <p class="text-gray-600">Established with a focus on local businesses.</p>
+                        </li>
+                        <li class="mb-4">
+                            <h4 class="text-xl font-semibold text-gray-700">1998: Expansion of Services</h4>
+                            <p class="text-gray-600">Introduced online banking and expanded loan offerings.</p>
+                        </li>
+                        <li class="mb-4">
+                            <h4 class="text-xl font-semibold text-gray-700">2010: Regional Growth</h4>
+                            <p class="text-gray-600">Opened new branches across the region.</p>
+                        </li>
+                        <li>
+                            <h4 class="text-xl font-semibold text-gray-700">2023: Digital Transformation</h4>
+                            <p class="text-gray-600">Launched mobile banking app and enhanced digital services.</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Team Section -->
-        <section class="py-16 bg-cream">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-primary-green mb-6 text-center" data-animate="slide-in-bottom">Meet Our Team</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Team Member 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in">
-                        <img src="/api/placeholder/400/300" alt="Team Member 1" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold mb-2">John test</h3>
-                            <p class="text-gray-700 mb-2">CEO & Founder</p>
-                            <p class="text-gray-500">John has been in the automotive industry for over 40 years and is passionate about providing exceptional service.</p>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in" data-animate-delay="200">
-                        <img src="/api/placeholder/400/300" alt="Team Member 2" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold mb-2">Jane Doe</h3>
-                            <p class="text-gray-700 mb-2">Sales Manager</p>
-                            <p class="text-gray-500">Jane is dedicated to helping customers find the perfect vehicle to fit their needs and budget.</p>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in" data-animate-delay="400">
-                        <img src="/api/placeholder/400/300" alt="Team Member 3" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold mb-2">Mike Smith</h3>
-                            <p class="text-gray-700 mb-2">Service Manager</p>
-                            <p class="text-gray-500">Mike ensures that our service department provides top-notch maintenance and repairs for all vehicles.</p>
-                        </div>
-                    </div>
+    <!-- Team Section -->
+    <section class="py-12 md:py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 text-center">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-4">
+                    <img src="/api/placeholder/300/300" alt="John Doe" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-700 text-center">John Doe</h3>
+                    <p class="text-gray-600 text-center">CEO</p>
+                    <p class="text-gray-600 text-center mt-2">John has over 20 years of experience in the banking industry.</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-4">
+                    <img src="/api/placeholder/300/300" alt="Jane Smith" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-700 text-center">Jane Smith</h3>
+                    <p class="text-gray-600 text-center">CFO</p>
+                    <p class="text-gray-600 text-center mt-2">Jane is a seasoned financial expert with a strong track record.</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-4">
+                    <img src="/api/placeholder/300/300" alt="David Lee" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+                    <h3 class="text-xl font-semibold text-gray-700 text-center">David Lee</h3>
+                    <p class="text-gray-600 text-center">Head of Commercial Lending</p>
+                    <p class="text-gray-600 text-center mt-2">David specializes in providing tailored loan solutions to businesses.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Achievements Section -->
-        <section class="py-16 bg-primary-green text-cream">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold mb-6 text-center" data-animate="slide-in-bottom">Our Achievements</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Achievement 1 -->
-                    <div class="bg-white text-gray-900 rounded-lg shadow-md p-6 text-center" data-animate="fade-in">
-                        <i class="fas fa-trophy fa-3x text-secondary-green mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Customer Satisfaction Award</h3>
-                        <p class="text-gray-700">Awarded for outstanding customer service in 2022 and 2023.</p>
-                    </div>
-
-                    <!-- Achievement 2 -->
-                    <div class="bg-white text-gray-900 rounded-lg shadow-md p-6 text-center" data-animate="fade-in" data-animate-delay="200">
-                        <i class="fas fa-star fa-3x text-secondary-green mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Top Sales Performance</h3>
-                        <p class="text-gray-700">Recognized for achieving top sales performance in the region.</p>
-                    </div>
-
-                    <!-- Achievement 3 -->
-                    <div class="bg-white text-gray-900 rounded-lg shadow-md p-6 text-center" data-animate="fade-in" data-animate-delay="400">
-                        <i class="fas fa-handshake fa-3x text-secondary-green mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Community Involvement Award</h3>
-                        <p class="text-gray-700">Honored for our commitment to supporting local community initiatives.</p>
-                    </div>
+    <!-- Achievements Section -->
+    <section class="py-12 md:py-16 lg:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 text-center">Our Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Rated #1 in Customer Satisfaction</h3>
+                    <p class="text-gray-600">We consistently receive high ratings for our commitment to customer service.</p>
+                </div>
+                <!-- Achievement 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Awarded "Best Commercial Bank"</h3>
+                    <p class="text-gray-600">Recognized for our innovative solutions and financial performance.</p>
+                </div>
+                <!-- Achievement 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Increased Loan Portfolio by 20%</h3>
+                    <p class="text-gray-600">Demonstrated our ability to support business growth and expansion.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <!-- Footer (Consistent with Homepage) -->
-    <footer class="bg-gray-800 text-cream py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-            <!-- About Us -->
+    <!-- Footer (Identical to Homepage) -->
+    <footer class="bg-gray-800 text-white py-8 md:py-12 lg:py-16">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-                <h4 class="text-lg font-semibold mb-4">About test</h4>
-                <p>test Automotive is dedicated to providing quality vehicles and exceptional service to our community.  We strive for customer satisfaction and integrity in all that we do.</p>
+                <h4 class="text-lg font-semibold mb-4">About Us</h4>
+                <p class="text-gray-300">Test Commercial Banking is dedicated to providing financial solutions for businesses of all sizes. We are committed to your success.</p>
             </div>
-
-            <!-- Quick Links -->
             <div>
                 <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                <ul class="list-none pl-0">
-                    <li><a href="/" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="/about.html" class="hover:text-gray-300">About Us</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Inventory</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Services</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                <ul class="list-none">
+                    <li><a href="/" class="text-gray-300 hover:text-yellow-300">Home</a></li>
+                    <li><a href="/about" class="text-gray-300 hover:text-yellow-300">About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-yellow-300">Services</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-yellow-300">Loans</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-yellow-300">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Services -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Our Services</h4>
-                <ul class="list-none pl-0">
-                    <li><a href="#" class="hover:text-gray-300">New Car Sales</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Used Car Sales</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Service & Maintenance</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Financing Options</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Information -->
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
-                <p>123 Main Street<br>Anytown, USA 12345</p>
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: info@testautomotive.com</p>
-                <div class="mt-4">
-                    <a href="#" class="text-cream hover:text-gray-300 mr-2"><i class="fab fa-facebook-square fa-2x"></i></a>
-                    <a href="#" class="text-cream hover:text-gray-300 mr-2"><i class="fab fa-twitter-square fa-2x"></i></a>
-                    <a href="#" class="text-cream hover:text-gray-300"><i class="fab fa-instagram-square fa-2x"></i></a>
+                <p class="text-gray-300">123 Main Street<br>Anytown, USA 12345</p>
+                <p class="text-gray-300">Email: info@testbank.com<br>Phone: (555) 123-4567</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-yellow-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.669 9.116 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.479 1.513-3.855 3.756-3.855 1.082 0 2.008.151 2.278.219v2.865H16.04c-1.215 0-1.443.617-1.443 1.253v1.63h2.759l-.439 2.865h-2.32V21.878C18.331 21.116 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.633 7.997c.013.174.013.348.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.316.033.636.053.961.053 1.852 0 3.55-6.044 3.55-6.044.443-.09.849-.344 1.158-.67
       </main>
-      <footer class="bg-gray-800 text-white py-8">
+      <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <div>
-                <h4 class="text-lg font-bold mb-4">Test Automotive</h4>
-                <p>Your trusted source for quality vehicles and exceptional service.</p>
+                <h4 class="text-lg font-bold mb-4">test Bank</h4>
+                <p class="text-gray-400">Your trusted partner for commercial banking solutions.</p>
+                <p class="text-gray-400 mt-2">© 2024 test Bank. All rights reserved.</p>
             </div>
+
             <div>
                 <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                <ul class="list-none">
-                    <li><a href="/" class="hover:text-green-300">Home</a></li>
-                    <li><a href="/inventory" class="hover:text-green-300">Inventory</a></li>
-                    <li><a href="/services" class="hover:text-green-300">Services</a></li>
-                    <li><a href="/about" class="hover:text-green-300">About</a></li>
-                    <li><a href="/contact" class="hover:text-green-300">Contact</a></li>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="/" class="hover:text-yellow-300">Home</a></li>
+                    <li><a href="/services" class="hover:text-yellow-300">Services</a></li>
+                    <li><a href="/about" class="hover:text-yellow-300">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-yellow-300">Contact</a></li>
                 </ul>
             </div>
+
             <div>
                 <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-                <ul class="list-none">
-                    <li>123 Main Street, Anytown, USA</li>
-                    <li>(555) 123-4567</li>
-                    <li>info@testautomotive.com</li>
-                </ul>
+                <p class="text-gray-400">123 Main Street</p>
+                <p class="text-gray-400">Anytown, CA 12345</p>
+                <p class="text-gray-400">Phone: (555) 123-4567</p>
+                <p class="text-gray-400">Email: info@testbank.com</p>
             </div>
+
             <div>
                 <h4 class="text-lg font-bold mb-4">Follow Us</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="hover:text-green-300"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="#" class="hover:text-green-300"><i class="fab fa-twitter fa-2x"></i></a>
-                    <a href="#" class="hover:text-green-300"><i class="fab fa-instagram fa-2x"></i></a>
-                </div>
-            </div>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.663 9.15 8.431 9.828V15.469h-2.385v-3.409h2.385V9.91c0-2.224 1.343-3.425 3.301-3.425 1.925 0 2.879.141 2.879.141v3.188H17.347c-1.079 0-1.416.669-1.416 1.366v1.778h2.893l-.456 3.409h-2.437v6.359C18.337 21.15 22 16.99
+
+<!-- FEATURES SECTION -->
+<section id=" features"="" class="py-16 bg-gray-50 overflow-hidden">
+  </path></svg></a><div class="container mx-auto px-4"><a href="#" class="text-gray-400 hover:text-yellow-300">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl" data-animate="fade-in">
+        Empowering Your Business with Tailored Financial Solutions
+      </h2>
+      <p class="mt-4 text-lg text-gray-500" data-animate="fade-in" data-animate-delay="200">
+        Discover how test can help your business thrive with our comprehensive suite of financial services.
+      </p>
+    </div>
+
+    </a><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><a href="#" class="text-gray-400 hover:text-yellow-300">
+
+      <!-- Feature 1: Business Loans -->
+      </a><div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-left"><a href="#" class="text-gray-400 hover:text-yellow-300">
+        <img class="h-64 w-full object-cover" src="/images/gd594c355ccd25d9797f612556e62af1a31834712ad0728382a6683d5cdadcd8e3b8fc2dc1eb7d0bb20db95074898d56e12e" alt="Business Loan" loading="lazy">
+        </a><div class="p-6"><a href="#" class="text-gray-400 hover:text-yellow-300">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Loans</h3>
+          <p class="text-gray-600 mb-4">
+            Fuel your growth with our flexible business loan options. We offer competitive rates and tailored repayment plans to meet your specific needs.
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-500">
+            <li>Term Loans</li>
+            <li>Lines of Credit</li>
+            <li>SBA Loans</li>
+            <li>Commercial Real Estate Loans</li>
+          </ul>
+          </a><a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+            Learn More
+          </a>
         </div>
-        <div class="text-center mt-8">
-            <p>© 2023 Test Automotive. All rights reserved.</p>
+      </div>
+
+      <!-- Feature 2: Commercial Checking Accounts -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-up">
+        <img class="h-64 w-full object-cover" src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="Commercial Checking Account" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Checking Accounts</h3>
+          <p class="text-gray-600 mb-4">
+            Simplify your business finances with our comprehensive checking account solutions. Enjoy convenient online banking, mobile deposits, and dedicated support.
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-500">
+            <li>Unlimited Transactions</li>
+            <li>Online and Mobile Banking</li>
+            <li>Dedicated Account Manager</li>
+            <li>Fraud Protection Services</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+            Explore Accounts
+          </a>
         </div>
-    </footer>
+      </div>
+
+      <!-- Feature 3: Treasury Management Services -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-right">
+        <img class="h-64 w-full object-cover" src="/images/gcfbdb0c10fea2dfea0d4c1f51b4a89d284d608dbf061206d555d9c440e77778f781df54a5a545bc266094b7833ed9eca936" alt="Treasury Management" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Treasury Management Services</h3>
+          <p class="text-gray-600 mb-4">
+            Optimize your cash flow and streamline your financial operations with our advanced treasury management solutions.
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-500">
+            <li>Automated Clearing House (ACH)</li>
+            <li>Wire Transfers</li>
+            <li>Lockbox Services</li>
+            <li>Account Reconciliation</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+            Discover Solutions
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 4: Commercial Real Estate -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-animate="slide-in-left">
+        <img class="h-64 w-full object-cover" src="/images/gd30fe00be8c9f68e457c5407323297aa266f7a38ca29ab6a7e68213c1905e404a1d0eb4f877c81ad0d87f4b0d68406538b6" alt="Commercial Real Estate" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Real Estate Financing</h3>
+          <p class="text-gray-600 mb-4">
+            Acquire, refinance, or develop commercial properties with our tailored real estate financing options.
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-500">
+            <li>Construction Loans</li>
+            <li>Bridge Loans</li>
+            <li>Permanent Financing</li>
+            <li>Investment Property Loans</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+            View Options
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature 5: International Banking -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-2" data-animate="slide-in-right">
+        <img class="h-64 w-full object-cover" src="/images/image_1742876713070_-10e02.jpg" alt="International Banking" loading="lazy">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">International Banking Services</h3>
+          <p class="text-gray-600 mb-4">
+            Expand your global reach with our comprehensive international banking solutions, including trade finance, foreign exchange, and cross-border payments.
+          </p>
+          <ul class="list-disc list-inside text-sm text-gray-500">
+            <li>Letters of Credit</li>
+            <li>Foreign Exchange Services</li>
+            <li>International Wire Transfers</li>
+            <li>Export Financing</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+            Go Global
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div></div></div></footer>
     </body>
     </html>
