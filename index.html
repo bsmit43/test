@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test - Professional website">
     <meta name="generator" content="Website Generator">
-    <meta name="theme-color" content="hsl(99, 77%, 40%)">
+    <meta name="theme-color" content="hsl(32, 87%, 40%)">
     <title>test</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap' rel='stylesheet'>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body{font-family:'Manrope', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
-        h1,h2,h3,h4,h5,h6{font-family:'Manrope', sans-serif}
+        body{font-family:'DM Sans', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
+        h1,h2,h3,h4,h5,h6{font-family:'DM Serif Display', serif}
         section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
         header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}[data-animate="stagger"]>*{opacity:0;transform:translateY(15px);transition:opacity .5s,transform .5s;transition-delay:calc(var(--child-index,0)*.1s)}[data-animate="stagger"].visible>*{opacity:1;transform:translateY(0)}
+        [data-animate]{opacity:0;transform:scale(.94);transition:opacity .6s ease-out,transform .6s cubic-bezier(.175,.885,.32,1.275)}[data-animate].visible{opacity:1;transform:scale(1)}
         .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
         ::-webkit-scrollbar{width:8px;height:8px}
         ::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:hsl(99, 77%, 40%);border-radius:4px}
-        ::-webkit-scrollbar-thumb:hover{background:hsl(99, 77%, 30%)}
-        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(99, 77%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
+        ::-webkit-scrollbar-thumb{background:hsl(32, 87%, 40%);border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:hsl(32, 87%, 30%)}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(32, 87%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
         @media print{[data-animate]{opacity:1;transform:none}}
     </style>
     
     <script>
-        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(99, 77%, 95%)","100":"hsl(99, 77%, 90%)","200":"hsl(99, 77%, 80%)","300":"hsl(99, 77%, 70%)","400":"hsl(99, 77%, 60%)","500":"hsl(99, 77%, 50%)","600":"hsl(99, 77%, 40%)","700":"hsl(99, 77%, 30%)","800":"hsl(99, 77%, 20%)","900":"hsl(99, 77%, 10%)"}},fontFamily:{sans:[''Manrope'','system-ui','sans-serif'],heading:[''Manrope'','sans-serif']}}}}
+        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(32, 87%, 95%)","100":"hsl(32, 87%, 90%)","200":"hsl(32, 87%, 80%)","300":"hsl(32, 87%, 70%)","400":"hsl(32, 87%, 60%)","500":"hsl(32, 87%, 50%)","600":"hsl(32, 87%, 40%)","700":"hsl(32, 87%, 30%)","800":"hsl(32, 87%, 20%)","900":"hsl(32, 87%, 10%)"}},fontFamily:{sans:[''DM Sans'','system-ui','sans-serif'],heading:[''DM Serif Display'','serif']}}}}
     </script>
 </head>
 <body class="antialiased text-gray-800">
@@ -42,594 +42,413 @@
 
 
 <!-- HEADER SECTION -->
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Commercial Banking</title>
+    <title>test Accounting</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Custom Styles (optional - can be in a separate CSS file) */
-        .bg-gradient-custom {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Navy to Light Blue */
+        /* Custom Styles (optional, for things not easily done with Tailwind) */
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
         }
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+        .custom-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="font-sans bg-cream text-gray-800">
 
     <!-- Header Section -->
-    <header class="relative overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="Cityscape" class="w-full h-full object-cover object-center" data-animate="fade-in">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-500 opacity-70"></div>
-        </div>
+    <header class="relative overflow-hidden bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url(/images/gc9be52a413589154f1790097ad20fb012d2c90881162f8b92ca37dad91eff742a6865bfb00106ffc86de786682ad7377_64);">
+        <div class="gradient-overlay absolute top-0 left-0 w-full h-full"></div>
 
-        <nav class="relative z-10 py-6">
-            <div class="container mx-auto px-6">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center flex-shrink-0 text-white">
-                        <span class="font-semibold text-xl tracking-tight">Test Bank</span>
-                    </div>
-                    <div class="block lg:hidden">
-                        <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded text-blue-200 border-blue-400 hover:text-white hover:border-white">
-                            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                        </button>
-                    </div>
-                    <div class="hidden lg:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down">Home</a>
-                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="100">Services</a>
-                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="200">About Us</a>
-                            <a href="#" class="text-blue-100 hover:text-white px-3 py-2 rounded-md text-sm font-medium" data-animate="fade-in-down" data-animation-delay="300">Contact</a>
-                        </div>
-                    </div>
+        <!-- Navigation Bar -->
+        <nav class="absolute top-0 left-0 w-full py-6 px-4 md:px-8 lg:px-16 xl:px-32 z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-white text-2xl font-bold">test Accounting</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-white hover:text-green-200 transition duration-300">Home</a>
+                    <a href="#services" class="text-white hover:text-green-200 transition duration-300">Services</a>
+                    <a href="#about" class="text-white hover:text-green-200 transition duration-300">About Us</a>
+                    <a href="#team" class="text-white hover:text-green-200 transition duration-300">Team</a>
+                    <a href="#contact" class="text-white hover:text-green-200 transition duration-300">Contact</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
 
             <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="lg:hidden hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
-                    <a href="#" class="text-blue-100 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-green-50 shadow-md rounded-md mt-2 py-2">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Home</a>
+                <a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Services</a>
+                <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">About Us</a>
+                <a href="#team" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Team</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Contact</a>
             </div>
         </nav>
 
-        <div class="relative z-10 container mx-auto px-6 py-20 md:py-32 lg:py-40">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-shadow leading-tight mb-6" data-animate="fade-in-up">
-                Empowering Your Business <br> for Sustainable Growth
-            </h1>
-            <p class="text-blue-100 text-xl md:text-2xl mb-8 text-shadow" data-animate="fade-in-up" data-animation-delay="200">
-                Comprehensive commercial banking solutions tailored to your unique needs.
-            </p>
-            <a href="#" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg uppercase tracking-wider" data-animate="fade-in-up" data-animation-delay="400">
-                Explore Our Services
-            </a>
+        <!-- Hero Content -->
+        <div class="container mx-auto text-center text-white z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-animate="fade-in-up">Empowering Your Financial Success</h1>
+            <p class="text-lg md:text-xl mb-8" data-animate="fade-in-down">Expert accounting solutions tailored for your business needs.</p>
+            <a href="#contact" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 custom-shadow" data-animate="slide-in-left">Get a Free Consultation</a>
         </div>
     </header>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
     </script>
 
-</body>
-</html>
-
-<!-- ABOUT SECTION -->
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Commercial Banking</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    /* Custom Styles (optional - can be added directly in HTML as well) */
-    .gradient-blue-navy {
-      background: linear-gradient(to right, #1e3a8a, #3b82f6); /* Navy to Light Blue */
-    }
-    .gradient-yellow-blue {
-      background: linear-gradient(to right, #facc15, #60a5fa); /* Yellow to Light Blue */
-    }
-    .custom-shadow {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-  </style>
-</head>
-<body class="bg-gray-50 font-sans">
-
-  <!-- Header -->
-  <header class="bg-white shadow-md">
-    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="text-2xl font-bold text-navy-700">
-        <span class="text-yellow-500">Test</span> Bank
-      </a>
-      <div class="hidden md:flex items-center space-x-6">
-        <a href="#" class="hover:text-blue-500">Home</a>
-        <a href="#" class="hover:text-blue-500">About</a>
-        <a href="#" class="hover:text-blue-500">Services</a>
-        <a href="#" class="hover:text-blue-500">Loans</a>
-        <a href="#" class="hover:text-blue-500">Contact</a>
-        <a href="#" class="bg-yellow-500 text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-300">Get Started</a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-blue-500 focus:outline-none">
-        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-          <path id="open-menu" fill-rule="evenodd" d="M4 5h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm0 7h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2a1 1 0 011-1zm0 7h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2a1 1 0 011-1z"/>
-          <path id="close-menu" fill="currentColor" class="hidden" d="M9.172 16.243a.5.5 0 01-.707-.707L11.293 12 9.172 9.879a.5.5 0 11.707-.707L12 11.293l2.121-2.121a.5.5 0 01.707.707L12.707 12l2.121 2.121a.5.5 0 01-.707.707L12 12.707l-2.121 2.121a.5.5 0 01-.707-.707zM20 3H4a1 1 0 00-1 1v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1z"/>
-        </svg>
-      </button>
-
-      <!-- Mobile Menu (Hidden by default) -->
-      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-6 z-10">
-        <a href="#" class="block py-2 hover:text-blue-500">Home</a>
-        <a href="#" class="block py-2 hover:text-blue-500">About</a>
-        <a href="#" class="block py-2 hover:text-blue-500">Services</a>
-        <a href="#" class="block py-2 hover:text-blue-500">Loans</a>
-        <a href="#" class="block py-2 hover:text-blue-500">Contact</a>
-        <a href="#" class="block py-2 bg-yellow-500 text-white rounded-lg text-center hover:bg-yellow-600 transition duration-300">Get Started</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
-    <img src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-500 opacity-70"></div>
-    <div class="relative z-10 text-center text-white">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-animate="fade-in-up">Empowering Your Business Growth</h1>
-      <p class="text-lg md:text-xl mb-8" data-animate="fade-in-down">Your trusted partner for commercial banking solutions.</p>
-      <a href="#" class="bg-yellow-500 text-blue-900 py-3 px-6 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition duration-300" data-animate="fade-in">Explore Our Services</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div data-animate="fade-in-right">
-          <img src="/images/gcfbdb0c10fea2dfea0d4c1f51b4a89d284d608dbf061206d555d9c440e77778f781df54a5a545bc266094b7833ed9eca936" alt="About Us" class="rounded-xl shadow-lg">
-        </div>
-        <div data-animate="fade-in-left">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">About Test Commercial Banking</h2>
-          <p class="text-gray-700 leading-relaxed mb-6">
-            At Test Commercial Banking, we are dedicated to providing innovative and reliable financial solutions to businesses of all sizes. With decades of experience in the banking industry, our team of experts understands the unique challenges and opportunities that businesses face in today's dynamic market.
-          </p>
-          <p class="text-gray-700 leading-relaxed mb-6">
-            Our mission is to empower your business growth by offering tailored financial products and services, including commercial loans, lines of credit, treasury management, and more. We pride ourselves on building long-term relationships with our clients, based on trust, transparency, and mutual success.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            We are committed to supporting the communities we serve through responsible lending practices and community involvement. Choose Test Commercial Banking as your trusted financial partner and experience the difference.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service Card 1 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up">
-          <i class="fas fa-briefcase text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Loans</h3>
-          <p class="text-gray-600">Flexible financing options to support your business expansion, equipment purchases, and working capital needs.</p>
-        </div>
-
-        <!-- Service Card 2 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="200">
-          <i class="fas fa-chart-line text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Treasury Management</h3>
-          <p class="text-gray-600">Efficient solutions for managing your cash flow, optimizing liquidity, and streamlining payment processes.</p>
-        </div>
-
-        <!-- Service Card 3 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="400">
-          <i class="fas fa-credit-card text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Lines of Credit</h3>
-          <p class="text-gray-600">Access revolving credit to cover short-term financing needs and manage unexpected expenses.</p>
-        </div>
-
-        <!-- Service Card 4 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up">
-          <i class="fas fa-building text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Real Estate Financing</h3>
-          <p class="text-gray-600">Secure financing for commercial real estate acquisitions, construction projects, and property improvements.</p>
-        </div>
-
-        <!-- Service Card 5 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="200">
-          <i class="fas fa-globe text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">International Banking</h3>
-          <p class="text-gray-600">Facilitate global trade and expansion with our comprehensive international banking services.</p>
-        </div>
-
-        <!-- Service Card 6 -->
-        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="400">
-          <i class="fas fa-hand-holding-usd text-3xl text-yellow-500 mb-4"></i>
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Equipment Financing</h3>
-          <p class="text-gray-600">Acquire essential equipment and machinery with our tailored equipment financing solutions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">What Our Clients Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Testimonial Card 1 -->
-        <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-left">
-          <p class="text-gray-700 italic mb-4">"Test Commercial Banking has been an invaluable partner in our business growth. Their personalized service and flexible financing options have helped us expand our operations and achieve our goals."</p>
-          <div class="flex items-center">
-            <img src="/images/image_1742876716069_-343e9.svg" alt="John Doe" class="w-12 h-12 rounded-full mr-4">
-            <div>
-              <p class="font-semibold text-gray-800">John Doe</p>
-              <p class="text-gray-600">CEO, Example Company</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial Card 2 -->
-        <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-right">
-          <p class="text-gray-700 italic mb-4">"We appreciate the proactive and responsive support we receive from the Test Commercial Banking team. Their expertise in treasury management has significantly improved our cash flow efficiency."</p>
-          <div class="flex items-center">
-            <img src="/images/image_1742876718704_617ba4.svg" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4">
-            <div>
-              <p class="font-semibold text-gray-800">Jane Smith</p>
-              <p class="text-gray-600">CFO, Another Company</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Contact Us</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Contact Form -->
-        <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-left">
-          <form>
-            <div class="mb-4">
-              <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-              <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="
-
-<!-- SERVICES SECTION -->
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test - Commercial Banking</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Custom Styles - keep these consistent across all pages */
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Navy to Light Blue Gradient */
-        }
-        .text-primary {
-            color: #1e3a8a; /* Navy */
-        }
-        .text-secondary {
-            color: #3b82f6; /* Light Blue */
-        }
-        .bg-secondary {
-            background-color: #3b82f6; /* Light Blue */
-        }
-        .hover\:scale-105:hover {
-            transform: scale(1.05);
-        }
-    </style>
-</head>
-<body class="font-sans antialiased bg-gray-50">
-
-    <!-- Header Section (Consistent across all pages) -->
-    <header class="bg-gradient-primary text-white py-6 md:py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between">
-                <div>
-                    <a href="/" class="text-2xl font-bold">test Bank</a>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="/" class="hover:text-yellow-300">Home</a>
-                    <a href="/services" class="hover:text-yellow-300">Services</a>
-                    <a href="/about" class="hover:text-yellow-300">About Us</a>
-                    <a href="/contact" class="hover:text-yellow-300">Contact</a>
-                </nav>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden bg-gradient-primary py-2 px-4">
-            <a href="/" class="block py-1 hover:text-yellow-300">Home</a>
-            <a href="/services" class="block py-1 hover:text-yellow-300">Services</a>
-            <a href="/about" class="block py-1 hover:text-yellow-300">About Us</a>
-            <a href="/contact" class="block py-1 hover:text-yellow-300">Contact</a>
-        </div>
-    </header>
-
     <!-- Services Section -->
-    <section class="py-16 bg-white" data-animate="fade-in">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-primary mb-4">Our Comprehensive Services</h2>
-                <p class="text-gray-600 text-lg">We offer a wide range of commercial banking services to help your business thrive.</p>
-            </div>
-
+    <section id="services" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
                 <!-- Service Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/gd594c355ccd25d9797f612556e62af1a31834712ad0728382a6683d5cdadcd8e3b8fc2dc1eb7d0bb20db95074898d56e12e" alt="Business Loans" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Business Loans</h3>
-                        <p class="text-gray-700">Secure the capital you need to expand your operations, invest in new equipment, or manage cash flow with our flexible business loan options.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Term Loans</li>
-                            <li>Lines of Credit</li>
-                            <li>SBA Loans</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-chart-line text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Financial Reporting</h3>
+                    <p class="text-gray-700">Accurate and timely financial statements to help you make informed decisions.</p>
                 </div>
 
                 <!-- Service Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/gcfbdb0c10fea2dfea0d4c1f51b4a89d284d608dbf061206d555d9c440e77778f781df54a5a545bc266094b7833ed9eca936" alt="Merchant Services" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Merchant Services</h3>
-                        <p class="text-gray-700">Accept payments seamlessly with our comprehensive merchant services, including credit card processing, online payment gateways, and point-of-sale solutions.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Credit Card Processing</li>
-                            <li>Online Payment Gateways</li>
-                            <li>Point-of-Sale Systems</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-file-invoice-dollar text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Tax Preparation</h3>
+                    <p class="text-gray-700">Expert tax preparation services to minimize your tax liabilities and ensure compliance.</p>
                 </div>
 
                 <!-- Service Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/gd30fe00be8c9f68e457c5407323297aa266f7a38ca29ab6a7e68213c1905e404a1d0eb4f877c81ad0d87f4b0d68406538b6" alt="Cash Management" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Cash Management</h3>
-                        <p class="text-gray-700">Optimize your cash flow with our advanced cash management tools, including online banking, automated clearing house (ACH) services, and lockbox solutions.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Online Banking</li>
-                            <li>ACH Services</li>
-                            <li>Lockbox Solutions</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Bookkeeping Services</h3>
+                    <p class="text-gray-700">Comprehensive bookkeeping solutions to keep your finances organized and up-to-date.</p>
                 </div>
 
                 <!-- Service Card 4 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="International Banking" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">International Banking</h3>
-                        <p class="text-gray-700">Expand your global reach with our international banking services, including foreign exchange, trade finance, and international wire transfers.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Foreign Exchange</li>
-                            <li>Trade Finance</li>
-                            <li>International Wire Transfers</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-money-bill-wave text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Payroll Management</h3>
+                    <p class="text-gray-700">Efficient and accurate payroll processing to ensure your employees are paid on time.</p>
                 </div>
 
-                 <!-- Service Card 5 -->
-                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/image_1742876721881_215413.jpg" alt="Treasury Management" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Treasury Management</h3>
-                        <p class="text-gray-700">Efficiently manage your financial resources with our treasury management services, including investment solutions, risk management, and liquidity management.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Investment Solutions</li>
-                            <li>Risk Management</li>
-                            <li>Liquidity Management</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <!-- Service Card 5 -->
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-handshake text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Business Consulting</h3>
+                    <p class="text-gray-700">Strategic business consulting to help you achieve your financial goals.</p>
                 </div>
 
                 <!-- Service Card 6 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:scale-105" data-animate="slide-up">
-                    <img src="/images/image_1742876724494_1ee1fb.jpg" alt="Commercial Real Estate Financing" class="w-full h-48 object-cover object-center">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Commercial Real Estate Financing</h3>
-                        <p class="text-gray-700">Finance your commercial real estate projects with our tailored financing solutions, including construction loans, bridge loans, and permanent financing.</p>
-                        <ul class="list-disc pl-5 mt-3 text-gray-600">
-                            <li>Construction Loans</li>
-                            <li>Bridge Loans</li>
-                            <li>Permanent Financing</li>
-                        </ul>
-                        <a href="#" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Learn More</a>
-                    </div>
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-piggy-bank text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Budgeting & Forecasting</h3>
+                    <p class="text-gray-700">Develop realistic budgets and financial forecasts to plan for the future.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Footer Section (Consistent across all pages) -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div>
-                <h4 class="text-lg font-bold mb-4">test Bank</h4>
-                <p class="text-gray-400">Your trusted partner for commercial banking solutions.</p>
-                <p class="text-gray-400 mt-2">&copy; 2024 test Bank. All rights reserved.</p>
+    <!-- About Us Section -->
+    <section id="about" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-cream">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <img src="/images/gb4a9f07bc93e34191a431513a5fc5a57519b80428f2279bb699f8a68fe4ed584299c838b3c6b236227b5412cef0320278b9" alt="About Us" class="rounded-lg shadow-md">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">About test Accounting</h2>
+                <p class="text-gray-700 mb-4">test Accounting is a trusted provider of accounting and financial services. With years of experience, we are dedicated to helping businesses thrive by offering expert guidance and tailored solutions.</p>
+                <p class="text-gray-700 mb-4">Our mission is to provide exceptional service and build long-lasting relationships with our clients. We are committed to integrity, accuracy, and professionalism in everything we do.</p>
+                <a href="#contact" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 custom-shadow">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <img src="/images/g16f754d3fdfd65f1f10335a2a34cf9781c88a7ae004c60c95fc8c4e6fed6c56880045317fb2f0982e3a49e3e41a38d7d429" alt="Team Member 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">John Doe</h3>
+                    <p class="text-gray-700 text-center">CEO & Founder</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Team Member 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">Jane Smith</h3>
+                    <p class="text-gray-700 text-center">Senior Accountant</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
+                    <img src="/images/image_1742877670537_-15b46.jpg" alt="Team Member 3" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">Mike Johnson</h3>
+                    <p class="text-gray-700 text-center">Tax Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-cream">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-
+
+<!-- ABOUT SECTION -->
+<section id="about" class="relative overflow-hidden py-20 bg-cream-100">
+    <div class="container mx-auto px-4">
+        <div class="lg:flex lg:items-center lg:justify-between">
+            <div class="lg:w-1/2 mb-10 lg:mb-0" data-animate="fade-right">
+                <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Team working on financial documents" class="rounded-xl shadow-lg">
+            </div>
+            <div class="lg:w-1/2 lg:pl-16" data-animate="fade-left">
+                <h2 class="text-3xl font-extrabold text-green-900 mb-6">About Test Accounting</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    At Test Accounting, we're more than just number crunchers. We're your trusted partners in financial success. Founded in 2010, we've been serving businesses and individuals in the [City/Region] area with integrity, expertise, and a commitment to excellence.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Our team of experienced CPAs and financial professionals brings a wealth of knowledge to every client engagement. We stay up-to-date on the latest tax laws and accounting regulations to ensure that you receive the most accurate and effective advice.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-gray-700 font-medium">Expertise & Experience</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-gray-700 font-medium">Personalized Service</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-gray-700 font-medium">Commitment to Accuracy</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span class="text-gray-700 font-medium">Ethical & Transparent</span>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    We believe in building long-term relationships with our clients, based on trust and mutual respect. Let us help you navigate the complexities of the financial world and achieve your business goals.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-16 bg-cream-100 overflow-hidden">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-animate="fade-in">
+            <h2 class="text-3xl lg:text-4xl font-semibold text-green-700 mb-4">Our Accounting Services</h2>
+            <p class="text-gray-600 leading-relaxed">We offer a comprehensive range of accounting services tailored to meet your business needs. From bookkeeping to tax planning, we're here to help you succeed.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-animate="slide-in-up">
+            <!-- Service 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Bookkeeping" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Bookkeeping Services</h3>
+                    <p class="text-gray-700 leading-relaxed">Accurate and timely bookkeeping is essential for financial health. We handle all aspects, from recording transactions to reconciling accounts.</p>
+                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
+                        <li>Daily Transaction Recording</li>
+                        <li>Bank Reconciliation</li>
+                        <li>Financial Statement Preparation</li>
+                        <li>Accounts Payable & Receivable</li>
+                    </ul>
+                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
+                </div>
             </div>
 
-            <div>
-                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                <ul class="text-gray-400 space-y-2">
-                    <li><a href="/" class="hover:text-yellow-300">Home</a></li>
-                    <li><a href="/services" class="hover:text-yellow-300">Services</a></li>
-                    <li><a href="/about" class="hover:text-yellow-300">About Us</a></li>
-                    <li><a href="/contact" class="hover:text-yellow-300">Contact</a></li>
-                </ul>
+            <!-- Service 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="/images/gb4a9f07bc93e34191a431513a5fc5a57519b80428f2279bb699f8a68fe4ed584299c838b3c6b236227b5412cef0320278b9" alt="Tax Planning" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Tax Planning & Preparation</h3>
+                    <p class="text-gray-700 leading-relaxed">Minimize your tax liabilities and maximize your savings with our expert tax planning and preparation services. We stay up-to-date with the latest tax laws.</p>
+                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
+                        <li>Individual Tax Returns</li>
+                        <li>Business Tax Returns</li>
+                        <li>Tax Planning Strategies</li>
+                        <li>IRS Representation</li>
+                    </ul>
+                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
+                </div>
             </div>
 
-            <div>
-                <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-                <p class="text-gray-400">123 Main Street</p>
-                <p class="text-gray-400">Anytown, CA 12345</p>
-                <p class="text-gray-400">Phone: (555) 123-4567</p>
-                <p class="text-gray-400">Email: info@testbank.com</p>
+            <!-- Service 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="/images/g16f754d3fdfd65f1f10335a2a34cf9781c88a7ae004c60c95fc8c4e6fed6c56880045317fb2f0982e3a49e3e41a38d7d429" alt="Financial Consulting" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Financial Consulting</h3>
+                    <p class="text-gray-700 leading-relaxed">Gain valuable insights and make informed decisions with our financial consulting services. We help you analyze your financial data and develop strategies for growth.</p>
+                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
+                        <li>Budgeting & Forecasting</li>
+                        <li>Financial Analysis</li>
+                        <li>Business Valuation</li>
+                        <li>Strategic Planning</li>
+                    </ul>
+                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
+                </div>
             </div>
 
-            <div>
-                <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-yellow-300"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.663 9.15 8.431 9.828V15.469h-2.385v-3.409h2.385V9.91c0-2.224 1.343-3.425 3.301-3.425 1.925 0 2.879.141 2.879.141v3.188H17.347c-1.079 0-1.416.669-1.416 1.366v1.778h2.893l-.456 3.409h-2.437v6.359C18.337 21.15 22 16.99
+            <!-- Service 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="/images/gc9be52a413589154f1790097ad20fb012d2c90881162f8b92ca37dad91eff742a6865bfb00106ffc86de786682ad7377_64" alt="Payroll Services" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Payroll Services</h3>
+                    <p class="text-gray-700 leading-relaxed">Simplify your payroll process with our reliable and efficient payroll services. We handle everything from calculating wages to filing taxes.</p>
+                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
+                        <li>Payroll Processing</li>
+                        <li>Tax Withholding & Filing</li>
+                        <li>Employee Benefits Administration</li>
+                        <li>Year-End Reporting</li>
+                    </ul>
+                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
+                </div>
+            </div>
+
+             <!-- Service 5 -->
+             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="/images/image_1742877674601_-7903c.jpg" alt="Audit and Assurance" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-green-600 mb-2">Audit and Assurance Services</h3>
+                    <p class="text-gray-700 leading-relaxed">Ensure the accuracy and reliability of your financial statements with our comprehensive audit and assurance services.</p>
+                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
+                        <li>Financial Statement Audits</li>
+                        <li>Internal Control Assessments</li>
+                        <li>Compliance Audits</li>
+                        <li>Due Diligence</li>
+                    </ul>
+                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- FEATURES SECTION -->
-<section id="features" class="py-16 bg-gray-50 overflow-hidden">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl" data-animate="fade-in">
-        Empowering Your Business with Tailored Financial Solutions
-      </h2>
-      <p class="mt-4 text-lg text-gray-500" data-animate="fade-in" data-animate-delay="200">
-        Discover how test can help your business thrive with our comprehensive suite of financial services.
-      </p>
+<section id="features" class="py-16 bg-cream">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-green-900 mb-4" data-animate="fade-in">Key Features That Drive Your Success</h2>
+            <p class="text-gray-700 leading-relaxed" data-animate="fade-in" data-animate-delay="200">
+                We offer a comprehensive suite of accounting services designed to streamline your finances, reduce risk, and empower your business to thrive.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature 1: Accurate Financial Reporting -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Accurate Financial Reporting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Gain a clear and concise understanding of your financial performance with our detailed and accurate reporting. We provide timely insights to help you make informed decisions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Tax Planning & Compliance -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="100">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Tax Planning & Compliance</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Minimize your tax liabilities and ensure compliance with all relevant regulations. Our proactive tax planning strategies help you optimize your financial position.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Bookkeeping & Accounting Services -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="200">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Bookkeeping & Accounting Services</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        From day-to-day bookkeeping to comprehensive accounting solutions, we handle all your financial needs with precision and efficiency, freeing you to focus on your core business.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4: Payroll Management -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 4.75 7.5 4.75a4.875 4.875 0 00-4.875 4.875c0 .768.148 1.535.439 2.253M12 6.253l1.5 3.75m-1.5-3.75c1.168 5.477 2.754 6.25 4.5 6.25a4.875 4.875 0 014.875 4.875c0 .768-.148 1.535-.439 2.253m-4.875-4.875L12 14.747m0-13c-1.168 5.477-2.754 6.25-4.5 6.25a4.875 4.875 0 00-4.875 4.875c0 .768.148 1.535.439 2.253"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Payroll Management</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Simplify your payroll process with our comprehensive payroll management services. We handle everything from calculating wages to filing taxes, ensuring accurate and timely payments.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 5: Business Consulting -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="100">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-2m-2 9l-5.387-5.387C13.924 12.602 14.19 11.377 14.19 10.15c0-2.652-4.5-4.8-9-4.8m0 0v3.675A5.5 5.5 0 016.75 6.5h0"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Business Consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Leverage our expertise to gain valuable insights and strategic guidance. We provide tailored business consulting services to help you optimize your operations and achieve your goals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 6: Cloud Accounting Solutions -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="200">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4m4-2v5"></path></svg>
+                        <h3 class="text-xl font-semibold text-green-800">Cloud Accounting Solutions</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Access your financial data anytime, anywhere with our secure cloud accounting solutions. Enjoy real-time insights, improved collaboration, and enhanced efficiency.
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Feature 1: Business Loans -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-left">
-        <img class="h-64 w-full object-cover" src="/images/gd594c355ccd25d9797f612556e62af1a31834712ad0728382a6683d5cdadcd8e3b8fc2dc1eb7d0bb20db95074898d56e12e" alt="Business Loan" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Loans</h3>
-          <p class="text-gray-600 mb-4">
-            Fuel your growth with our flexible business loan options. We offer competitive rates and tailored repayment plans to meet your specific needs.
-          </p>
-          <ul class="list-disc list-inside text-sm text-gray-500">
-            <li>Term Loans</li>
-            <li>Lines of Credit</li>
-            <li>SBA Loans</li>
-            <li>Commercial Real Estate Loans</li>
-          </ul>
-          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-            Learn More
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature 2: Commercial Checking Accounts -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-up">
-        <img class="h-64 w-full object-cover" src="/images/g42ba219e426952b739583d3e493d7af9c089bdc79be69d0d7273b93837a6d834850a964f409cf1e4e8d9ed803edb3af26d1" alt="Commercial Checking Account" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Checking Accounts</h3>
-          <p class="text-gray-600 mb-4">
-            Simplify your business finances with our comprehensive checking account solutions. Enjoy convenient online banking, mobile deposits, and dedicated support.
-          </p>
-          <ul class="list-disc list-inside text-sm text-gray-500">
-            <li>Unlimited Transactions</li>
-            <li>Online and Mobile Banking</li>
-            <li>Dedicated Account Manager</li>
-            <li>Fraud Protection Services</li>
-          </ul>
-          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-            Explore Accounts
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature 3: Treasury Management Services -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-right">
-        <img class="h-64 w-full object-cover" src="/images/gcfbdb0c10fea2dfea0d4c1f51b4a89d284d608dbf061206d555d9c440e77778f781df54a5a545bc266094b7833ed9eca936" alt="Treasury Management" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Treasury Management Services</h3>
-          <p class="text-gray-600 mb-4">
-            Optimize your cash flow and streamline your financial operations with our advanced treasury management solutions.
-          </p>
-          <ul class="list-disc list-inside text-sm text-gray-500">
-            <li>Automated Clearing House (ACH)</li>
-            <li>Wire Transfers</li>
-            <li>Lockbox Services</li>
-            <li>Account Reconciliation</li>
-          </ul>
-          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-            Discover Solutions
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature 4: Commercial Real Estate -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-animate="slide-in-left">
-        <img class="h-64 w-full object-cover" src="/images/gd30fe00be8c9f68e457c5407323297aa266f7a38ca29ab6a7e68213c1905e404a1d0eb4f877c81ad0d87f4b0d68406538b6" alt="Commercial Real Estate" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">Commercial Real Estate Financing</h3>
-          <p class="text-gray-600 mb-4">
-            Acquire, refinance, or develop commercial properties with our tailored real estate financing options.
-          </p>
-          <ul class="list-disc list-inside text-sm text-gray-500">
-            <li>Construction Loans</li>
-            <li>Bridge Loans</li>
-            <li>Permanent Financing</li>
-            <li>Investment Property Loans</li>
-          </ul>
-          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-            View Options
-          </a>
-        </div>
-      </div>
-
-      <!-- Feature 5: International Banking -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-2" data-animate="slide-in-right">
-        <img class="h-64 w-full object-cover" src="/images/image_1742876727145_-d0782.jpg" alt="International Banking" loading="lazy">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">International Banking Services</h3>
-          <p class="text-gray-600 mb-4">
-            Expand your global reach with our comprehensive international banking solutions, including trade finance, foreign exchange, and cross-border payments.
-          </p>
-          <ul class="list-disc list-inside text-sm text-gray-500">
-            <li>Letters of Credit</li>
-            <li>Foreign Exchange Services</li>
-            <li>International Wire Transfers</li>
-            <li>Export Financing</li>
-          </ul>
-          <a href="#" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-            Go Global
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
 
     </main>
