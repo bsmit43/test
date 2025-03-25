@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test - Professional website">
     <meta name="generator" content="Website Generator">
-    <meta name="theme-color" content="hsl(32, 87%, 40%)">
+    <meta name="theme-color" content="hsl(26, 61%, 40%)">
     <title>test</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,18 +21,18 @@
         h1,h2,h3,h4,h5,h6{font-family:'DM Serif Display', serif}
         section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
         header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-        [data-animate]{opacity:0;transform:scale(.94);transition:opacity .6s ease-out,transform .6s cubic-bezier(.175,.885,.32,1.275)}[data-animate].visible{opacity:1;transform:scale(1)}
+        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}
         .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
         ::-webkit-scrollbar{width:8px;height:8px}
         ::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:hsl(32, 87%, 40%);border-radius:4px}
-        ::-webkit-scrollbar-thumb:hover{background:hsl(32, 87%, 30%)}
-        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(32, 87%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
+        ::-webkit-scrollbar-thumb{background:hsl(26, 61%, 40%);border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:hsl(26, 61%, 30%)}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(26, 61%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
         @media print{[data-animate]{opacity:1;transform:none}}
     </style>
     
     <script>
-        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(32, 87%, 95%)","100":"hsl(32, 87%, 90%)","200":"hsl(32, 87%, 80%)","300":"hsl(32, 87%, 70%)","400":"hsl(32, 87%, 60%)","500":"hsl(32, 87%, 50%)","600":"hsl(32, 87%, 40%)","700":"hsl(32, 87%, 30%)","800":"hsl(32, 87%, 20%)","900":"hsl(32, 87%, 10%)"}},fontFamily:{sans:[''DM Sans'','system-ui','sans-serif'],heading:[''DM Serif Display'','serif']}}}}
+        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(26, 61%, 95%)","100":"hsl(26, 61%, 90%)","200":"hsl(26, 61%, 80%)","300":"hsl(26, 61%, 70%)","400":"hsl(26, 61%, 60%)","500":"hsl(26, 61%, 50%)","600":"hsl(26, 61%, 40%)","700":"hsl(26, 61%, 30%)","800":"hsl(26, 61%, 20%)","900":"hsl(26, 61%, 10%)"}},fontFamily:{sans:[''DM Sans'','system-ui','sans-serif'],heading:[''DM Serif Display'','serif']}}}}
     </script>
 </head>
 <body class="antialiased text-gray-800">
@@ -42,407 +42,455 @@
 
 
 <!-- HEADER SECTION -->
-```html
+<header class="relative bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url(/images/img_-54b2c.jpg);">
+    <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
+    <nav class="absolute top-0 left-0 w-full p-6 flex items-center justify-between text-white z-20">
+        <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold">test</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+            <a href="#services" class="hover:text-gray-300">Services</a>
+            <a href="#portfolio" class="hover:text-gray-300">Portfolio</a>
+            <a href="#about" class="hover:text-gray-300">About Us</a>
+            <a href="#contact" class="hover:text-gray-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden absolute top-0 left-0 w-full h-screen bg-black bg-opacity-90 z-30 p-6">
+        <button id="mobile-menu-close" class="absolute top-4 right-4 text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="flex flex-col items-center justify-center h-full text-white space-y-6">
+            <a href="#services" class="hover:text-gray-300 text-xl">Services</a>
+            <a href="#portfolio" class="hover:text-gray-300 text-xl">Portfolio</a>
+            <a href="#about" class="hover:text-gray-300 text-xl">About Us</a>
+            <a href="#contact" class="hover:text-gray-300 text-xl">Contact</a>
+        </div>
+    </div>
+
+    <div class="relative z-10 text-center text-white">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4" data-animate="fade-in-up">Elevating Your Moments</h1>
+        <p class="text-lg md:text-xl mb-8" data-animate="fade-in-up" data-animate-delay="200">Creating unforgettable experiences, one event at a time.</p>
+        <a href="#contact" class="bg-white text-black py-3 px-8 rounded-lg font-semibold hover:bg-gray-200 transition duration-300" data-animate="fade-in-up" data-animate-delay="400">Plan Your Event</a>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    </script>
+</header>
+
+<!-- ABOUT SECTION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test Accounting</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Custom Styles (optional, for things not easily done with Tailwind) */
-        .gradient-overlay {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-        }
-
-        .custom-shadow {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test - Event Planning</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Custom Styles - Consistent across all pages */
+    .gradient-bg {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    }
+    .hover-underline:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body class="font-sans bg-cream text-gray-800">
+<body class="bg-gray-50 font-sans">
 
-    <!-- Header Section -->
-    <header class="relative overflow-hidden bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url(/images/gc9be52a413589154f1790097ad20fb012d2c90881162f8b92ca37dad91eff742a6865bfb00106ffc86de786682ad7377_64);">
-        <div class="gradient-overlay absolute top-0 left-0 w-full h-full"></div>
-
-        <!-- Navigation Bar -->
-        <nav class="absolute top-0 left-0 w-full py-6 px-4 md:px-8 lg:px-16 xl:px-32 z-10">
-            <div class="container mx-auto flex justify-between items-center">
-                <a href="#" class="text-white text-2xl font-bold">test Accounting</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#" class="text-white hover:text-green-200 transition duration-300">Home</a>
-                    <a href="#services" class="text-white hover:text-green-200 transition duration-300">Services</a>
-                    <a href="#about" class="text-white hover:text-green-200 transition duration-300">About Us</a>
-                    <a href="#team" class="text-white hover:text-green-200 transition duration-300">Team</a>
-                    <a href="#contact" class="text-white hover:text-green-200 transition duration-300">Contact</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
-
-            <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="hidden md:hidden bg-green-50 shadow-md rounded-md mt-2 py-2">
-                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Home</a>
-                <a href="#services" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Services</a>
-                <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">About Us</a>
-                <a href="#team" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Team</a>
-                <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-green-100 transition duration-300">Contact</a>
-            </div>
-        </nav>
-
-        <!-- Hero Content -->
-        <div class="container mx-auto text-center text-white z-10">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-animate="fade-in-up">Empowering Your Financial Success</h1>
-            <p class="text-lg md:text-xl mb-8" data-animate="fade-in-down">Expert accounting solutions tailored for your business needs.</p>
-            <a href="#contact" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 custom-shadow" data-animate="slide-in-left">Get a Free Consultation</a>
-        </div>
-    </header>
-
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-chart-line text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Financial Reporting</h3>
-                    <p class="text-gray-700">Accurate and timely financial statements to help you make informed decisions.</p>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-file-invoice-dollar text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Tax Preparation</h3>
-                    <p class="text-gray-700">Expert tax preparation services to minimize your tax liabilities and ensure compliance.</p>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Bookkeeping Services</h3>
-                    <p class="text-gray-700">Comprehensive bookkeeping solutions to keep your finances organized and up-to-date.</p>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-money-bill-wave text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Payroll Management</h3>
-                    <p class="text-gray-700">Efficient and accurate payroll processing to ensure your employees are paid on time.</p>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-handshake text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Business Consulting</h3>
-                    <p class="text-gray-700">Strategic business consulting to help you achieve your financial goals.</p>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <i class="fas fa-piggy-bank text-3xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Budgeting & Forecasting</h3>
-                    <p class="text-gray-700">Develop realistic budgets and financial forecasts to plan for the future.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-cream">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div class="md:w-1/2">
-                <img src="/images/gb4a9f07bc93e34191a431513a5fc5a57519b80428f2279bb699f8a68fe4ed584299c838b3c6b236227b5412cef0320278b9" alt="About Us" class="rounded-lg shadow-md">
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800">About test Accounting</h2>
-                <p class="text-gray-700 mb-4">test Accounting is a trusted provider of accounting and financial services. With years of experience, we are dedicated to helping businesses thrive by offering expert guidance and tailored solutions.</p>
-                <p class="text-gray-700 mb-4">Our mission is to provide exceptional service and build long-lasting relationships with our clients. We are committed to integrity, accuracy, and professionalism in everything we do.</p>
-                <a href="#contact" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 custom-shadow">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team Member 1 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <img src="/images/g16f754d3fdfd65f1f10335a2a34cf9781c88a7ae004c60c95fc8c4e6fed6c56880045317fb2f0982e3a49e3e41a38d7d429" alt="Team Member 1" class="rounded-full w-24 h-24 mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">John Doe</h3>
-                    <p class="text-gray-700 text-center">CEO & Founder</p>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Team Member 2" class="rounded-full w-24 h-24 mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">Jane Smith</h3>
-                    <p class="text-gray-700 text-center">Senior Accountant</p>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
-                    <img src="/images/image_1742877670537_-15b46.jpg" alt="Team Member 3" class="rounded-full w-24 h-24 mx-auto mb-4">
-                    <h3 class="text-xl font-semibold mb-2 text-center text-gray-800">Mike Johnson</h3>
-                    <p class="text-gray-700 text-center">Tax Specialist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 md:px-8 lg:px-16 xl:px-32 bg-cream">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Contact Form -->
-                <div>
-                    <form>
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-
-
-<!-- ABOUT SECTION -->
-<section id="about" class="relative overflow-hidden py-20 bg-cream-100">
+  <!-- Header (Consistent across all pages) -->
+  <header class="bg-black text-white py-6 md:py-8 fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto px-4">
-        <div class="lg:flex lg:items-center lg:justify-between">
-            <div class="lg:w-1/2 mb-10 lg:mb-0" data-animate="fade-right">
-                <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Team working on financial documents" class="rounded-xl shadow-lg">
-            </div>
-            <div class="lg:w-1/2 lg:pl-16" data-animate="fade-left">
-                <h2 class="text-3xl font-extrabold text-green-900 mb-6">About Test Accounting</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    At Test Accounting, we're more than just number crunchers. We're your trusted partners in financial success. Founded in 2010, we've been serving businesses and individuals in the [City/Region] area with integrity, expertise, and a commitment to excellence.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Our team of experienced CPAs and financial professionals brings a wealth of knowledge to every client engagement. We stay up-to-date on the latest tax laws and accounting regulations to ensure that you receive the most accurate and effective advice.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span class="text-gray-700 font-medium">Expertise & Experience</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span class="text-gray-700 font-medium">Personalized Service</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span class="text-gray-700 font-medium">Commitment to Accuracy</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span class="text-gray-700 font-medium">Ethical & Transparent</span>
-                    </div>
-                </div>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    We believe in building long-term relationships with our clients, based on trust and mutual respect. Let us help you navigate the complexities of the financial world and achieve your business goals.
-                </p>
-            </div>
-        </div>
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold">test Events</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="/" class="hover-underline">Home</a>
+          <a href="/about" class="hover-underline">About</a>
+          <a href="/services" class="hover-underline">Services</a>
+          <a href="/gallery" class="hover-underline">Gallery</a>
+          <a href="/contact" class="hover-underline">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </div>
     </div>
-</section>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-white py-4 px-6 absolute top-full left-0 w-full z-40">
+      <a href="/" class="block py-2 hover:text-gray-300">Home</a>
+      <a href="/about" class="block py-2 hover:text-gray-300">About</a>
+      <a href="/services" class="block py-2 hover:text-gray-300">Services</a>
+      <a href="/gallery" class="block py-2 hover:text-gray-300">Gallery</a>
+      <a href="/contact" class="block py-2 hover:text-gray-300">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-24">
+
+    <!-- About Section -->
+    <section class="py-20 bg-white" data-animate="fade-in">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="md:order-2">
+            <img src="/images/img_-253e9.jpg" alt="Elegant Event Setup" class="rounded-xl shadow-lg">
+          </div>
+          <div class="md:order-1">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">About test Events</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              At test Events, we believe that every event should be a unique and unforgettable experience. Founded in 2015 by Emily Carter, we started as a small team with a big passion for creating exceptional events.  From intimate gatherings to grand celebrations, we pour our hearts and expertise into every detail.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Our mission is simple: to bring your vision to life. We work closely with you to understand your style, preferences, and budget, crafting bespoke events that reflect your personality and exceed your expectations.  We handle everything from venue selection and vendor management to decor and entertainment, ensuring a seamless and stress-free planning process.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              We are committed to sustainable practices and strive to minimize our environmental impact. We partner with local vendors who share our values and use eco-friendly materials whenever possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-100" data-animate="fade-in">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Our Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <i class="fas fa-heart fa-3x text-red-500 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Passion</h3>
+            <p class="text-gray-600">We are passionate about creating exceptional events and exceeding our clients' expectations.</p>
+          </div>
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <i class="fas fa-users fa-3x text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Collaboration</h3>
+            <p class="text-gray-600">We believe in the power of collaboration and work closely with our clients and partners to achieve outstanding results.</p>
+          </div>
+          <div class="text-center p-6 bg-white rounded-lg shadow-md">
+            <i class="fas fa-leaf fa-3x text-green-500 mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Sustainability</h3>
+            <p class="text-gray-600">We are committed to sustainable practices and strive to minimize our environmental impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white" data-animate="fade-in">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Meet Our Team</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <img src="/api/placeholder/300/300" alt="Emily Carter" class="rounded-full w-48 h-48 mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Emily Carter</h3>
+            <p class="text-gray-600">Founder & CEO</p>
+          </div>
+          <div class="text-center">
+            <img src="/api/placeholder/300/300" alt="David Lee" class="rounded-full w-48 h-48 mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">David Lee</h3>
+            <p class="text-gray-600">Event Planner</p>
+          </div>
+          <div class="text-center">
+            <img src="/api/placeholder/300/300" alt="Sarah Johnson" class="rounded-full w-48 h-48 mx-auto mb-4">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">Sarah Johnson</h3>
+            <p class="text-gray-600">Design Coordinator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (Consistent across all pages) -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-lg font-bold mb-4">About test Events</h4>
+        <p class="text-gray-400">We create unforgettable events tailored to your unique vision. Let us bring your dreams to life.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="text-gray-400">
+          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li><a href="/about" class="hover:text-white">About</a></li>
+          <li><a href="/services" class="hover:text-white">Services</a></li>
+          <li><a href="/gallery" class="hover:text-white">Gallery</a></li>
+          <li><a href="/contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+        <p class="text-gray-400">123 Main Street, Anytown, USA</p>
+        <p class="text-gray-400">Email: info@testevents.com</p>
+        <p class="text-gray-400">Phone: (555) 123-4567</p>
+        <div class="mt-4">
+          <a href="#" class="text-gray-400 hover:text-white mr-2"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white mr-2"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white mr-2"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8 text-gray-500">
+      &copy; 2024 test Events. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
 
 <!-- SERVICES SECTION -->
-<section id="services" class="py-16 bg-cream-100 overflow-hidden">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12" data-animate="fade-in">
-            <h2 class="text-3xl lg:text-4xl font-semibold text-green-700 mb-4">Our Accounting Services</h2>
-            <p class="text-gray-600 leading-relaxed">We offer a comprehensive range of accounting services tailored to meet your business needs. From bookkeeping to tax planning, we're here to help you succeed.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-animate="slide-in-up">
-            <!-- Service 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="/images/gc901f7f0c42deb821eedcb58ac43d63bfe73cf370a00d31dab6e7f4d01860a5109fd2b01ceb4834a6cd996c3fa72422642d" alt="Bookkeeping" class="w-full h-48 object-cover object-center">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-green-600 mb-2">Bookkeeping Services</h3>
-                    <p class="text-gray-700 leading-relaxed">Accurate and timely bookkeeping is essential for financial health. We handle all aspects, from recording transactions to reconciling accounts.</p>
-                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
-                        <li>Daily Transaction Recording</li>
-                        <li>Bank Reconciliation</li>
-                        <li>Financial Statement Preparation</li>
-                        <li>Accounts Payable & Receivable</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="/images/gb4a9f07bc93e34191a431513a5fc5a57519b80428f2279bb699f8a68fe4ed584299c838b3c6b236227b5412cef0320278b9" alt="Tax Planning" class="w-full h-48 object-cover object-center">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-green-600 mb-2">Tax Planning & Preparation</h3>
-                    <p class="text-gray-700 leading-relaxed">Minimize your tax liabilities and maximize your savings with our expert tax planning and preparation services. We stay up-to-date with the latest tax laws.</p>
-                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
-                        <li>Individual Tax Returns</li>
-                        <li>Business Tax Returns</li>
-                        <li>Tax Planning Strategies</li>
-                        <li>IRS Representation</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="/images/g16f754d3fdfd65f1f10335a2a34cf9781c88a7ae004c60c95fc8c4e6fed6c56880045317fb2f0982e3a49e3e41a38d7d429" alt="Financial Consulting" class="w-full h-48 object-cover object-center">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-green-600 mb-2">Financial Consulting</h3>
-                    <p class="text-gray-700 leading-relaxed">Gain valuable insights and make informed decisions with our financial consulting services. We help you analyze your financial data and develop strategies for growth.</p>
-                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
-                        <li>Budgeting & Forecasting</li>
-                        <li>Financial Analysis</li>
-                        <li>Business Valuation</li>
-                        <li>Strategic Planning</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="/images/gc9be52a413589154f1790097ad20fb012d2c90881162f8b92ca37dad91eff742a6865bfb00106ffc86de786682ad7377_64" alt="Payroll Services" class="w-full h-48 object-cover object-center">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-green-600 mb-2">Payroll Services</h3>
-                    <p class="text-gray-700 leading-relaxed">Simplify your payroll process with our reliable and efficient payroll services. We handle everything from calculating wages to filing taxes.</p>
-                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
-                        <li>Payroll Processing</li>
-                        <li>Tax Withholding & Filing</li>
-                        <li>Employee Benefits Administration</li>
-                        <li>Year-End Reporting</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
-                </div>
-            </div>
-
-             <!-- Service 5 -->
-             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <img src="/images/image_1742877674601_-7903c.jpg" alt="Audit and Assurance" class="w-full h-48 object-cover object-center">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-green-600 mb-2">Audit and Assurance Services</h3>
-                    <p class="text-gray-700 leading-relaxed">Ensure the accuracy and reliability of your financial statements with our comprehensive audit and assurance services.</p>
-                    <ul class="list-disc list-inside mt-4 text-sm text-gray-600">
-                        <li>Financial Statement Audits</li>
-                        <li>Internal Control Assessments</li>
-                        <li>Compliance Audits</li>
-                        <li>Due Diligence</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</a>
-                </div>
-            </div>
-        </div>
+<section id="services" class="py-16 bg-gray-50 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl data-animate='fade-in-up'">Our Event Planning Services</h2>
+      <p class="mt-4 text-lg text-gray-500 data-animate='fade-in-up' data-animate-delay='200ms'">We offer comprehensive event planning services to make your special occasions unforgettable.</p>
     </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Service Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='400ms'">
+        <img src="/images/img_-54b2c.jpg" alt="Wedding Planning" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Wedding Planning</h3>
+          <p class="text-gray-600 mb-4">From venue selection to vendor coordination, we handle every detail to create your dream wedding.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Venue Selection</li>
+            <li>Vendor Management</li>
+            <li>Budget Planning</li>
+            <li>Timeline Creation</li>
+            <li>On-site Coordination</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='600ms'">
+        <img src="/images/img_-253e9.jpg" alt="Corporate Events" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Corporate Events</h3>
+          <p class="text-gray-600 mb-4">We specialize in planning successful corporate events, from conferences to team-building activities.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Conference Management</li>
+            <li>Team Building Activities</li>
+            <li>Product Launches</li>
+            <li>Gala Dinners</li>
+            <li>Trade Shows</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='800ms'">
+        <img src="/images/img_-1cd49.jpg" alt="Birthday Parties" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Birthday Parties</h3>
+          <p class="text-gray-600 mb-4">Let us create a memorable birthday celebration for you or your loved ones, tailored to your specific needs.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Theme Design</li>
+            <li>Entertainment Booking</li>
+            <li>Catering Services</li>
+            <li>Decoration Setup</li>
+            <li>Party Favors</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+       <!-- Service Card 4 -->
+       <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='400ms'">
+        <img src="/images/img_-2af87.jpg" alt="Anniversary Celebrations" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Anniversary Celebrations</h3>
+          <p class="text-gray-600 mb-4">Celebrate your years of love with a beautifully planned anniversary event.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Romantic Dinner Planning</li>
+            <li>Venue Decoration</li>
+            <li>Guest Accommodation</li>
+            <li>Entertainment Arrangements</li>
+            <li>Personalized Gifts</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='600ms'">
+        <img src="/api/placeholder/640/480" alt="Charity Events" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Charity Events</h3>
+          <p class="text-gray-600 mb-4">We assist in planning and executing impactful charity events to support your cause.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Fundraising Strategy</li>
+            <li>Sponsor Acquisition</li>
+            <li>Volunteer Coordination</li>
+            <li>Auction Management</li>
+            <li>Public Relations</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden data-animate='fade-in-up' data-animate-delay='800ms'">
+        <img src="/api/placeholder/640/480" alt="Private Parties" class="w-full h-56 object-cover object-center">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Private Parties</h3>
+          <p class="text-gray-600 mb-4">From intimate gatherings to large celebrations, we create unforgettable private party experiences.</p>
+          <ul class="list-disc list-inside text-gray-600">
+            <li>Custom Theme Design</li>
+            <li>Catering & Bar Services</li>
+            <li>Live Music & DJ Booking</li>
+            <li>Security & Staffing</li>
+            <li>Event Photography</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors duration-200">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- FEATURES SECTION -->
-<section id="features" class="py-16 bg-cream">
+<section id="features" class="py-16 bg-gray-50 overflow-hidden">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-green-900 mb-4" data-animate="fade-in">Key Features That Drive Your Success</h2>
-            <p class="text-gray-700 leading-relaxed" data-animate="fade-in" data-animate-delay="200">
-                We offer a comprehensive suite of accounting services designed to streamline your finances, reduce risk, and empower your business to thrive.
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-800 mb-4" data-animate="fade-in">
+                Why Choose Test Event Planning?
+            </h2>
+            <p class="text-gray-600 text-lg" data-animate="fade-in" data-animate-delay="200">
+                We go beyond the ordinary to create extraordinary events that leave a lasting impression.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Feature 1: Accurate Financial Reporting -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-left">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Accurate Financial Reporting</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Seamless Execution
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Gain a clear and concise understanding of your financial performance with our detailed and accurate reporting. We provide timely insights to help you make informed decisions.
+                    <p class="text-gray-600">
+                        From initial concept to final cleanup, we handle every detail with precision and care.  Our experienced team ensures a smooth and stress-free event for you and your guests.
                     </p>
                 </div>
             </div>
 
-            <!-- Feature 2: Tax Planning & Compliance -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="100">
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="fade-in">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Tax Planning & Compliance</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Creative Design & Styling
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Minimize your tax liabilities and ensure compliance with all relevant regulations. Our proactive tax planning strategies help you optimize your financial position.
+                    <p class="text-gray-600">
+                        Our team of talented designers will transform your vision into a stunning reality. We pay attention to every detail, from floral arrangements to lighting, to create a truly unforgettable atmosphere.
                     </p>
                 </div>
             </div>
 
-            <!-- Feature 3: Bookkeeping & Accounting Services -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="200">
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-right">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Bookkeeping & Accounting Services</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Budget Management
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        From day-to-day bookkeeping to comprehensive accounting solutions, we handle all your financial needs with precision and efficiency, freeing you to focus on your core business.
+                    <p class="text-gray-600">
+                        We work closely with you to create a budget that meets your needs and expectations.  Our transparent pricing and detailed cost breakdowns ensure that you stay in control every step of the way.
                     </p>
                 </div>
             </div>
 
-            <!-- Feature 4: Payroll Management -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up">
+            <!-- Feature 4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-left">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 4.75 7.5 4.75a4.875 4.875 0 00-4.875 4.875c0 .768.148 1.535.439 2.253M12 6.253l1.5 3.75m-1.5-3.75c1.168 5.477 2.754 6.25 4.5 6.25a4.875 4.875 0 014.875 4.875c0 .768-.148 1.535-.439 2.253m-4.875-4.875L12 14.747m0-13c-1.168 5.477-2.754 6.25-4.5 6.25a4.875 4.875 0 00-4.875 4.875c0 .768.148 1.535.439 2.253"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Payroll Management</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Vendor Relationships
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Simplify your payroll process with our comprehensive payroll management services. We handle everything from calculating wages to filing taxes, ensuring accurate and timely payments.
+                    <p class="text-gray-600">
+                        We have established strong relationships with a network of trusted vendors, ensuring that you receive the highest quality services at competitive prices.
                     </p>
                 </div>
             </div>
 
-            <!-- Feature 5: Business Consulting -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="100">
+            <!-- Feature 5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="fade-in">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-2m-2 9l-5.387-5.387C13.924 12.602 14.19 11.377 14.19 10.15c0-2.652-4.5-4.8-9-4.8m0 0v3.675A5.5 5.5 0 016.75 6.5h0"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Business Consulting</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Personalized Service
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Leverage our expertise to gain valuable insights and strategic guidance. We provide tailored business consulting services to help you optimize your operations and achieve your goals.
+                    <p class="text-gray-600">
+                        We understand that every event is unique. We take the time to get to know you and your vision, tailoring our services to meet your specific needs and preferences.
                     </p>
                 </div>
             </div>
 
-            <!-- Feature 6: Cloud Accounting Solutions -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden" data-animate="slide-in-up" data-animate-delay="200">
+             <!-- Feature 6 -->
+             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-right">
                 <div class="p-6">
                     <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4m4-2v5"></path></svg>
-                        <h3 class="text-xl font-semibold text-green-800">Cloud Accounting Solutions</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-primary-500 mr-3">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM8.547 9.547a.75.75 0 00-1.06 1.06l3.217 3.217H5.75a.75.75 0 000 1.5h5.167l-3.217 3.217a.75.75 0 101.06 1.06l4.5-4.5a.75.75 0 000-1.06l-4.5-4.5z" clip-rule="evenodd" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Unforgettable Experiences
+                        </h3>
                     </div>
-                    <p class="text-gray-600 leading-relaxed">
-                        Access your financial data anytime, anywhere with our secure cloud accounting solutions. Enjoy real-time insights, improved collaboration, and enhanced efficiency.
+                    <p class="text-gray-600">
+                        Our goal is to create events that are not only beautiful but also meaningful and memorable. We want your guests to leave feeling inspired and delighted.
                     </p>
                 </div>
             </div>
