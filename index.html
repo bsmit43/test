@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test - Professional website">
     <meta name="generator" content="Website Generator">
-    <meta name="theme-color" content="hsl(26, 61%, 40%)">
+    <meta name="theme-color" content="hsl(270, 78%, 40%)">
     <title>test</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,14 +25,14 @@
         .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
         ::-webkit-scrollbar{width:8px;height:8px}
         ::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:hsl(26, 61%, 40%);border-radius:4px}
-        ::-webkit-scrollbar-thumb:hover{background:hsl(26, 61%, 30%)}
-        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(26, 61%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
+        ::-webkit-scrollbar-thumb{background:hsl(270, 78%, 40%);border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:hsl(270, 78%, 30%)}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(270, 78%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
         @media print{[data-animate]{opacity:1;transform:none}}
     </style>
     
     <script>
-        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(26, 61%, 95%)","100":"hsl(26, 61%, 90%)","200":"hsl(26, 61%, 80%)","300":"hsl(26, 61%, 70%)","400":"hsl(26, 61%, 60%)","500":"hsl(26, 61%, 50%)","600":"hsl(26, 61%, 40%)","700":"hsl(26, 61%, 30%)","800":"hsl(26, 61%, 20%)","900":"hsl(26, 61%, 10%)"}},fontFamily:{sans:[''DM Sans'','system-ui','sans-serif'],heading:[''DM Serif Display'','serif']}}}}
+        tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(270, 78%, 95%)","100":"hsl(270, 78%, 90%)","200":"hsl(270, 78%, 80%)","300":"hsl(270, 78%, 70%)","400":"hsl(270, 78%, 60%)","500":"hsl(270, 78%, 50%)","600":"hsl(270, 78%, 40%)","700":"hsl(270, 78%, 30%)","800":"hsl(270, 78%, 20%)","900":"hsl(270, 78%, 10%)"}},fontFamily:{sans:[''DM Sans'','system-ui','sans-serif'],heading:[''DM Serif Display'','serif']}}}}
     </script>
 </head>
 <body class="antialiased text-gray-800">
@@ -498,6 +498,313 @@
         </div>
     </div>
 </section>
+
+<!-- TESTIMONIALS SECTION -->
+```html
+<section id="testimonials" class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl" data-animate="fade-in">
+                What Our Clients Say
+            </h2>
+            <p class="mt-4 text-lg text-gray-500" data-animate="fade-in" data-animate-delay="200">
+                Don't just take our word for it. See what our clients have to say about their experiences with test.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-bottom">
+                <div>
+                    <div class="mb-4">
+                        <svg class="w-6 h-6 text-primary-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9.984 16.016l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zm8.016 0l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zM5.953 12q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422zm12.094 0q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        test made our wedding day absolutely perfect.  From the initial consultation to the final execution, their attention to detail was impeccable.  We highly recommend them!
+                    </p>
+                </div>
+                <div class="text-sm text-gray-500">
+                    - Sarah & Michael, Wedding
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-bottom" data-animate-delay="200">
+                <div>
+                    <div class="mb-4">
+                        <svg class="w-6 h-6 text-primary-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9.984 16.016l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zm8.016 0l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zM5.953 12q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422zM12.094 0q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        We hired test to plan our corporate retreat, and they exceeded all expectations. The venue was perfect, the activities were engaging, and the entire event ran seamlessly.
+                    </p>
+                </div>
+                <div class="text-sm text-gray-500">
+                    - John Smith, CEO, Acme Corp
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-bottom" data-animate-delay="400">
+                <div>
+                    <div class="mb-4">
+                        <svg class="w-6 h-6 text-primary-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9.984 16.016l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zm8.016 0l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zM5.953 12q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422zM12.094 0q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        test helped us plan a surprise birthday party for my mom, and it was a huge success! They took care of everything, from the decorations to the catering, and made sure everything was perfect.
+                    </p>
+                </div>
+                <div class="text-sm text-gray-500">
+                    - Jessica L., Birthday Party
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-bottom">
+                <div>
+                    <div class="mb-4">
+                        <svg class="w-6 h-6 text-primary-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9.984 16.016l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zm8.016 0l-4.228 4.228q-.375.375-.891.375-.516 0-.891-.375-.375-.375-.375-.891 0-.516.375-.891l5.125-5.125q-.375-.797-.375-1.391 0-.641.5-1.141.5-.5.984-.5.484 0 .984.5.5.5.5 1.141 0 .594-.375 1.391zM5.953 12q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.469 1.141-1.172.469-.703.75-1.422zM12.094 0q.281-.75.75-1.422.469-.672 1.172-1.141.703-.469 1.422-.75.75-.281 1.422-.75.672-.4
+
+<!-- CONTACT SECTION -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test - Event Planning</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles (if needed) */
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Header -->
+    <header class="bg-black text-white py-6 md:py-8 lg:py-10" style="background-image: url(/images/img_-54b2c.jpg); background-size: cover; background-position: center;">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold">test Events</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gray-300">Home</a>
+                    <a href="#" class="hover:text-gray-300">Services</a>
+                    <a href="#" class="hover:text-gray-300">Portfolio</a>
+                    <a href="#" class="hover:text-gray-300">About</a>
+                    <a href="#" class="hover:text-gray-300">Contact</a>
+                </nav>
+                <button class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 md:py-32 lg:py-40 text-white" style="background-image: url(/images/img_-54b2c.jpg); background-size: cover; background-position: center;">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-animate="fade-in-down">Your Vision, Our Expertise</h1>
+            <p class="text-lg md:text-xl mb-8" data-animate="fade-in-up">Creating unforgettable events tailored to your unique style and needs.</p>
+            <a href="#" class="bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition duration-300" data-animate="fade-in-left">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" data-animate="fade-in">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up">
+                    <img src="/images/img_-253e9.jpg" alt="Wedding Planning" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Wedding Planning</h3>
+                    <p class="text-gray-700">From venue selection to vendor coordination, we handle every detail to create your dream wedding.</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="200">
+                    <img src="/images/img_-1cd49.jpg" alt="Corporate Events" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Corporate Events</h3>
+                    <p class="text-gray-700">We specialize in planning conferences, seminars, and team-building events that align with your business goals.</p>
+                </div>
+                <div class="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="400">
+                    <img src="/images/img_-2af87.jpg" alt="Private Parties" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Private Parties</h3>
+                    <p class="text-gray-700">Celebrate your special moments with our expertly planned birthday parties, anniversaries, and other private events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" data-animate="fade-in">Our Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up">
+                    <img src="/images/img_-79e62.jpg" alt="Wedding Event" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Elegant Wedding</h3>
+                        <p class="text-gray-700">A classic wedding with a modern twist, featuring stunning floral arrangements and personalized details.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="200">
+                    <img src="/images/img_-263ce.jpg" alt="Corporate Event" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Successful Conference</h3>
+                        <p class="text-gray-700">A well-organized corporate conference that fostered collaboration and networking among attendees.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" data-animate="fade-in-up" data-animate-delay="400">
+                    <img src="/images/img_-41847.jpg" alt="Private Party" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Birthday Celebration</h3>
+                        <p class="text-gray-700">A vibrant and memorable birthday party with custom decorations and entertainment for all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" data-animate="fade-in">About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div data-animate="fade-in-right">
+                    <img src="/images/img_-3be9a.jpg" alt="Our Team" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div data-animate="fade-in-left">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">We are passionate event planners</h3>
+                    <p class="text-gray-700 mb-6">test Events is a full-service event planning company dedicated to creating exceptional experiences. With years of experience and a passion for detail, we bring your vision to life.</p>
+                    <p class="text-gray-700 mb-6">Our team of dedicated professionals works closely with you to understand your needs and preferences, ensuring that every event is tailored to your unique style and objectives. From concept to execution, we handle every aspect of event planning with creativity and precision.</p>
+                    <p class="text-gray-700">We are committed to making your event a success and creating memories that last a lifetime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" data-animate="fade-in">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div data-animate="fade-in-right">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Get in Touch</h3>
+                    <p class="text-gray-700 mb-6">We'd love to hear from you! Contact us to discuss your event planning needs and how we can help you create an unforgettable experience.</p>
+                    <ul class="list-none">
+                        <li class="mb-2"><strong class="font-semibold text-gray-800">Address:</strong> 123 Main Street, Anytown, USA</li>
+                        <li class="mb-2"><strong class="font-semibold text-gray-800">Phone:</strong> (555) 123-4567</li>
+                        <li class="mb-2"><strong class="font-semibold text-gray-800">Email:</strong> info@testevents.com</li>
+                    </ul>
+                </div>
+                <div data-animate="fade-in-left">
+                    <form class="bg-white rounded-lg p-8 shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="bg-black text-white py-2 px-4 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 focus:outline-none focus:shadow-outline">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 md:py-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">test Events</h3>
+                <p class="text-gray-400">Creating unforgettable events tailored to your unique style and needs.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="list-none">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Portfolio</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                <p class="text-gray-400">123 Main Street, Anytown,
+
+<!-- FOOTER SECTION -->
+<footer class="bg-gray-900 text-white py-12 md:py-16 lg:py-20">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">About test</h3>
+                <p class="text-gray-400">test is a premier event planning company dedicated to creating unforgettable experiences. From intimate gatherings to grand celebrations, we handle every detail with precision and passion.</p>
+                <div class="flex mt-4 space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Services</h3>
+                <ul class="list-none pl-0">
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Corporate Events</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Weddings</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Private Parties</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Conferences</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Product Launches</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="list-none pl-0">
+                    <li class="mb-2"><a href="/" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li class="mb-2"><a href="/about" class="text-gray-400 hover:text-white">About Us</a></li>
+                    <li class="mb-2"><a href="/services" class="text-gray-400 hover:text-white">Services</a></li>
+                    <li class="mb-2"><a href="/portfolio" class="text-gray-400 hover:text-white">Portfolio</a></li>
+                    <li class="mb-2"><a href="/contact" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                <p class="text-gray-400 mb-2">Address: 123 Event Street, Cityville, State 12345</p>
+                <p class="text-gray-400 mb-2">Phone: (555) 123-4567</p>
+                <p class="text-gray-400 mb-2">Email: info@testevents.com</p>
+                <div class="mt-4">
+                    <h4 class="text-md font-semibold mb-2">Subscribe to our Newsletter</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-gray-300 py-2 px-3 rounded-l-lg focus:outline-none w-3/4">
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-r-lg focus:outline-none">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-500">© 2024 test. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
     </main>
     
