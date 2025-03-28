@@ -8,189 +8,185 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <style>
         
-        body{font-family:'DM Sans', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
-        h1,h2,h3,h4,h5,h6{font-family:'DM Serif Display', serif}
-        section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
-        header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}
-        .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
-        ::-webkit-scrollbar{width:8px;height:8px}
-        ::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:hsl(140, 67%, 40%);border-radius:4px}
-        ::-webkit-scrollbar-thumb:hover{background:hsl(140, 67%, 30%)}
-        body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(140, 67%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
-        @media print{[data-animate]{opacity:1;transform:none}}
-    
-        /* Custom Styles - Keeping it consistent */
-        .transition-opacity {
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-
-        /* Add more custom styles here as needed */
-    
-        /* Custom Styles - Consider moving these to a separate CSS file for larger projects */
-        .gradient-background {
-            background: linear-gradient(to right, rgba(34, 197, 94, 0.9), rgba(56, 189, 248, 0.9)); /* Emerald and Sky Blue */
-        }
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-        }
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-    
-        /* Custom Styles - Consistent Across the Site */
-        .gradient-bg {
-            background: linear-gradient(to right, #3b82f6, #63b3ed); /* Blue gradient */
-        }
-        .hover-shadow:hover {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        /* Ensure consistent text readability across different screen sizes */
-        body {
-            min-width: 320px;
-        }
-    
-        /* Custom Styles (Optional - for things not easily done with Tailwind) */
-        .gradient-hero {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-        }
-    
+      body{font-family:'Poppins', system-ui, sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
+      h1,h2,h3,h4,h5,h6{font-family:'Poppins', sans-serif}
+      section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
+      header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
+      [data-animate]{opacity:0;transition:opacity .8s ease-out}[data-animate].visible{opacity:1}
+      .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
+      ::-webkit-scrollbar{width:8px;height:8px}
+      ::-webkit-scrollbar-track{background:#f1f1f1}
+      ::-webkit-scrollbar-thumb{background:hsl(173, 80%, 40%);border-radius:4px}
+      ::-webkit-scrollbar-thumb:hover{background:hsl(173, 80%, 30%)}
+      body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(173, 80%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
+      @media print{[data-animate]{opacity:1;transform:none}}
+  
       </style>
     </head>
     <body>
-      <nav class="absolute top-0 left-0 w-full py-6 px-4 sm:px-6 lg:px-8 z-20">
-            <div class="container mx-auto flex justify-between items-center">
-                <a href="#" class="text-white text-2xl font-bold">Test Accounting</a>
-                <div class="hidden lg:flex space-x-6">
-                    <a href="#" class="text-gray-200 hover:text-white transition-opacity">Home</a>
-                    <a href="#" class="text-gray-200 hover:text-white transition-opacity">Services</a>
-                    <a href="#" class="text-gray-200 hover:text-white transition-opacity">About Us</a>
-                    <a href="#" class="text-gray-200 hover:text-white transition-opacity">Contact</a>
-                </div>
-                <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="text-gray-200 hover:text-white focus:outline-none focus:text-white">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
+      <nav class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-4 fixed top-0 w-full z-50" data-animate="fade-down">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-4.037m-7.328 0A5.97 5.97 0 016 21m6-3a9.004 9.004 0 00-8.716-4.037m7.328 0A5.97 5.97 0 0018 18"></path>
+                </svg>
+                <span class="font-bold text-xl">Test Consumer Protection</span>
+            </a>
+
+            <!-- Mobile Menu Button (Hidden on larger screens) -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links (Hidden on mobile) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-blue-200 transition duration-300">Home</a>
+                <a href="/about" class="hover:text-blue-200 transition duration-300">About Us</a>
+                <a href="/services" class="hover:text-blue-200 transition duration-300">Services</a>
+                <a href="/resources" class="hover:text-blue-200 transition duration-300">Resources</a>
+                <a href="/contact" class="hover:text-blue-200 transition duration-300">Contact</a>
             </div>
-        </nav>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 py-4">
+        <div class="container mx-auto px-4 flex flex-col space-y-4">
+            <a href="/" class="block hover:text-blue-200 transition duration-300">Home</a>
+            <a href="/about" class="block hover:text-blue-200 transition duration-300">About Us</a>
+            <a href="/services" class="block hover:text-blue-200 transition duration-300">Services</a>
+            <a href="/resources" class="block hover:text-blue-200 transition duration-300">Resources</a>
+            <a href="/contact" class="block hover:text-blue-200 transition duration-300">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</nav>
       <header class="bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div class="container mx-auto px-4 py-12">
           <h1 class="text-3xl font-bold">test - About test</h1>
         </div>
       </header>
       <main class="container mx-auto px-4 py-8">
-        ```html
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - test Accounting</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Us - test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto-slab': ['Roboto Slab', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2e3192', // Deep blue
+                        'secondary': '#f0f4f8', // Light gray/beige
+                        'accent': '#3ac1e3', // Bright blue accent
+                        'neutral': '#6b7280', // Gray for text
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom Styles - Add these to a separate CSS file for better organization */
-        .gradient-bg {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); /* Deep Blue to Light Blue */
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
         }
 
-        .gradient-overlay {
-            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(59, 130, 246, 0.7));
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Color of the tracking area */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Color of the scroll thumb */
+            border-radius: 4px; /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Color of the scroll thumb on hover */
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="font-roboto antialiased bg-secondary text-neutral">
 
     <!-- Header -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold text-blue-700">
-                test Accounting
-            </a>
+    <header class="bg-gradient-to-r from-primary to-accent shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="text-2xl font-roboto-slab text-white font-bold">test</a>
             <nav class="hidden md:flex space-x-6">
-                <a href="/" class="text-gray-700 hover:text-blue-500">Home</a>
-                <a href="/about" class="text-gray-700 hover:text-blue-500">About Us</a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">Services</a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">Resources</a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">Contact</a>
+                <a href="/" class="text-white hover:text-secondary transition duration-300">Home</a>
+                <a href="/about.html" class="text-white hover:text-secondary transition duration-300">About Us</a>
+                <a href="#" class="text-white hover:text-secondary transition duration-300">Services</a>
+                <a href="#" class="text-white hover:text-secondary transition duration-300">Resources</a>
+                <a href="#" class="text-white hover:text-secondary transition duration-300">Contact</a>
             </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-500 focus:outline-none focus:text-blue-500">
-                    <i class="fas fa-bars fa-lg"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 py-2 px-4 shadow-md">
-            <a href="/" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
-            <a href="/about" class="block py-2 text-gray-700 hover:text-blue-500">About Us</a>
-            <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Services</a>
-            <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Resources</a>
-            <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Contact</a>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-96 md:h-128 overflow-hidden">
-        <img src="/images/gd053d4353a878ad0ce3df728305dfe5dacc85c9899962d6dd22e44905f8601f2312fbebfe4691c798b4b6426ffff4bdc_640.jpg" alt="Business Meeting" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 gradient-overlay"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center">
-            <div class="text-white">
-                <h1 class="text-3xl md:text-5xl font-bold mb-4" data-animate="fade-in">About test Accounting</h1>
-                <p class="text-lg md:text-xl" data-animate="fade-in" data-animate-delay="0.2s">Your Trusted Partner in Financial Success.</p>
-            </div>
+    <section class="relative py-24 bg-cover bg-center" style="background-image: url(/images/g35bf43bfe4ff2663ee30428008c8547ea1541a876f8cae8e3c8b9168d3363ddfb2499a780126d33c04fa75ad39492e39df0d919ba03f547b5f63473acdf646c8_640.jpg);">
+        <div class="absolute inset-0 bg-primary opacity-70"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-5xl font-roboto-slab font-bold text-white mb-6" data-animate="fade-in-down">About test: Protecting Your Rights</h1>
+            <p class="text-xl text-secondary mb-8" data-animate="fade-in-up">Learn more about our mission, history, and the dedicated team behind our commitment to consumer protection.</p>
         </div>
     </section>
 
     <!-- Company History -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center" data-animate="slide-in-bottom">Our Journey</h2>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-roboto-slab font-semibold text-primary mb-8 text-center" data-animate="fade-in">Our History</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="md:order-2" data-animate="fade-in">
-                    <img src="/images/g484a8c6d90eb1223126d92a04bc00cd026464888c19bbd45c1d348f5e7e40c795b8b3a6907b602f8c0fc2b7c96924db6b4dee10bf41287865f1dcc966cb6cede_640.jpg" alt="Office Interior" class="rounded-lg shadow-md">
+                <div>
+                    <p class="text-lg leading-relaxed mb-6" data-animate="fade-in-left">test was founded in 2005 by a group of concerned citizens who recognized the growing need for consumer advocacy and protection. Initially, we started as a small volunteer organization, providing free legal advice to individuals facing unfair business practices. </p>
+                    <p class="text-lg leading-relaxed mb-6" data-animate="fade-in-left">Over the years, we have expanded our services to include mediation, investigation, and legal representation. We have successfully resolved thousands of cases, recovering millions of dollars for consumers who have been victims of fraud, deception, and unfair business practices.</p>
+                    <p class="text-lg leading-relaxed" data-animate="fade-in-left">Our commitment to justice and consumer rights has earned us a reputation as a trusted and effective advocate for the people. We continue to evolve and adapt to the changing landscape of consumer protection, ensuring that we remain at the forefront of the fight for fairness and transparency in the marketplace.</p>
                 </div>
-                <div class="md:order-1" data-animate="fade-in" data-animate-delay="0.2s">
-                    <p class="text-gray-700 leading-relaxed mb-4">test Accounting was founded in 2010 by John Smith, a Certified Public Accountant with a vision to provide personalized and proactive financial solutions to small and medium-sized businesses. Starting as a small practice in a local community, we have grown into a reputable firm serving clients across various industries.</p>
-                    <p class="text-gray-700 leading-relaxed mb-4">Over the years, we have adapted to the evolving financial landscape, embracing technology and innovation to deliver efficient and accurate services. Our commitment to excellence and client satisfaction has been the cornerstone of our success.</p>
-                    <p class="text-gray-700 leading-relaxed">Today, test Accounting is a team of dedicated professionals committed to helping our clients achieve their financial goals. We are proud of our history and excited about the future.</p>
+                <div>
+                    <img src="/images/gb64a6939e3c49fbf51eaba10a54fd4f31032aa6f235d255da22e56876e1ab0f682e6520e7d0f4e0bf9723870f972644b50a2e132f05cb85f83ac1afa5623236d_640.jpg" alt="Company History" class="rounded-lg shadow-md" data-animate="fade-in-right">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission & Values -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-roboto-slab font-semibold text-primary mb-8 text-center" data-animate="fade-in">Our Mission & Values</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-animate="fade-in">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Our Mission</h2>
-                    <p class="text-gray-700 leading-relaxed">To empower businesses with accurate, insightful, and timely financial information, enabling them to make informed decisions and achieve sustainable growth. We strive to be a trusted advisor and a valuable partner in our clients' success.</p>
+                <div data-animate="fade-in-up">
+                    <h3 class="text-2xl font-roboto-slab font-semibold text-neutral mb-4">Our Mission</h3>
+                    <p class="text-lg leading-relaxed">To empower consumers by providing them with the knowledge, resources, and legal support they need to protect themselves from unfair and deceptive business practices. We strive to create a fair and transparent marketplace where consumers can make informed decisions and businesses are held accountable for their actions.</p>
                 </div>
-                <div data-animate="fade-in" data-animate-delay="0.2s">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Our Values</h2>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                <div data-animate="fade-in-up">
+                    <h3 class="text-2xl font-roboto-slab font-semibold text-neutral mb-4">Our Values</h3>
+                    <ul class="list-disc list-inside text-lg leading-relaxed">
                         <li><b>Integrity:</b> We uphold the highest ethical standards in all our interactions.</li>
-                        <li><b>Accuracy:</b> We are committed to providing precise and reliable financial data.</li>
-                        <li><b>Client Focus:</b> We prioritize our clients' needs and strive to exceed their expectations.</li>
-                        <li><b>Innovation:</b> We embrace technology and continuous improvement to deliver cutting-edge solutions.</li>
-                        <li><b>Teamwork:</b> We foster a collaborative environment where every team member is valued and empowered.</li>
+                        <li><b>Advocacy:</b> We are passionate about representing the interests of consumers.</li>
+                        <li><b>Transparency:</b> We believe in open and honest communication.</li>
+                        <li><b>Empowerment:</b> We provide consumers with the tools they need to protect themselves.</li>
+                        <li><b>Justice:</b> We are committed to fighting for fairness and accountability.</li>
                     </ul>
                 </div>
             </div>
@@ -199,1000 +195,121 @@
 
     <!-- Team Section -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center" data-animate="slide-in-bottom">Meet Our Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-roboto-slab font-semibold text-primary mb-8 text-center" data-animate="fade-in">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Team Member 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in">
-                    <img src="/images/gcafd17218dda8581d78455e8bdf3c8a52848b889af230f7fa9a708e05b8a041118d31f75612753df54a37673487515c66bc7ff8073a3d39c28eb352de397b5cf_640.jpg" alt="John Smith" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">John Smith, CPA</h3>
-                        <p class="text-gray-600 mb-2">Founder & CEO</p>
-                        <p class="text-gray-700 leading-relaxed">John is a Certified Public Accountant with over 20 years of experience in the accounting industry. He is passionate about helping businesses thrive.</p>
-                    </div>
+                <div class="bg-secondary rounded-lg shadow-md p-4 text-center" data-animate="fade-in-up">
+                    <img src="/images/g03c7a1da8976ad3e5a895181414e8f6dd37761c7dd426bb9283d5bdfd8aefadcfc8c0b70edc33dfb440c82eebb3e9bc5_640.jpg" alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-roboto-slab font-semibold text-neutral">Jane Doe</h3>
+                    <p class="text-sm text-neutral">Executive Director</p>
+                    <p class="text-sm text-neutral mt-2">Jane has over 15 years of experience in consumer protection law.</p>
                 </div>
-
                 <!-- Team Member 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in" data-animate-delay="0.2s">
-                    <img src="/images/g7ebf282145b7ec78ec06aec5be46939215f2a7d28badfbe523924c71d0e8de407e0f1f38fab32db8825c8a9047abd92b5ba7cc681804d32c61b4301506fa39a8_640.jpg" alt="Alice Johnson" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Alice Johnson, EA</h3>
-                        <p class="text-gray-600 mb-2">Senior Tax Accountant</p>
-                        <p class="text-gray-700 leading-relaxed">Alice is an Enrolled Agent specializing in tax planning and preparation for individuals and businesses. She is dedicated to providing expert tax advice.</p>
-                    </div>
+                <div class="bg-secondary rounded-lg shadow-md p-4 text-center" data-animate="fade-in-up">
+                    <img src="/images/gc157cec7c4cb70d7150b2908e7407df23d6ecfe2269eaa62e965ae29657b55f5cae49ca78b7f67c733874025642b08dae4aaa922f4d8f7a4bb79ac1d8147bd15_640.jpg" alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-roboto-slab font-semibold text-neutral">John Smith</h3>
+                    <p class="text-sm text-neutral">Senior Attorney</p>
+                    <p class="text-sm text-neutral mt-2">John specializes in fraud and deceptive practices litigation.</p>
                 </div>
-
-                <!-- Team Member 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-animate="fade-in" data-animate-delay="0.4s">
-                    <img src="/api/placeholder/640/480" alt="David Lee" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">David Lee</h3>
-                        <p class="text-gray-600 mb-2">Bookkeeping Manager</p>
-                        <p class="text-gray-700 leading-relaxed">David manages our bookkeeping department and ensures accurate and timely financial record-keeping for our clients. He is detail-oriented and highly organized.</p>
-                    </div>
+                 <!-- Team Member 3 -->
+                 <div class="bg-secondary rounded-lg shadow-md p-4 text-center" data-animate="fade-in-up">
+                    <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Sarah" alt="Sarah Lee" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-roboto-slab font-semibold text-neutral">Sarah Lee</h3>
+                    <p class="text-sm text-neutral">Case Manager</p>
+                    <p class="text-sm text-neutral mt-2">Sarah is dedicated to helping consumers navigate the legal process.</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="bg-secondary rounded-lg shadow-md p-4 text-center" data-animate="fade-in-up">
+                    <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=David" alt="David Brown" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-roboto-slab font-semibold text-neutral">David Brown</h3>
+                    <p class="text-sm text-neutral">Investigator</p>
+                    <p class="text-sm text-neutral mt-2">David has a background in law enforcement and fraud investigation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center" data-animate="slide-in-bottom">Our Achievements</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Award-Winning Service</h3>
-                    <p class="text-gray-700 leading-relaxed">We have been recognized as a top accounting firm in the region for our exceptional client service and commitment to excellence. Our dedication to providing personalized solutions has earned us numerous accolades.</p>
+    <!-- Achievements Section -->
+    <section class="py-16 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-roboto-slab font-semibold text-primary mb-8 text-center" data-animate="fade-in">Our Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-up">
+                    <h3 class="text-2xl font-roboto-slab font-semibold text-neutral mb-2">Millions Recovered</h3>
+                    <p class="text-lg text-neutral">Recovered over $10 million for consumers who have been victims of fraud and unfair business practices.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in" data-animate-delay="0.2s">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Industry Recognition</h3>
-                    <p class="text-gray-700 leading-relaxed">test Accounting has been featured in leading industry publications for our innovative approach to financial management and our contributions to the accounting profession. We are proud to be at the forefront of the industry.</p>
+                <!-- Achievement 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-up">
+                    <h3 class="text-2xl font-roboto-slab font-semibold text-neutral mb-2">Thousands Helped</h3>
+                    <p class="text-lg text-neutral">Assisted over 5,000 individuals and families in resolving consumer disputes.</p>
+                </div>
+                <!-- Achievement 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6" data-animate="fade-in-up">
+                    <h3 class="text-2xl font-roboto-slab font-semibold text-neutral mb-2">Awards & Recognition</h3>
+                    <p class="text-lg text-neutral">Received numerous awards and recognition for our commitment to consumer protection and advocacy.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-primary text-secondary py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-                <h4 class="text-xl font-semibold mb-4">test Accounting</h4>
-                <p class="text-gray-300">Your trusted partner for accounting, tax, and financial services. We help businesses thrive by providing expert guidance and personalized solutions.</p>
+                <h4 class="text-xl font-roboto-slab font-semibold mb-4">About test</h4>
+                <p class="text-secondary">test is dedicated to protecting consumers from fraud and unfair business practices. We provide resources, legal support, and advocacy to empower individuals and families.</p>
             </div>
             <div>
-                <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                <ul class="list-none">
-                    <li><a href="/" class="text-gray-300 hover:text-white">Home</a></li>
-                    <li><a href="/about" class="text-gray-300 hover:text-white">About Us</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Services</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Resources</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
+                <h4 class="text-xl font-roboto-slab font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/" class="hover:text-accent transition duration-300">Home</a></li>
+                    <li><a href="/about.html" class="hover:text-accent transition duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-accent transition duration-300">Services</a></li>
+                    <li><a href="#" class="hover:text-accent transition duration-300">Resources</a></li>
+                    <li><a href="#" class="hover:text-accent transition duration-300">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
-                <p class="text-gray-300">123 Main Street<br>Anytown, CA 12345</p>
-                <p class="text-gray-300">Email: info@testaccounting.com<br>Phone: (555) 123-4567</p>
-                <div class="mt-4">
-                    <a href="#" class="text-gray-300 hover:text-white mr-2"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white mr-2"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                </div>
+                <h4 class="text-xl font-roboto-slab font-semibold mb-4">Contact Us</h4>
+                <p class="text-secondary">123 Main Street<br>Anytown, USA 12345</p>
+                <p class="text-secondary">Email: info@test.com<br>Phone: (555) 123-4567</p>
             </div>
         </div>
         <div class="text-center mt-8">
-            <p class="text-gray-400">© 2023 test Accounting. All rights reserved.</p>
+            <p class="text-secondary">&copy; 2024 test. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Basic Animation (Intersection Observer)
-        const animatedElements = document.querySelectorAll('[data-animate]');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    const animationType = element.dataset.animate;
-                    const animationDelay = element.dataset.animateDelay || '0s';
-
-                    element.style.animation = `${animationType} 0.8s ease-out ${animationDelay} forwards`;
-                    element.classList.add('animated'); // Add a class to prevent re-animation
-      </main>
-      <footer class="bg-blue-900 text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Test Accounting</h4>
-                <p>Providing expert accounting solutions for your business needs.</p>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                <ul class="list-none pl-0">
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Home</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Services</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">About Us</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Services</h4>
-                <ul class="list-none pl-0">
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Financial Reporting</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Tax Preparation</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-orange-500 transition-opacity">Bookkeeping Services</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
-                <ul class="list-none pl-0">
-                    <li class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> 123 Main Street, Anytown, USA</li>
-                    <li class="mb-2"><i class="fas fa-phone mr-2"></i> (555) 123-4567</li>
-                    <li class="mb-2"><i class="fas fa-envelope mr-2"></i> info@testaccounting.com</li>
-                </ul>
-            </div>
-
-<!-- ABOUT SECTION -->
-Okay, here's the complete HTML for the index page of the "test" Accounting business website, built with Tailwind CSS and designed to be responsive and visually appealing.  I've focused on creating realistic content and maintaining a consistent style throughout.
-
-```html
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test - Accounting Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        /* Custom Styles - Consider moving these to a separate CSS file for larger projects */
-        .gradient-background {
-            background: linear-gradient(to right, rgba(34, 197, 94, 0.9), rgba(56, 189, 248, 0.9)); /* Emerald and Sky Blue */
-        }
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-        }
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-    </style>
-
-
-
-    <!-- Header Section -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold text-emerald-600">test Accounting</a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-emerald-500 transition-colors">Home</a>
-                <a href="/about" class="hover:text-emerald-500 transition-colors">About</a>
-                <a href="/services" class="hover:text-emerald-500 transition-colors">Services</a>
-                <a href="/team" class="hover:text-emerald-500 transition-colors">Our Team</a>
-                <a href="/contact" class="hover:text-emerald-500 transition-colors">Contact</a>
-            </nav>
-            <button class="md:hidden text-emerald-600 focus:outline-none">
-                <i class="fa fa-bars fa-2x"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url(/images/gd053d4353a878ad0ce3df728305dfe5dacc85c9899962d6dd22e44905f8601f2312fbebfe4691c798b4b6426ffff4bdc_640.jpg);">
-        <div class="absolute inset-0 hero-gradient"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6" data-animate="fade-in">Your Trusted Partner in Financial Success</h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8" data-animate="fade-in" data-animate-delay="0.2s">Providing expert accounting, tax, and consulting services to help your business thrive.</p>
-            <a href="/contact" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300" data-animate="slide-up" data-animate-delay="0.4s">Get a Free Consultation</a>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="md:order-2" data-animate="slide-left">
-                <img src="/images/g484a8c6d90eb1223126d92a04bc00cd026464888c19bbd45c1d348f5e7e40c795b8b3a6907b602f8c0fc2b7c96924db6b4dee10bf41287865f1dcc966cb6cede_640.jpg" alt="About Us" class="rounded-xl shadow-lg hover-scale">
-            </div>
-            <div class="md:order-1" data-animate="slide-right">
-                <h2 class="text-3xl font-bold text-emerald-600 mb-4">About test Accounting</h2>
-                <p class="text-gray-700 mb-6">test Accounting is a full-service accounting firm dedicated to providing exceptional financial solutions to businesses of all sizes.  Founded in 2010 by Sarah Johnson, a Certified Public Accountant with over 15 years of experience, we have built a reputation for accuracy, integrity, and personalized service.</p>
-                <p class="text-gray-700 mb-6">Our team of experienced accountants and consultants is committed to understanding your unique business needs and developing tailored strategies to help you achieve your financial goals. We stay up-to-date with the latest tax laws and accounting regulations to ensure compliance and maximize your profitability.</p>
-                <ul class="list-disc list-inside text-gray-700">
-                    <li><strong>Mission:</strong> To empower businesses with the financial insights and solutions they need to succeed.</li>
-                    <li><strong>Vision:</strong> To be the leading accounting firm recognized for its expertise, innovation, and client-focused approach.</li>
-                    <li><strong>Values:</strong> Integrity, Accuracy, Reliability, Collaboration, and Continuous Improvement.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-emerald-600 mb-8 text-center" data-animate="fade-down">Our Comprehensive Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up">
-                    <i class="fa fa-calculator fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Accounting &amp; Bookkeeping</h3>
-                    <p class="text-gray-600">Accurate and timely financial record-keeping, including general ledger maintenance, financial statement preparation, and bank reconciliation.</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.2s">
-                    <i class="fa fa-file-invoice-dollar fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tax Planning &amp; Preparation</h3>
-                    <p class="text-gray-600">Strategic tax planning to minimize your tax liabilities and ensure compliance with all applicable tax laws.  We handle individual, corporate, and partnership tax returns.</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.4s">
-                    <i class="fa fa-chart-line fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Financial Consulting</h3>
-                    <p class="text-gray-600">Expert financial advice to help you make informed decisions about your business, including budgeting, forecasting, and profitability analysis.</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up">
-                    <i class="fa fa-handshake fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Advisory Services</h3>
-                    <p class="text-gray-600">Guidance and support for business startups, mergers and acquisitions, and business valuation.</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.2s">
-                    <i class="fa fa-money-bill-wave fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Payroll Services</h3>
-                    <p class="text-gray-600">Comprehensive payroll processing services, including payroll tax filing, employee payment, and W-2 preparation.</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.4s">
-                    <i class="fa fa-landmark fa-3x text-emerald-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Audit &amp; Assurance</h3>
-                    <p class="text-gray-600">Independent audits and assurance services to provide credibility and transparency to your financial statements.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-emerald-600 mb-8 text-center" data-animate="fade-down">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="bg-white rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up">
-                    <p class="text-gray-700 italic mb-4">"test Accounting has been instrumental in helping us manage our finances and stay compliant with tax regulations. Their expertise and personalized service are invaluable."</p>
-                    <div class="flex items-center">
-                        <img src="/images/svg_3.svg" alt="John Doe" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">John Doe</p>
-                            <p class="text-gray-500">CEO, Acme Corp</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.2s">
-                    <p class="text-gray-700 italic mb-4">"We've been working with test Accounting for several years, and they've consistently provided us with excellent accounting and tax services.  We highly recommend them!"</p>
-                    <div class="flex items-center">
-                        <img src="/images/svg_7.svg" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Jane Smith</p>
-                            <p class="text-gray-500">Owner, Smith &amp; Co.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.4s">
-                    <p class="text-gray-700 italic mb-4">"Their financial consulting services have helped us make better decisions and improve our profitability.  test Accounting is a trusted advisor and a valuable partner."</p>
-                    <div class="flex items-center">
-                        <img src="/images/svg_11.svg" alt="Peter Jones" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="font-semibold text-gray-800">Peter Jones</p>
-                            <p class="text-gray-500">Manager, Global Solutions</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-emerald-600 mb-8 text-center" data-animate="fade-down">Meet Our Expert Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up">
-                    <img src="/images/svg_15.svg" alt="Sarah Johnson" class="w-full rounded-xl mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sarah Johnson, CPA</h3>
-                    <p class="text-gray-600">Founder &amp; Managing Partner</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.2s">
-                    <img src="/images/svg_19.svg" alt="Michael Brown" class="w-full rounded-xl mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Michael Brown, Accountant</h3>
-                    <p class="text-gray-600">Senior Accountant</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.4s">
-                    <img src="/images/svg_23.svg" alt="Emily Davis" class="w-full rounded-xl mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Emily Davis, Tax Specialist</h3>
-                    <p class="text-gray-600">Tax Manager</p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-md p-6 hover-scale" data-animate="slide-up" data-animate-delay="0.6s">
-                    <img src="/images/svg_27.svg" alt="David Wilson" class="w-full rounded-xl mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">David Wilson, Consultant</h3>
-                    <p class="text-gray-600">Financial Consultant</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-emerald-600 mb-8 text-center" data-animate="fade-down">Contact Us Today</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="md:order-2" data-="" <!--="" services="" section="" --="">
-```html
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Accounting - Expert Financial Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        /* Custom Styles - Consistent Across the Site */
-        .gradient-bg {
-            background: linear-gradient(to right, #3b82f6, #63b3ed); /* Blue gradient */
-        }
-        .hover-shadow:hover {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        /* Ensure consistent text readability across different screen sizes */
-        body {
-            min-width: 320px;
-        }
-    </style>
-
-
-
-    <!-- Header Section -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold text-blue-600">Test Accounting</a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Services</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">About Us</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
-            </nav>
-            <button class="md:hidden text-blue-600 focus:outline-none">
-                <i class="fa fa-bars fa-lg"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url(/images/gd053d4353a878ad0ce3df728305dfe5dacc85c9899962d6dd22e44905f8601f2312fbebfe4691c798b4b6426ffff4bdc_640.jpg);">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-500 opacity-70"></div>
-        <div class="relative z-10 text-center text-white">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-animate="fade-in">Expert Accounting Solutions for Your Business</h1>
-            <p class="text-lg md:text-xl mb-8" data-animate="fade-in" data-animate-delay="0.2s">We provide comprehensive accounting services to help your business thrive.</p>
-            <a href="#" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300" data-animate="slide-in-bottom" data-animate-delay="0.4s">Get Started Today</a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-600 mb-8" data-animate="fade-in">Our Comprehensive Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Service Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="slide-in-left">
-                    <img src="/images/g484a8c6d90eb1223126d92a04bc00cd026464888c19bbd45c1d348f5e7e40c795b8b3a6907b602f8c0fc2b7c96924db6b4dee10bf41287865f1dcc966cb6cede_640.jpg" alt="Tax Preparation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Tax Preparation &amp; Planning</h3>
-                        <p class="text-gray-600 mb-4">Minimize your tax liabilities and maximize your returns with our expert tax preparation and strategic planning services. We stay up-to-date with the latest tax laws to ensure compliance and optimize your financial position.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="fade-in">
-                    <img src="/images/gcafd17218dda8581d78455e8bdf3c8a52848b889af230f7fa9a708e05b8a041118d31f75612753df54a37673487515c66bc7ff8073a3d39c28eb352de397b5cf_640.jpg" alt="Bookkeeping Services" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bookkeeping &amp; Accounting</h3>
-                        <p class="text-gray-600 mb-4">Keep your financial records accurate and organized with our comprehensive bookkeeping and accounting services. We handle everything from transaction recording to financial statement preparation, allowing you to focus on growing your business.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="slide-in-right">
-                    <img src="/images/g7ebf282145b7ec78ec06aec5be46939215f2a7d28badfbe523924c71d0e8de407e0f1f38fab32db8825c8a9047abd92b5ba7cc681804d32c61b4301506fa39a8_640.jpg" alt="Financial Consulting" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Financial Consulting &amp; Analysis</h3>
-                        <p class="text-gray-600 mb-4">Gain valuable insights into your business's financial performance with our expert consulting and analysis services. We provide strategic advice to help you make informed decisions, improve profitability, and achieve your financial goals.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="slide-in-left">
-                    <img src="/api/placeholder/640/480" alt="Payroll Services" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Payroll Services</h3>
-                        <p class="text-gray-600 mb-4">Simplify your payroll process with our reliable and efficient payroll services. We handle everything from calculating wages and deductions to filing payroll taxes, ensuring accuracy and compliance.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="fade-in">
-                    <img src="/api/placeholder/640/480" alt="Audit &amp; Assurance" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Audit &amp; Assurance</h3>
-                        <p class="text-gray-600 mb-4">Ensure the integrity and reliability of your financial statements with our audit and assurance services. We provide independent assessments to help you identify and mitigate risks, improve internal controls, and enhance stakeholder confidence.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover-shadow" data-animate="slide-in-right">
-                    <img src="/api/placeholder/640/480" alt="Business Valuation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Business Valuation</h3>
-                        <p class="text-gray-600 mb-4">Determine the fair market value of your business with our professional business valuation services. We provide accurate and reliable valuations for various purposes, including mergers and acquisitions, estate planning, and litigation support.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div data-animate="fade-in">
-                    <h2 class="text-3xl font-bold text-blue-600 mb-4">About Test Accounting</h2>
-                    <p class="text-gray-700 mb-6">Test Accounting is a leading provider of accounting and financial services, dedicated to helping businesses of all sizes achieve their financial goals. With a team of experienced professionals and a commitment to excellence, we deliver personalized solutions that meet your unique needs.</p>
-                    <p class="text-gray-700">We pride ourselves on our integrity, accuracy, and client satisfaction. Our goal is to be your trusted advisor, providing you with the insights and support you need to make informed decisions and drive your business forward.</p>
-                </div>
-                <div data-animate="slide-in-right">
-                    <img src="/api/placeholder/640/480" alt="About Us" class="rounded-lg shadow-md">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-600 mb-8" data-animate="fade-in">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-animate="slide-in-left">
-                    <p class="text-gray-700 mb-4">Get in touch with us today to discuss your accounting needs and how we can help your business succeed.</p>
-                    <ul class="list-none">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> 123 Main Street, Anytown, USA</li>
-                        <li class="mb-2"><i class="fas fa-phone text-blue-500 mr-2"></i> (555) 123-4567</li>
-                        <li class="mb-2"><i class="fas fa-envelope text-blue-500 mr-2"></i> info@testaccounting.com</li>
-                    </ul>
-                </div>
-                <div data-animate="slide-in-right">
-                    <form class="bg-white shadow-md rounded-lg p-6">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                        </div>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div>
-                <h4 class="text-lg font-bold mb-4">Test Accounting</h4>
-                <p class="text-gray-300">Providing expert accounting solutions for your business success.</p>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                <ul class="list-none">
-                    <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Services</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-4">Services</h4>
-                <ul class="list-none">
-                    <li><a href="#" class="text-gray-300 hover:text
-
-<!-- FEATURES SECTION -->
-```html
-<!DOCTYPE html>
-<html lang=" en"="">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Accounting</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        /* Custom Styles (Optional - for things not easily done with Tailwind) */
-        .gradient-hero {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-        }
-    </style>
-
-
-
-    <!-- Header Section -->
-    </a><header class="bg-blue-900 text-white py-6 md:py-8 lg:py-10" style="background-image: url(/images/gd053d4353a878ad0ce3df728305dfe5dacc85c9899962d6dd22e44905f8601f2312fbebfe4691c798b4b6426ffff4bdc_640.jpg); background-size: cover; background-position: center;"><a href="#" class="text-gray-300 hover:text
-
-<!-- FEATURES SECTION -->
-```html
-<!DOCTYPE html>
-<html lang=" en"="">
-        <div class="gradient-hero absolute inset-0"></div>
-        </a><div class="container mx-auto px-4 relative z-10"><a href="#" class="text-gray-300 hover:text
-
-<!-- FEATURES SECTION -->
-```html
-<!DOCTYPE html>
-<html lang=" en"="">
-            </a><div class="flex justify-between items-center"><a href="#" class="text-gray-300 hover:text
-
-<!-- FEATURES SECTION -->
-```html
-<!DOCTYPE html>
-<html lang=" en"="">
-                </a><a href="#" class="text-2xl md:text-3xl font-bold">
-                    <img src="/api/placeholder/100/40" alt="Test Accounting Logo" class="h-10 inline-block align-middle mr-2">
-                    Test Accounting
-                </a>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#" class="hover:text-orange-400">Home</a>
-                    <a href="#" class="hover:text-orange-400">Services</a>
-                    <a href="#" class="hover:text-orange-400">About Us</a>
-                    <a href="#" class="hover:text-orange-400">Contact</a>
-                </nav>
-                <button class="md:hidden text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
-            <div class="text-center mt-8 md:mt-12 lg:mt-16">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4" data-animate="fade-in">Your Trusted Partner in Financial Success</h1>
-                <p class="text-lg md:text-xl mb-6" data-animate="fade-in" data-animate-delay="200">Expert accounting solutions tailored to your business needs.</p>
-                <a href="#" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300" data-animate="slide-in-bottom" data-animate-delay="400">Get a Free Consultation</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-animate="fade-in">Key Features &amp; Benefits</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Feature 1 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-left">
-                    <i class="fas fa-chart-line text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Real-Time Financial Reporting</h3>
-                    <p class="text-gray-600">Access up-to-the-minute financial data with our intuitive reporting dashboards. Make informed decisions based on accurate and timely insights.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in">
-                    <i class="fas fa-money-bill-wave text-3xl text-green-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Tax Optimization Strategies</h3>
-                    <p class="text-gray-600">Minimize your tax liabilities with our proactive tax planning services. We identify opportunities for deductions and credits to maximize your savings.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-right">
-                    <i class="fas fa-users text-3xl text-purple-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Dedicated Account Manager</h3>
-                    <p class="text-gray-600">Receive personalized support from a dedicated account manager who understands your unique business needs. We're here to answer your questions and provide expert guidance.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-left">
-                    <i class="fas fa-book text-3xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Accurate Bookkeeping Services</h3>
-                    <p class="text-gray-600">Maintain organized and accurate financial records with our comprehensive bookkeeping services. We handle everything from transaction recording to bank reconciliation.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in">
-                    <i class="fas fa-shield-alt text-3xl text-red-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Fraud Detection &amp; Prevention</h3>
-                    <p class="text-gray-600">Protect your business from financial fraud with our advanced detection and prevention measures. We monitor transactions and identify suspicious activity.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-right">
-                    <i class="fas fa-cloud text-3xl text-indigo-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Cloud-Based Accounting Solutions</h3>
-                    <p class="text-gray-600">Access your financial data from anywhere with our secure cloud-based accounting platform. Collaborate with your team and stay connected on the go.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="py-16 bg-blue-100">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div data-animate="fade-in">
-                    <img src="/images/g484a8c6d90eb1223126d92a04bc00cd026464888c19bbd45c1d348f5e7e40c795b8b3a6907b602f8c0fc2b7c96924db6b4dee10bf41287865f1dcc966cb6cede_640.jpg" alt="About Us" class="rounded-lg shadow-lg">
-                </div>
-                <div data-animate="slide-in-right">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About Test Accounting</h2>
-                    <p class="text-gray-700 mb-4">At Test Accounting, we are committed to providing exceptional accounting services to businesses of all sizes. With years of experience and a team of dedicated professionals, we strive to be your trusted partner in financial success.</p>
-                    <p class="text-gray-700 mb-4">We understand the challenges that businesses face in today's complex financial landscape. That's why we offer a comprehensive range of services, from bookkeeping and tax planning to financial reporting and fraud prevention.</p>
-                    <a href="#" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-animate="fade-in">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Service 1 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-left">
-                    <i class="fas fa-calculator text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Bookkeeping</h3>
-                    <p class="text-gray-600">We provide accurate and reliable bookkeeping services to keep your financial records in order.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in">
-                    <i class="fas fa-file-invoice-dollar text-3xl text-green-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Tax Preparation</h3>
-                    <p class="text-gray-600">We handle all aspects of tax preparation, ensuring compliance and maximizing your tax savings.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-right">
-                    <i class="fas fa-chart-pie text-3xl text-purple-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Financial Analysis</h3>
-                    <p class="text-gray-600">We provide in-depth financial analysis to help you make informed business decisions.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-left">
-                    <i class="fas fa-hand-holding-usd text-3xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Payroll Services</h3>
-                    <p class="text-gray-600">We offer comprehensive payroll services to streamline your employee payments and tax filings.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="fade-in">
-                    <i class="fas fa-money-check-alt text-3xl text-red-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Audit Support</h3>
-                    <p class="text-gray-600">We provide expert support during audits, ensuring a smooth and efficient process.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-gray-100 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300" data-animate="slide-in-right">
-                    <i class="fas fa-briefcase text-3xl text-indigo-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Business Consulting</h3>
-                    <p class="text-gray-600">We offer strategic business consulting services to help you achieve your financial goals.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-16 bg-blue-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-animate="fade-in">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-animate="slide-in-left">
-                    <img src="/images/gcafd17218dda8581d78455e8bdf3c8a52848b889af230f7fa9a708e05b8a041118d31f75612753df54a37673487515c66bc7ff8073a3d39c28eb352de397b5cf_640.jpg" alt="Contact Us" class="rounded-lg shadow-lg">
-                </div>
-                <div data-animate="slide-in-right">
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                            <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
-                        </div>
-                        <button type="submit" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team
-
-    </main>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded',function(){
-            // Animation system
-            const observer=new IntersectionObserver(entries=>{
-                entries.forEach((entry,i)=>{
-                    if(entry.isIntersecting){
-                        setTimeout(()=>{
-                            entry.target.classList.add('visible');
-                            // Handle staggered children if using that animation style
-                            if(entry.target.getAttribute('data-animate')==='stagger'){
-                                Array.from(entry.target.children).forEach((child,childIndex)=>{
-                                    child.style.setProperty('--child-index',childIndex);
-                                });
-                            }
-                        },i*100);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },{threshold:0.15,rootMargin:'0px 0px -100px 0px'});
-            
-            document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
-            
-            // Fixed navigation
-            const nav=document.querySelector('nav');
-            if(nav){
-                const handleScroll=()=>{
-                    nav.classList[window.scrollY>100?'add':'remove']('nav-fixed');
-                };
-                window.addEventListener('scroll',handleScroll,{passive:true});
-                handleScroll();
-            }
-            
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-                anchor.addEventListener('click',function(e){
-                    e.preventDefault();
-                    const targetId=this.getAttribute('href');
-                    if(targetId==='#')return;
-                    const target=document.querySelector(targetId);
-                    if(target){
-                        const targetPosition=target.getBoundingClientRect().top+window.pageYOffset-(nav?nav.offsetHeight:0)-20;
-                        window.scrollTo({top:targetPosition,behavior:'smooth'});
-                    }
-                });
-            });
-            
-            // Scroll progress indicator
-            const height=Math.max(
-                document.body.scrollHeight,
-                document.body.offsetHeight,
-                document.documentElement.clientHeight,
-                document.documentElement.scrollHeight,
-                document.documentElement.offsetHeight
-            )-window.innerHeight;
-            
-            window.addEventListener('scroll',()=>{
-                document.documentElement.style.setProperty('--scroll-progress',(window.scrollY/height*100)+'%');
-            },{passive:true});
-            
-            // Mobile menu
-            const menuToggle=document.getElementById('mobile-menu-toggle');
-            const mobileMenu=document.getElementById('mobile-menu');
-            if(menuToggle&&mobileMenu){
-                menuToggle.addEventListener('click',()=>{
-                    mobileMenu.classList.toggle('hidden');
-                    document.body.classList.toggle('overflow-hidden');
-                });
-                document.addEventListener('click',e=>{
-                    if(mobileMenu&&!mobileMenu.classList.contains('hidden')&&
-                        menuToggle&&!menuToggle.contains(e.target)&&!mobileMenu.contains(e.target)){
-                        mobileMenu.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
-                    }
-                });
-            }
-            
-            // Accordions
-            document.querySelectorAll('[data-accordion-target]').forEach(btn=>{
-                btn.addEventListener('click',()=>{
-                    const target=document.querySelector(btn.getAttribute('data-accordion-target'));
-                    if(target){
-                        const isExpanded=btn.getAttribute('aria-expanded')==='true';
-                        target.classList.toggle('hidden');
-                        btn.setAttribute('aria-expanded',isExpanded?'false':'true');
-                        const icon=btn.querySelector('.accordion-icon');
-                        if(icon)icon.classList.toggle('rotate-180');
-                    }
-                });
-            });
-            
-            // Form validation (optional enhancement)
-            document.querySelectorAll('form').forEach(form=>{
-                form.addEventListener('submit',function(e){
-                    let valid=true;
-                    const requiredFields=form.querySelectorAll('[required]');
-                    
-                    requiredFields.forEach(field=>{
-                        if(!field.value.trim()){
-                            valid=false;
-                            field.classList.add('border-red-500');
-                            
-                            // Add error message if not already present
-                            let errorMsg=field.parentNode.querySelector('.error-message');
-                            if(!errorMsg){
-                                errorMsg=document.createElement('p');
-                                errorMsg.className='text-red-500 text-sm mt-1 error-message';
-                                errorMsg.textContent='This field is required';
-                                field.parentNode.appendChild(errorMsg);
-                            }
-                        }else{
-                            field.classList.remove('border-red-500');
-                            const errorMsg=field.parentNode.querySelector('.error-message');
-                            if(errorMsg)errorMsg.remove();
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('[data-animate]');
+
+            animatedElements.forEach(element => {
+                const animation = element.dataset.animate;
+                element.classList.add('opacity-0'); // Initially hide the element
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            element.classList.remove('opacity-0');
+                            element.classList.add(animation);
+                            observer.unobserve(element); // Only animate once
                         }
                     });
-                    
-                    if(!valid){
-                        e.preventDefault();
-                    }
+                }, {
+                    threshold: 0.2 // Adjust threshold as needed
                 });
-            });
-            
-            // Tabs functionality if present
-            document.querySelectorAll('[data-tabs]').forEach(tabGroup=>{
-                const tabs=tabGroup.querySelectorAll('[data-tab]');
-                const tabContents=document.querySelectorAll('[data-tab-content]');
-                
-                tabs.forEach(tab=>{
-                    tab.addEventListener('click',()=>{
-                        const target=tab.getAttribute('data-tab');
-                        
-                        // Update active tab state
-                        tabs.forEach(t=>t.classList.remove('active-tab','text-primary-600','border-primary-600'));
-                        tab.classList.add('active-tab','text-primary-600','border-primary-600');
-                        
-                        // Show correct content
-                        tabContents.forEach(content=>{
-                            if(content.getAttribute('data-tab-content')===target){
-                                content.classList.remove('hidden');
-                            }else{
-                                content.classList.add('hidden');
-                            }
-                        });
-                    });
-                });
-            });
-            
-            // Carousels
-            document.querySelectorAll('[data-carousel]').forEach(carousel=>{
-                const slides=carousel.querySelectorAll('[data-slide]');
-                const prevBtn=carousel.querySelector('[data-carousel-prev]');
-                const nextBtn=carousel.querySelector('[data-carousel-next]');
-                
-                if(slides.length>0&&prevBtn&&nextBtn){
-                    let current=0,interval=null;
-                    
-                    slides[0].classList.remove('hidden');
-                    
-                    const updateIndicators=()=>{
-                        carousel.querySelectorAll('[data-indicator]').forEach((ind,i)=>{
-                            ind.classList[i===current?'add':'remove']('bg-primary-600');
-                            ind.classList[i!==current?'add':'remove']('bg-gray-300');
-                        });
-                    };
-                    
-                    const showSlide=idx=>{
-                        slides.forEach(s=>s.classList.add('hidden'));
-                        slides[idx].classList.remove('hidden');
-                        updateIndicators();
-                    };
-                    
-                    nextBtn.addEventListener('click',()=>{
-                        current=(current+1)%slides.length;
-                        showSlide(current);
-                    });
-                    
-                    prevBtn.addEventListener('click',()=>{
-                        current=(current-1+slides.length)%slides.length;
-                        showSlide(current);
-                    });
-                    
-                    updateIndicators();
-                    
-                    const startAuto=()=>{
-                        if(carousel.hasAttribute('data-auto')&&!interval){
-                            interval=setInterval(()=>{
-                                current=(current+1)%slides.length;
-                                showSlide(current);
-                            },5000);
-                        }
-                    };
-                    
-                    carousel.addEventListener('mouseenter',()=>{
-                        if(interval){clearInterval(interval);interval=null;}
-                    });
-                    
-                    carousel.addEventListener('mouseleave',startAuto);
-                    
-                    carousel.querySelectorAll('[data-indicator]').forEach((ind,i)=>{
-                        ind.addEventListener('click',()=>{
-                            current=i;
-                            showSlide(current);
-                        });
-                    });
-                    
-                    startAuto();
-                }
-            });
-            
-            // Initialize counters for stats sections if they exist
-            document.querySelectorAll('[data-counter]').forEach(counter=>{
-                const target=parseInt(counter.getAttribute('data-counter')||'0',10);
-                const duration=1500; // Animation duration in ms
-                const step=Math.ceil(target/50); // How much to increment per step
-                let current=0;
-                
-                const updateCounter=()=>{
-                    current+=step;
-                    if(current>target)current=target;
-                    
-                    counter.textContent=current.toString().replace(/B(?=(d{3})+(?!d))/g,',');
-                    
-                    if(current<target){
-                        requestAnimationFrame(updateCounter);
-                    }
-                };
-                
-                // Start counting when element is in view
-                const observer=new IntersectionObserver(entries=>{
-                    entries.forEach(entry=>{
-                        if(entry.isIntersecting){
-                            updateCounter();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                },{threshold:0.5});
-                
-                observer.observe(counter);
+
+                observer.observe(element);
             });
         });
     </script>
+
 </body>
-</html>--></li></ul></div></div></footer></div></div></div></section></div></footer>
+</html>
+      </main>
+      
     </body>
     </html>
