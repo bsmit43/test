@@ -3,1244 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="test - Professional website">
-  <meta name="generator" content="Website Generator">
-  <meta name="theme-color" content="hsl(265, 60%, 40%)">
-  <title>test</title>
-  
+  <title>test - Test Preparation</title>
+  <meta name="description" content="Website for test, specializing in Test Preparation">
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href='https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&display=swap' rel='stylesheet'>
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <!-- AI is expected to include font links and Tailwind config script within its generated sections -->
   <style>
-      body{font-family:'Archivo', sans-serif;overflow-x:hidden;width:100%;max-width:100%;margin:0;padding:0}
-      h1,h2,h3,h4,h5,h6{font-family:'Archivo Black', sans-serif}
-      section,header,footer{width:100vw;max-width:100%;overflow-x:hidden}
-      header{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
-      [data-animate]{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}[data-animate].visible{opacity:1;transform:translateY(0)}
-      .nav-fixed{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);box-shadow:0 1px 3px rgba(0,0,0,.1);transition:all .3s ease;width:100%}
-      ::-webkit-scrollbar{width:8px;height:8px}
-      ::-webkit-scrollbar-track{background:#f1f1f1}
-      ::-webkit-scrollbar-thumb{background:hsl(265, 60%, 40%);border-radius:4px}
-      ::-webkit-scrollbar-thumb:hover{background:hsl(265, 60%, 30%)}
-      body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:hsl(265, 60%, 40%);transform:scaleX(calc(var(--scroll-progress,0%)/100));transform-origin:left;z-index:1000}
-      @media print{[data-animate]{opacity:1;transform:none}}
+    body { margin: 0; overflow-x: hidden; width: 100%; max-width: 100%; font-family: sans-serif; /* Default */ }
+    section, header, footer, nav { width: 100%; max-width: 100vw; overflow-x: hidden; }
   </style>
-  
-  <script>
-      tailwind.config={theme:{extend:{colors:{primary:{"50":"hsl(265, 60%, 95%)","100":"hsl(265, 60%, 90%)","200":"hsl(265, 60%, 80%)","300":"hsl(265, 60%, 70%)","400":"hsl(265, 60%, 60%)","500":"hsl(265, 60%, 50%)","600":"hsl(265, 60%, 40%)","700":"hsl(265, 60%, 30%)","800":"hsl(265, 60%, 20%)","900":"hsl(265, 60%, 10%)"}},fontFamily:{sans:[''Archivo'','sans-serif'],heading:[''Archivo Black'','sans-serif']}}}}
-  </script>
 </head>
-<body class="antialiased text-gray-800">
-  <nav class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-4 fixed top-0 w-full z-50" data-animate="fade-down">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <a href="/" class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-4.037m-7.328 0A5.97 5.97 0 016 21m6-3a9.004 9.004 0 00-8.716-4.037m7.328 0A5.97 5.97 0 0018 18" />
-                </svg>
-                <span class="font-bold text-xl">Test Consumer Protection</span>
-            </a>
-
-            <!-- Mobile Menu Button (Hidden on larger screens) -->
-            <button id="mobile-menu-button" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-
-            <!-- Navigation Links (Hidden on mobile) -->
-            <div class="hidden md:flex space-x-6">
-                <a href="/" class="hover:text-blue-200 transition duration-300">Home</a>
-                <a href="/about" class="hover:text-blue-200 transition duration-300">About Us</a>
-                <a href="/services" class="hover:text-blue-200 transition duration-300">Services</a>
-                <a href="/resources" class="hover:text-blue-200 transition duration-300">Resources</a>
-                <a href="/contact" class="hover:text-blue-200 transition duration-300">Contact</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 py-4">
-        <div class="container mx-auto px-4 flex flex-col space-y-4">
-            <a href="/" class="block hover:text-blue-200 transition duration-300">Home</a>
-            <a href="/about" class="block hover:text-blue-200 transition duration-300">About Us</a>
-            <a href="/services" class="block hover:text-blue-200 transition duration-300">Services</a>
-            <a href="/resources" class="block hover:text-blue-200 transition duration-300">Resources</a>
-            <a href="/contact" class="block hover:text-blue-200 transition duration-300">Contact</a>
-        </div>
-    </div>
-
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-</nav>
-  <main>
-      
-<!-- NAV SECTION -->
-
-
-<!-- HEADER SECTION -->
-<header class="sticky top-0 z-50 bg-gradient-to-r from-blue-700 to-blue-900 shadow-md">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="/" class="flex items-center text-white font-bold text-xl">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-4.037m-7.32.732V5a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v11.218a2.25 2.25 0 002.25 2.25h1.5m7.32-.732V5a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v11.218a2.25 2.25 0 002.25 2.25h1.5m7.32-.732V5a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v11.218a2.25 2.25 0 002.25 2.25h1.5m-6.751.732a4.5 4.5 0 01-6.596-6.597l.732-.732A4.5 4.5 0 0112 21" />
-            </svg>
-            Test Consumer Protection
+<body class="antialiased">
+  
+<!-- START SECTION: NAV -->
+<nav class="bg-white shadow-md sticky top-0 z-50" data-animate="slide-in-top">
+  <div class="container mx-auto px-4 py-3 md:py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-800">
+          test
         </a>
+      </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+        <a href="/about" class="text-gray-700 hover:text-blue-600 transition duration-300">About</a>
+        <a href="/courses" class="text-gray-700 hover:text-blue-600 transition duration-300">Courses</a>
+        <a href="/pricing" class="text-gray-700 hover:text-blue-600 transition duration-300">Pricing</a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
+        <a href="/login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Login</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md" aria-label="Open Menu">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M4 5h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm0 7h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2a1 1 0 011-1zm0 7h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2a1 1 0 011-1z" clip-rule="evenodd" />
+          </svg>
         </button>
-
-        <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="/" class="text-white hover:text-blue-200">Home</a>
-            <a href="/about" class="text-white hover:text-blue-200">About Us</a>
-            <a href="/services" class="text-white hover:text-blue-200">Services</a>
-            <a href="/resources" class="text-white hover:text-blue-200">Resources</a>
-            <a href="/contact" class="text-white hover:text-blue-200">Contact</a>
-        </nav>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-blue-800 shadow-md py-4">
-            <a href="/" class="block px-4 py-2 text-white hover:bg-blue-700">Home</a>
-            <a href="/about" class="block px-4 py-2 text-white hover:bg-blue-700">About Us</a>
-            <a href="/services" class="block px-4 py-2 text-white hover:bg-blue-700">Services</a>
-            <a href="/resources" class="block px-4 py-2 text-white hover:bg-blue-700">Resources</a>
-            <a href="/contact" class="block px-4 py-2 text-white hover:bg-blue-700">Contact</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-</header>
-
-<!-- ABOUT SECTION -->
-<section id="about" class="bg-blue-50 py-16 w-full overflow-hidden">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-
-      <!-- Image -->
-      <div class="relative" data-animate="fade-in-left">
-        <img src="/images/gb64a6939e3c49fbf51eaba10a54fd4f31032aa6f235d255da22e56876e1ab0f682e6520e7d0f4e0bf9723870f972644b50a2e132f05cb85f83ac1afa5623236d_640-1.jpg" alt="About Test Consumer Protection" class="rounded-xl shadow-lg w-full h-auto object-cover">
-        <div class="absolute bottom-0 right-0 bg-blue-200 bg-opacity-75 p-4 rounded-bl-xl rounded-tr-xl text-blue-800 font-medium">
-          Protecting Consumers Since 2005
-        </div>
       </div>
-
-      <!-- Text Content -->
-      <div class="text-blue-700" data-animate="fade-in-right">
-        <h2 class="text-3xl lg:text-4xl font-roboto-slab font-semibold mb-6">About Test Consumer Protection</h2>
-        <p class="text-lg leading-relaxed mb-6">
-          At Test Consumer Protection, we are dedicated to empowering consumers with the knowledge and resources they need to navigate the marketplace confidently.  Founded in 2005, our mission is to advocate for fair and ethical business practices, ensuring that individuals are protected from fraud, deceptive advertising, and unfair contracts.
-        </p>
-        <p class="text-lg leading-relaxed mb-6">
-          Our team of experienced attorneys, investigators, and consumer advocates work tirelessly to investigate complaints, provide legal guidance, and pursue legal action against companies that violate consumer protection laws.  We believe that every consumer deserves to be treated with respect and honesty, and we are committed to holding businesses accountable for their actions.
-        </p>
-        <p class="text-lg leading-relaxed mb-6">
-          We offer a wide range of services, including:
-        </p>
-        <ul class="list-disc list-inside mb-6">
-          <li>Free consultations with experienced consumer protection attorneys</li>
-          <li>Investigation of consumer complaints and potential violations of consumer protection laws</li>
-          <li>Legal representation in consumer protection lawsuits</li>
-          <li>Educational resources and workshops on consumer rights</li>
-          <li>Advocacy for stronger consumer protection laws and regulations</li>
-        </ul>
-        <p class="text-lg leading-relaxed">
-          We are proud to be a trusted resource for consumers in need of assistance.  If you have been the victim of fraud, deceptive advertising, or unfair business practices, we encourage you to contact us today for a free consultation.  Let us help you protect your rights and seek justice.
-        </p>
-      </div>
-
     </div>
   </div>
-</section>
 
-<!-- SERVICES SECTION -->
-<section id="services" class="py-16 bg-blue-50">
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-50 shadow-md py-2">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-blue-800 mb-4 font-roboto-slab" data-animate="fade-in">Our Services</h2>
-            <p class="text-blue-600 text-lg font-roboto" data-animate="fade-in" data-animate-delay="200">We are dedicated to protecting your rights as a consumer. Learn more about how we can help.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Service Card 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-left">
-                <img class="w-full h-56 object-cover" src="/images/gc157cec7c4cb70d7150b2908e7407df23d6ecfe2269eaa62e965ae29657b55f5cae49ca78b7f67c733874025642b08dae4aaa922f4d8f7a4bb79ac1d8147bd15_640-1.jpg" alt="Debt Relief">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2 font-roboto-slab">Debt Relief Assistance</h3>
-                    <p class="text-blue-600 font-roboto">Struggling with overwhelming debt? We can help you understand your options, negotiate with creditors, and find a path to financial freedom.</p>
-                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 font-roboto">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service Card 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-up">
-                <img class="w-full h-56 object-cover" src="/images/g35bf43bfe4ff2663ee30428008c8547ea1541a876f8cae8e3c8b9168d3363ddfb2499a780126d33c04fa75ad39492e39df0d919ba03f547b5f63473acdf646c8_640-1.jpg" alt="Fraud Investigation">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2 font-roboto-slab">Fraud Investigation & Recovery</h3>
-                    <p class="text-blue-600 font-roboto">If you've been a victim of fraud or scams, our expert investigators can help you uncover the truth and recover your losses.</p>
-                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 font-roboto">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service Card 3 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-right">
-                <img class="w-full h-56 object-cover" src="/images/gb64a6939e3c49fbf51eaba10a54fd4f31032aa6f235d255da22e56876e1ab0f682e6520e7d0f4e0bf9723870f972644b50a2e132f05cb85f83ac1afa5623236d_640-1.jpg" alt="Identity Theft Protection">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2 font-roboto-slab">Identity Theft Protection</h3>
-                    <p class="text-blue-600 font-roboto">Protect your personal information and prevent identity theft with our comprehensive monitoring and alert services.</p>
-                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 font-roboto">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Service Card 4 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-animate="slide-in-left">
-                <img class="w-full h-56 object-cover" src="/images/g03c7a1da8976ad3e5a895181414e8f6dd37761c7dd426bb9283d5bdfd8aefadcfc8c0b70edc33dfb440c82eebb3e9bc5_640-1.jpg" alt="Unfair Business Practices">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2 font-roboto-slab">Unfair Business Practices</h3>
-                    <p class="text-blue-600 font-roboto">Have you been a victim of deceptive advertising, price gouging, or other unfair business practices? We can help you seek justice and compensation.</p>
-                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 font-roboto">Learn More</a>
-                </div>
-            </div>
-
-             <!-- Service Card 5 -->
-             <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-animate="slide-in-right">
-                <img class="w-full h-56 object-cover" src="/images/g03c7a1da8976ad3e5a895181414e8f6dd37761c7dd426bb9283d5bdfd8aefadcfc8c0b70edc33dfb440c82eebb3e9bc5_640-1.jpg" alt="Warranty Disputes">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2 font-roboto-slab">Warranty Disputes</h3>
-                    <p class="text-blue-600 font-roboto">Are you having trouble with a warranty claim? We can help you understand your rights and fight for the coverage you deserve.</p>
-                    <a href="#" class="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 font-roboto">Learn More</a>
-                </div>
-            </div>
-
-        </div>
+      <a href="/" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+      <a href="/about" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">About</a>
+      <a href="/courses" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Courses</a>
+      <a href="/pricing" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Pricing</a>
+      <a href="/contact" class="block py-2 text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
+      <a href="/login" class="block py-2 text-blue-500 hover:text-blue-700 transition duration-300">Login</a>
     </div>
-</section>
+  </div>
 
-<!-- FEATURES SECTION -->
-<section class="bg-blue-50 py-16 overflow-hidden relative">
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</nav>
+<!-- END SECTION: NAV -->
+
+<!-- START SECTION: HEADER -->
+<header class="bg-gray-100">
+  <div class="relative">
+    <div class="absolute inset-0">
+      <img src="/api/placeholder/1600/800" alt="Students studying together" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-green-500 opacity-70"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 min-h-[500px] flex items-center justify-center">
+      <div class="text-center">
+        <h1 class="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl" data-animate="fade-in">
+          Ace Your Exams with Test
+        </h1>
+        <p class="mt-4 text-xl text-gray-200 sm:mt-5 max-w-xl mx-auto" data-animate="fade-in" data-animate-delay="200">
+          Comprehensive test preparation resources to help you achieve your academic goals. Get personalized guidance and proven strategies for success.
+        </p>
+        <div class="mt-8 sm:mt-10" data-animate="fade-in" data-animate-delay="400">
+          <div class="inline-flex rounded-md shadow">
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+              Get Started Now
+            </a>
+          </div>
+          <div class="ml-3 inline-flex rounded-md shadow">
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+              View Courses
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- END SECTION: HEADER -->
+
+<!-- START SECTION: ABOUT -->
+<section id="about" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="md:flex md:items-center md:justify-between mb-12" data-animate="fade-in">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">About Test</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          At Test, we're passionate about empowering students to achieve their academic goals. We provide comprehensive and personalized test preparation services, designed to boost confidence and maximize performance. Our experienced instructors and proven strategies have helped countless students succeed on standardized tests like the SAT, ACT, GRE, and GMAT.
+        </p>
+      </div>
+      <div class="md:w-1/2 mt-6 md:mt-0">
+        <img src="/api/placeholder/600/400" alt="Students studying together" class="rounded-lg shadow-md">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-animate="slide-up">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-graduation-cap text-2xl text-indigo-600 mr-3"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Our Mission</h3>
+        </div>
+        <p class="text-gray-600">
+          To provide exceptional test preparation services that equip students with the knowledge, skills, and confidence they need to excel.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-lightbulb text-2xl text-indigo-600 mr-3"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Our Values</h3>
+        </div>
+        <ul class="list-disc list-inside text-gray-600">
+          <li>Excellence</li>
+          <li>Integrity</li>
+          <li>Student-Centered Approach</li>
+          <li>Innovation</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center mb-4">
+          <i class="fas fa-users text-2xl text-indigo-600 mr-3"></i>
+          <h3 class="text-xl font-semibold text-gray-800">Our Team</h3>
+        </div>
+        <p class="text-gray-600">
+          Our team comprises experienced educators, test experts, and dedicated support staff committed to student success. We foster a collaborative and supportive learning environment.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center" data-animate="fade-in">
+      <a href="/contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+        Contact Us
+      </a>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</section>
+<!-- END SECTION: ABOUT -->
+
+<!-- START SECTION: SERVICES -->
+<section id="services" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-roboto-slab font-semibold text-blue-900 mb-4 data-animate" data-animate="fade-in-down">
-                Protecting Your Rights: Key Features of Our Service
-            </h2>
-            <p class="text-lg text-blue-700 data-animate" data-animate="fade-in-up">
-                We empower consumers by providing comprehensive support and resources to navigate complex issues.
-            </p>
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4" data-animate="fade-in">Our Comprehensive Test Preparation Services</h2>
+            <p class="text-gray-600 leading-relaxed" data-animate="fade-in" data-animate-delay="200">We provide tailored test preparation programs to help you achieve your best score.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Feature 1 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in-left">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Fraud Investigation</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        We conduct thorough investigations into potential fraud cases, gathering evidence and building strong cases on your behalf. Our expertise helps us identify and address fraudulent practices effectively.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom">
+                <div class="flex items-center justify-center h-16 w-16 bg-indigo-100 text-indigo-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-book fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">SAT/ACT Prep</h3>
+                <p class="text-gray-600 text-center">Maximize your score on the SAT or ACT with our proven strategies and personalized instruction.</p>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Dispute Resolution</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        Our skilled mediators facilitate constructive dialogue between consumers and businesses to resolve disputes fairly and efficiently. We strive to achieve mutually agreeable solutions that protect your interests.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom" data-animate-delay="100">
+                <div class="flex items-center justify-center h-16 w-16 bg-green-100 text-green-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-graduation-cap fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">GRE/GMAT Prep</h3>
+                <p class="text-gray-600 text-center">Ace the GRE or GMAT and get into your dream graduate program with our expert guidance.</p>
             </div>
 
-            <!-- Feature 3 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in-right">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Contract Review</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        We meticulously review contracts to identify unfair clauses and hidden risks, ensuring you understand your rights and obligations before signing. This proactive approach safeguards you from potential exploitation.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom" data-animate-delay="200">
+                <div class="flex items-center justify-center h-16 w-16 bg-yellow-100 text-yellow-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-file-alt fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">TOEFL/IELTS Prep</h3>
+                <p class="text-gray-600 text-center">Improve your English proficiency and achieve your desired score on the TOEFL or IELTS exam.</p>
             </div>
 
-            <!-- Feature 4 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in-left">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2z"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Debt Collection Defense</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        We provide expert legal defense against unfair or abusive debt collection practices, protecting you from harassment and ensuring your rights are respected throughout the process.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom">
+                <div class="flex items-center justify-center h-16 w-16 bg-red-100 text-red-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-calculator fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">Math Tutoring</h3>
+                <p class="text-gray-600 text-center">Build a strong foundation in math with our personalized tutoring sessions, covering all levels.</p>
             </div>
 
-            <!-- Feature 5 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Consumer Education</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        We offer educational resources and workshops to empower consumers with the knowledge they need to make informed decisions and protect themselves from scams and unfair business practices.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom" data-animate-delay="100">
+                <div class="flex items-center justify-center h-16 w-16 bg-blue-100 text-blue-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-pen-nib fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">Essay Writing Assistance</h3>
+                <p class="text-gray-600 text-center">Craft compelling essays that showcase your unique strengths and experiences to admissions committees.</p>
             </div>
 
-            <!-- Feature 6 -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden data-animate" data-animate="fade-in-right">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                        </svg>
-                        <h3 class="text-xl font-roboto-slab font-semibold text-blue-800">Legal Referrals</h3>
-                    </div>
-                    <p class="text-blue-700">
-                        We connect you with experienced attorneys specializing in consumer protection law, ensuring you have access to expert legal representation when needed. We carefully vet our referral network to ensure quality service.
-                    </p>
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300" data-animate="slide-in-bottom" data-animate-delay="200">
+                <div class="flex items-center justify-center h-16 w-16 bg-purple-100 text-purple-500 rounded-full mb-4 mx-auto">
+                    <i class="fas fa-chalkboard-teacher fa-2x"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2 text-center">Personalized Coaching</h3>
+                <p class="text-gray-600 text-center">Receive one-on-one coaching and mentorship to help you reach your full academic potential.</p>
             </div>
 
         </div>
     </div>
 </section>
+<!-- END SECTION: SERVICES -->
 
-<!-- TESTIMONIALS SECTION -->
-<section id="testimonials" class="bg-blue-50 py-16 w-full overflow-hidden">
+<!-- START SECTION: FEATURES -->
+<section id="features" class="bg-white py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold text-gray-800 text-center mb-8" data-animate="fade-in">Key Features & Benefits</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center" data-animate="slide-in-left">
+                <div class="text-5xl text-blue-600 mb-4">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Expert Instructors</h3>
+                <p class="text-gray-600">Learn from experienced instructors with proven track records in test preparation. Our instructors are dedicated to your success.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center" data-animate="fade-in">
+                <div class="text-5xl text-blue-600 mb-4">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Comprehensive Study Materials</h3>
+                <p class="text-gray-600">Access a vast library of study materials, including practice tests, detailed explanations, and targeted review sessions.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center" data-animate="slide-in-right">
+                <div class="text-5xl text-blue-600 mb-4">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Personalized Performance Tracking</h3>
+                <p class="text-gray-600">Track your progress with detailed performance reports and identify areas where you need to focus your efforts. We help you optimize your study plan.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center lg:col-span-1 md:col-span-2" data-animate="slide-in-bottom">
+                <div class="text-5xl text-blue-600 mb-4">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">Flexible Scheduling</h3>
+                <p class="text-gray-600">Study at your own pace with our flexible scheduling options. Access our resources anytime, anywhere, and fit your test preparation into your busy life.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END SECTION: FEATURES -->
+
+<!-- START SECTION: TESTIMONIALS -->
+<section class="bg-gray-50 py-12 lg:py-20" data-animate="fade-in">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-blue-900 text-center mb-8 font-roboto-slab" data-animate="fade-in">
-      What Our Clients Say
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="text-center mb-8 lg:mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        What Our Students Say
+      </h2>
+      <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:text-xl">
+        Don't just take our word for it. See how test has helped students achieve their goals.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Testimonial 1 -->
-      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between h-full" data-animate="slide-in-left">
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-left">
         <div>
-          <div class="text-blue-700 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block mr-2">
-              <path fill-rule="evenodd" d="M9.818 2.318a4.5 4.5 0 016.364 0l3.182 3.182a4.5 4.5 0 010 6.364L6.364 21.682a4.5 4.5 0 01-6.364 0l3.182-3.182a4.5 4.5 0 010-6.364l9.818-9.818zm-1.414 8.486a1.5 1.5 0 10-2.122 2.122 1.5 1.5 0 002.122-2.122zM14.744 7.45a1.5 1.5 0 10-2.122 2.121 1.5 1.5 0 002.122-2.121z" clip-rule="evenodd" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block">
-              <path fill-rule="evenodd" d="M14.182 2.318a4.5 4.5 0 00-6.364 0L4.636 5.5a4.5 4.5 0 000 6.364l9.818 9.818a4.5 4.5 0 006.364 0l-3.182-3.182a4.5 4.5 0 000-6.364L14.182 2.318zm1.414 8.486a1.5 1.5 0 102.122 2.122 1.5 1.5 0 00-2.122-2.122zM9.256 7.45a1.5 1.5 0 102.122 2.121 1.5 1.5 0 00-2.122-2.121z" clip-rule="evenodd" />
-            </svg>
-          </div>
-          <p class="text-blue-800 font-roboto">
-            "Test helped me navigate a complex dispute with a local contractor. Their expertise and dedication were invaluable in reaching a fair resolution. I highly recommend their services."
+          <p class="text-gray-700 italic mb-4">
+            "test provided me with the perfect blend of structured learning and personalized support. I improved my score significantly and got into my dream university!"
           </p>
         </div>
-        <div class="mt-4">
-          <p class="font-semibold text-blue-900 font-roboto">Jane Doe</p>
-          <p class="text-sm text-blue-600 font-roboto">Homeowner</p>
+        <div>
+          <div class="flex items-center mt-4">
+            <img src="/api/placeholder/40/40" alt="Sarah Johnson" class="w-10 h-10 rounded-full mr-3">
+            <div>
+              <p class="font-semibold text-gray-900">Sarah Johnson</p>
+              <p class="text-sm text-gray-500">Future Medical Student</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between h-full" data-animate="slide-in-up">
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-up">
         <div>
-          <div class="text-blue-700 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block mr-2">
-              <path fill-rule="evenodd" d="M9.818 2.318a4.5 4.5 0 016.364 0l3.182 3.182a4.5 4.5 0 010 6.364L6.364 21.682a4.5 4.5 0 01-6.364 0l3.182-3.182a4.5 4.5 0 010-6.364l9.818-9.818zm-1.414 8.486a1.5 1.5 0 10-2.122 2.122 1.5 1.5 0 002.122-2.122zM14.744 7.45a1.5 1.5 0 10-2.122 2.121 1.5 1.5 0 002.122-2.121z" clip-rule="evenodd" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block">
-              <path fill-rule="evenodd" d="M14.182 2.318a4.5 4.5 0 00-6.364 0L4.636 5.5a4.5 4.5 0 000 6.364l9.818 9.818a4.5 4.5 0 006.364 0l-3.182-3.182a4.5 4.5 0 000-6.364L14.182 2.318zm1.414 8.486a1.5 1.5 0 102.122 2.122 1.5 1.5 0 00-2.122-2.122zM9.256 7.45a1.5 1.5 0 102.122 2.121 1.5 1.5 0 00-2.122-2.121z" clip-rule="evenodd" />
-            </svg>
-          </div>
-          <p class="text-blue-800 font-roboto">
-            "I was facing harassment from debt collectors. Test stepped in and helped me understand my rights and put a stop to the abusive calls. Their support was a lifesaver."
+          <p class="text-gray-700 italic mb-4">
+            "The practice tests and detailed explanations were invaluable. I felt so much more confident on test day, thanks to test!"
           </p>
         </div>
-        <div class="mt-4">
-          <p class="font-semibold text-blue-900 font-roboto">Michael Smith</p>
-          <p class="text-sm text-blue-600 font-roboto">Consumer Advocate</p>
+        <div>
+          <div class="flex items-center mt-4">
+            <img src="/api/placeholder/40/40" alt="Michael Davis" class="w-10 h-10 rounded-full mr-3">
+            <div>
+              <p class="font-semibold text-gray-900">Michael Davis</p>
+              <p class="text-sm text-gray-500">Aspiring Engineer</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Testimonial 3 -->
-      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between h-full" data-animate="slide-in-right">
+      <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between" data-animate="slide-in-right">
         <div>
-          <div class="text-blue-700 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block mr-2">
-              <path fill-rule="evenodd" d="M9.818 2.318a4.5 4.5 0 016.364 0l3.182 3.182a4.5 4.5 0 010 6.364L6.364 21.682a4.5 4.5 0 01-6.364 0l3.182-3.182a4.5 4.5 0 010-6.364l9.818-9.818zm-1.414 8.486a1.5 1.5 0 10-2.122 2.122 1.5 1.5 0 002.122-2.122zM14.744 7.45a1.5 1.5 0 10-2.122 2.121 1.5 1.5 0 002.122-2.121z" clip-rule="evenodd" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 inline-block">
-              <path fill-rule="evenodd" d="M14.182 2.318a4.5 4.5 0 00-6.364 0L4.636 5.5a4.5 4.5 0 000 6.364l9.818 9.818a4.5 4.5 0 006.364 0l-3.182-3.182a4.5 4.5 0 000-6.364L14.182 2.318zm1.414 8.486a1.5 1.5 0 102.122 2.122 1.5 1.5 0 00-2.122-2.122zM9.256 7.45a1.5 1.5 0 102.122 2.121 1.5 1.5 0 00-2.122-2.121z" clip-rule="evenodd" />
-            </svg>
-          </div>
-          <p class="text-blue-800 font-roboto">
-            "I was wrongly accused of fraud. Test provided expert legal representation and cleared my name. I am incredibly grateful for their professionalism and dedication."
+          <p class="text-gray-700 italic mb-4">
+            "I struggled with standardized tests until I found test. Their expert instructors and comprehensive curriculum made all the difference. Highly recommend!"
           </p>
         </div>
-        <div class="mt-4">
-          <p class="font-semibold text-blue-900 font-roboto">David Lee</p>
-          <p class="text-sm text-blue-600 font-roboto">Business Owner</p>
+        <div>
+          <div class="flex items-center mt-4">
+            <img src="/api/placeholder/40/40" alt="Emily Carter" class="w-10 h-10 rounded-full mr-3">
+            <div>
+              <p class="font-semibold text-gray-900">Emily Carter</p>
+              <p class="text-sm text-gray-500">Law School Candidate</p>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+<!-- END SECTION: TESTIMONIALS -->
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="bg-blue-50 py-16 w-full overflow-hidden">
+<!-- START SECTION: CONTACT -->
+<section id="contact" class="bg-gray-50 py-16" data-animate="fade-in">
   <div class="container mx-auto px-4">
-    <div class="lg:flex lg:items-center lg:justify-between">
-      <div class="lg:w-1/2 mb-8 lg:mb-0" data-animate="fade-right">
-        <h2 class="text-3xl font-roboto-slab font-semibold text-blue-900 mb-4">Get in Touch with Test Consumer Protection</h2>
-        <p class="text-blue-700 leading-relaxed mb-6">
-          Do you have questions about consumer rights, unfair business practices, or need assistance with a consumer complaint? Our dedicated team is here to help. Contact us using the form below, or reach out via phone or email. We are committed to providing you with the information and resources you need to protect yourself.
-        </p>
-        <div class="flex items-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-500 mr-2">
-            <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h15a3 3 0 013 3v1.5a3 3 0 01-3 3h-15a3 3 0 01-3-3v-1.5zm15 0h-15v1.5a.75.75 0 00.75.75h13.5a.75.75 0 00.75-.75v-1.5zM3 10.5a3 3 0 013-3h15a3 3 0 013 3v1.5a3 3 0 01-3 3h-15a3 3 0 01-3-3v-1.5zm15 0h-15v1.5a.75.75 0 00.75.75h13.5a.75.75 0 00.75-.75v-1.5zM3 16.5a3 3 0 013-3h15a3 3 0 013 3v1.5a3 3 0 01-3 3h-15a3 3 0 01-3-3v-1.5zm15 0h-15v1.5a.75.75 0 00.75.75h13.5a.75.75 0 00.75-.75v-1.5z" clip-rule="evenodd" />
-          </svg>
-          <span class="text-blue-700">Phone: (555) 123-4567</span>
-        </div>
-        <div class="flex items-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-500 mr-2">
-            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-          </svg>
-          <span class="text-blue-700">Email: info@testconsumerprotection.com</span>
-        </div>
-        <div class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-500 mr-2">
-            <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.663 3.975-3.412 5.268-5.422.11-.174.216-.352.32-.533C21.44 12.192 22.5 10.375 22.5 8.25 22.5 5.864 20.409 3.75 18 3.75a9.74 9.74 0 00-3.489.794l-.194-.084c-.156-.066-.321-.102-.49-.102h-.001c-.168 0-.332.036-.488.102l-.195.084a9.752 9.752 0 00-3.489-.794c-2.409 0-4.5 2.114-4.5 4.5 0 2.125 1.06 3.942 2.74 5.338.104.181.21.359.321.533 1.292 2.01 3.323 3.762 5.267 5.422a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-          </svg>
-          <span class="text-blue-700">Address: 123 Main Street, Anytown, USA</span>
-        </div>
-      </div>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-semibold text-gray-800 mb-4">Contact Us</h2>
+      <p class="text-gray-600">Ready to take the next step in your test preparation journey? Reach out to our expert team at Test Prep Masters today!</p>
+    </div>
 
-      <div class="lg:w-1/2" data-animate="fade-left">
-        <div class="bg-white shadow-md rounded-xl p-8">
-          <h3 class="text-2xl font-roboto-slab font-semibold text-blue-900 mb-4">Send us a Message</h3>
-          <form action="#" method="POST">
-            <div class="mb-4">
-              <label for="name" class="block text-blue-700 text-sm font-bold mb-2">Your Name</label>
-              <input type="text" id="name" name="name" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your name">
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-blue-700 text-sm font-bold mb-2">Your Email</label>
-              <input type="email" id="email" name="email" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email">
-            </div>
-            <div class="mb-4">
-              <label for="subject" class="block text-blue-700 text-sm font-bold mb-2">Subject</label>
-              <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter the subject">
-            </div>
-            <div class="mb-6">
-              <label for="message" class="block text-blue-700 text-sm font-bold mb-2">Message</label>
-              <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your message"></textarea>
-            </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <form class="bg-white shadow-md rounded-lg p-8" data-animate="slide-in-left">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+            <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Send Message
             </button>
-          </form>
+          </div>
+        </form>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4" data-animate="slide-in-right">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Our Office</h3>
+          <p class="text-gray-600">Test Prep Masters Headquarters</p>
+          <p class="text-gray-600">123 Education Lane, Suite 200</p>
+          <p class="text-gray-600">Anytown, CA 91234</p>
+          <img src="/api/placeholder/400/300" alt="Map of Test Prep Masters Office" class="mt-4 rounded-md">
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Contact Information</h3>
+          <p class="text-gray-600">Phone: <a href="tel:+15551234567" class="text-blue-500 hover:text-blue-700">(555) 123-4567</a></p>
+          <p class="text-gray-600">Email: <a href="mailto:info@testprepmasters.com" class="text-blue-500 hover:text-blue-700">info@testprepmasters.com</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
+<!-- END SECTION: CONTACT -->
 
-<!-- FOOTER SECTION -->
-<footer class="bg-gray-800 text-gray-200 py-12 mt-24">
+<!-- START SECTION: FOOTER -->
+<footer class="bg-gray-100 py-12 border-t border-gray-200" data-animate="fade-in">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
             <div>
-                <h4 class="text-lg font-bold mb-4 text-blue-300">About Test</h4>
-                <p class="text-sm">Test is dedicated to protecting consumers from fraud, scams, and unfair business practices. We provide resources, education, and advocacy to empower individuals and communities.</p>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">About test</h3>
+                <p class="text-gray-600">test is dedicated to providing high-quality test preparation resources and support to help students achieve their academic goals.</p>
                 <div class="mt-4 flex space-x-4">
-                    <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook-square fa-2x"></i></a>
-                    <a href="#" class="hover:text-blue-500"><i class="fab fa-twitter-square fa-2x"></i></a>
-                    <a href="#" class="hover:text-blue-500"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
                 </div>
             </div>
 
             <div>
-                <h4 class="text-lg font-bold mb-4 text-blue-300">Quick Links</h4>
-                <ul class="text-sm">
-                    <li class="mb-2"><a href="/" class="hover:text-blue-500">Home</a></li>
-                    <li class="mb-2"><a href="/services" class="hover:text-blue-500">Our Services</a></li>
-                    <li class="mb-2"><a href="/resources" class="hover:text-blue-500">Resources</a></li>
-                    <li class="mb-2"><a href="/contact" class="hover:text-blue-500">Contact Us</a></li>
-                    <li class="mb-2"><a href="/report" class="hover:text-blue-500">Report a Scam</a></li>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Links</h3>
+                <ul class="list-none">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Courses</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Practice Tests</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Study Guides</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Admissions Consulting</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="text-lg font-bold mb-4 text-blue-300">Services</h4>
-                <ul class="text-sm">
-                    <li class="mb-2"><a href="#" class="hover:text-blue-500">Fraud Investigation</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-blue-500">Dispute Resolution</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-blue-500">Consumer Education</a></li>
-                    <li class="mb-2"><a href="#" class="hover:text-blue-500">Legal Referrals</a></li>
-                </ul>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Contact Us</h3>
+                <p class="text-gray-600">123 Test Prep Lane, Anytown, USA</p>
+                <p class="text-gray-600">Phone: (555) 123-4567</p>
+                <p class="text-gray-600">Email: info@test.com</p>
             </div>
 
             <div>
-                <h4 class="text-lg font-bold mb-4 text-blue-300">Contact Information</h4>
-                <p class="text-sm mb-2">Address: 123 Main Street, Anytown, USA</p>
-                <p class="text-sm mb-2">Phone: (555) 123-4567</p>
-                <p class="text-sm mb-2">Email: info@test.com</p>
-                <p class="text-sm">Office Hours: Mon-Fri, 9am-5pm</p>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Legal</h3>
+                <ul class="list-none">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-500">Terms & Conditions</a></li>
+                </ul>
             </div>
-
         </div>
 
-        <div class="mt-8 border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2024 Test. All rights reserved.</p>
-            <p>
-                <a href="/privacy" class="hover:text-blue-500">Privacy Policy</a> |
-                <a href="/terms" class="hover:text-blue-500">Terms of Service</a>
-            </p>
+        <div class="mt-8 text-center text-gray-500">
+            &copy; <span id="copyright-year"></span> test. All rights reserved.
         </div>
     </div>
-</footer>
-
-  </main>
-  
-  <script>
-      document.addEventListener('DOMContentLoaded',function(){
-          // Animation system with IntersectionObserver
-          const observer=new IntersectionObserver(entries=>{
-              entries.forEach((entry,i)=>{
-                  if(entry.isIntersecting){
-                      setTimeout(()=>{
-                          entry.target.classList.add('visible');
-                          // Handle staggered children if using that animation style
-                          if(entry.target.getAttribute('data-animate')==='stagger'){
-                              Array.from(entry.target.children).forEach((child,childIndex)=>{
-                                  child.style.setProperty('--child-index',childIndex);
-                              });
-                          }
-                      },i*100);
-                      observer.unobserve(entry.target);
-                  }
-              });
-          },{threshold:0.15,rootMargin:'0px 0px -100px 0px'});
-          
-          document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
-          
-          // Fixed navigation
-          const nav=document.querySelector('nav');
-          if(nav){
-              const handleScroll=()=>{
-                  const scrollPos = window.scrollY;
-                  nav.classList[scrollPos>100?'add':'remove']('nav-fixed');
-                  
-                  // Optional: Change nav color on certain sections
-                  document.querySelectorAll('[data-nav-color]').forEach(section => {
-                      const rect = section.getBoundingClientRect();
-                      if (rect.top <= 100 && rect.bottom >= 100) {
-                          const color = section.getAttribute('data-nav-color');
-                          if (color) {
-                              nav.style.setProperty('--nav-text-color', color);
-                          }
-                      }
-                  });
-              };
-              window.addEventListener('scroll',handleScroll,{passive:true});
-              handleScroll();
-          }
-          
-          // Smooth scroll
-          document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-              anchor.addEventListener('click',function(e){
-                  e.preventDefault();
-                  const targetId=this.getAttribute('href');
-                  if(targetId==='#')return;
-                  const target=document.querySelector(targetId);
-                  if(target){
-                      const targetPosition=target.getBoundingClientRect().top+window.pageYOffset-(nav?nav.offsetHeight:0)-20;
-                      window.scrollTo({top:targetPosition,behavior:'smooth'});
-                      
-                      // Close mobile menu if open
-                      const mobileMenu = document.getElementById('mobile-menu');
-                      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                          mobileMenu.classList.add('hidden');
-                          document.body.classList.remove('overflow-hidden');
-                      }
-                  }
-              });
-          });
-          
-          // Scroll progress indicator
-          const updateScrollProgress = () => {
-              const height = Math.max(
-                  document.body.scrollHeight,
-                  document.body.offsetHeight,
-                  document.documentElement.clientHeight,
-                  document.documentElement.scrollHeight,
-                  document.documentElement.offsetHeight
-              ) - window.innerHeight;
-              
-              document.documentElement.style.setProperty('--scroll-progress', (window.scrollY/height*100)+'%');
-          };
-          
-          window.addEventListener('scroll', updateScrollProgress, {passive:true});
-          window.addEventListener('resize', updateScrollProgress, {passive:true});
-          updateScrollProgress();
-          
-          // Mobile menu with improved interaction
-          const setupMobileMenu = () => {
-              const menuToggle = document.getElementById('mobile-menu-toggle');
-              const mobileMenu = document.getElementById('mobile-menu');
-              const mobileMenuClose = document.getElementById('mobile-menu-close');
-              
-              if (menuToggle && mobileMenu) {
-                  // Toggle menu open/close
-                  menuToggle.addEventListener('click', () => {
-                      mobileMenu.classList.toggle('hidden');
-                      document.body.classList.toggle('overflow-hidden');
-                      
-                      // Optional: Add slide-in animation
-                      if (!mobileMenu.classList.contains('hidden')) {
-                          setTimeout(() => mobileMenu.classList.add('mobile-menu-active'), 10);
-                      } else {
-                          mobileMenu.classList.remove('mobile-menu-active');
-                      }
-                  });
-                  
-                  // Close button in mobile menu
-                  if (mobileMenuClose) {
-                      mobileMenuClose.addEventListener('click', () => {
-                          mobileMenu.classList.add('hidden');
-                          document.body.classList.remove('overflow-hidden');
-                          mobileMenu.classList.remove('mobile-menu-active');
-                      });
-                  }
-                  
-                  // Close when clicking outside
-                  document.addEventListener('click', e => {
-                      if (mobileMenu && !mobileMenu.classList.contains('hidden') && 
-                          menuToggle && !menuToggle.contains(e.target) && 
-                          !mobileMenu.contains(e.target)) {
-                          mobileMenu.classList.add('hidden');
-                          document.body.classList.remove('overflow-hidden');
-                          mobileMenu.classList.remove('mobile-menu-active');
-                      }
-                  });
-                  
-                  // Close when escape key is pressed
-                  document.addEventListener('keydown', e => {
-                      if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                          mobileMenu.classList.add('hidden');
-                          document.body.classList.remove('overflow-hidden');
-                          mobileMenu.classList.remove('mobile-menu-active');
-                      }
-                  });
-              }
-          };
-          
-          setupMobileMenu();
-          
-          // Accordions with improved accessibility
-          document.querySelectorAll('[data-accordion-target]').forEach(btn => {
-              btn.addEventListener('click', () => {
-                  const target = document.querySelector(btn.getAttribute('data-accordion-target'));
-                  if (target) {
-                      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-                      
-                      // Toggle the target's visibility
-                      if (isExpanded) {
-                          target.style.maxHeight = null;
-                          setTimeout(() => target.classList.add('hidden'), 300);
-                      } else {
-                          target.classList.remove('hidden');
-                          target.style.maxHeight = target.scrollHeight + 'px';
-                      }
-                      
-                      // Update the button's state
-                      btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-                      
-                      // Rotate icon if present
-                      const icon = btn.querySelector('.accordion-icon');
-                      if (icon) icon.classList.toggle('rotate-180');
-                  }
-              });
-          });
-          
-          // Enhanced form validation
-          document.querySelectorAll('form').forEach(form => {
-              const validateField = (field) => {
-                  let isValid = true;
-                  const errorMsgId = `error-${field.id || Math.random().toString(36).substring(2, 9)}`;
-                  
-                  // Remove existing error message
-                  const existingError = field.parentNode.querySelector('.error-message');
-                  if (existingError) existingError.remove();
-                  
-                  // Validate based on field type and requirements
-                  if (field.hasAttribute('required') && !field.value.trim()) {
-                      isValid = false;
-                      field.setAttribute('aria-invalid', 'true');
-                      field.setAttribute('aria-describedby', errorMsgId);
-                      
-                      // Create and add error message
-                      const errorMsg = document.createElement('p');
-                      errorMsg.className = 'text-red-500 text-sm mt-1 error-message';
-                      errorMsg.id = errorMsgId;
-                      errorMsg.textContent = 'This field is required';
-                      field.parentNode.appendChild(errorMsg);
-                  } else if (field.type === 'email' && field.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
-                      isValid = false;
-                      field.setAttribute('aria-invalid', 'true');
-                      field.setAttribute('aria-describedby', errorMsgId);
-                      
-                      // Create and add error message
-                      const errorMsg = document.createElement('p');
-                      errorMsg.className = 'text-red-500 text-sm mt-1 error-message';
-                      errorMsg.id = errorMsgId;
-                      errorMsg.textContent = 'Please enter a valid email address';
-                      field.parentNode.appendChild(errorMsg);
-                  } else {
-                      field.removeAttribute('aria-invalid');
-                      field.removeAttribute('aria-describedby');
-                  }
-                  
-                  // Add visual feedback classes
-                  if (!isValid) {
-                      field.classList.add('border-red-500');
-                      field.classList.remove('border-green-500');
-                  } else if (field.value.trim()) {
-                      field.classList.remove('border-red-500');
-                      field.classList.add('border-green-500');
-                  } else {
-                      field.classList.remove('border-red-500', 'border-green-500');
-                  }
-                  
-                  return isValid;
-              };
-              
-              // Real-time validation on input/change
-              form.querySelectorAll('input, textarea, select').forEach(field => {
-                  field.addEventListener('blur', () => validateField(field));
-                  field.addEventListener('input', function() {
-                      if (this.getAttribute('aria-invalid') === 'true') {
-                          validateField(this);
-                      }
-                  });
-              });
-              
-              // Form submission validation
-              form.addEventListener('submit', function(e) {
-                  let isValid = true;
-                  
-                  // Validate all fields
-                  this.querySelectorAll('input, textarea, select').forEach(field => {
-                      if (!validateField(field)) {
-                          isValid = false;
-                      }
-                  });
-                  
-                  if (!isValid) {
-                      e.preventDefault();
-                      
-                      // Scroll to first invalid field
-                      const firstInvalid = this.querySelector('[aria-invalid="true"]');
-                      if (firstInvalid) {
-                          firstInvalid.focus();
-                          const headerOffset = nav ? nav.offsetHeight + 20 : 20;
-                          const firstInvalidPosition = firstInvalid.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-                          window.scrollTo({top: firstInvalidPosition, behavior: 'smooth'});
-                      }
-                  } else {
-                      // Show success message if we're not actually submitting
-                      if (this.getAttribute('data-demo-form') === 'true') {
-                          e.preventDefault();
-                          
-                          // Hide form
-                          this.classList.add('hidden');
-                          
-                          // Show success message
-                          const successMsg = document.createElement('div');
-                          successMsg.className = 'bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 my-4';
-                          successMsg.innerHTML = `
-                              <div class="flex items-center">
-                                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                  </svg>
-                                  <h4 class="text-lg font-semibold">Thank you for your submission!</h4>
-                              </div>
-                              <p class="mt-2">We've received your message and will respond as soon as possible.</p>
-                              <button type="button" class="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors" id="reset-form">Send another message</button>
-                          `;
-                          
-                          this.parentNode.appendChild(successMsg);
-                          
-                          // Reset button functionality
-                          document.getElementById('reset-form').addEventListener('click', () => {
-                              this.reset();
-                              this.classList.remove('hidden');
-                              successMsg.remove();
-                              this.querySelectorAll('input, textarea, select').forEach(field => {
-                                  field.classList.remove('border-red-500', 'border-green-500');
-                              });
-                          });
-                      }
-                  }
-              });
-          });
-          
-          // Tabs functionality
-          document.querySelectorAll('[data-tabs]').forEach(tabGroup => {
-              const tabs = tabGroup.querySelectorAll('[data-tab]');
-              const tabContents = document.querySelectorAll('[data-tab-content]');
-              
-              tabs.forEach(tab => {
-                  tab.addEventListener('click', () => {
-                      const target = tab.getAttribute('data-tab');
-                      
-                      // Update active tab state
-                      tabs.forEach(t => {
-                          t.classList.remove('active-tab', 'text-primary-600', 'border-primary-600');
-                          t.setAttribute('aria-selected', 'false');
-                      });
-                      
-                      tab.classList.add('active-tab', 'text-primary-600', 'border-primary-600');
-                      tab.setAttribute('aria-selected', 'true');
-                      
-                      // Show correct content with animation
-                      tabContents.forEach(content => {
-                          if (content.getAttribute('data-tab-content') === target) {
-                              content.classList.remove('hidden');
-                              setTimeout(() => content.classList.add('opacity-100'), 50);
-                          } else {
-                              content.classList.remove('opacity-100');
-                              setTimeout(() => content.classList.add('hidden'), 300);
-                          }
-                      });
-                  });
-                  
-                  // Keyboard navigation
-                  tab.addEventListener('keydown', e => {
-                      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-                          e.preventDefault();
-                          const tabArray = Array.from(tabs);
-                          const currentIndex = tabArray.indexOf(tab);
-                          let newIndex;
-                          
-                          if (e.key === 'ArrowLeft') {
-                              newIndex = currentIndex === 0 ? tabArray.length - 1 : currentIndex - 1;
-                          } else {
-                              newIndex = currentIndex === tabArray.length - 1 ? 0 : currentIndex + 1;
-                          }
-                          
-                          tabArray[newIndex].click();
-                          tabArray[newIndex].focus();
-                      }
-                  });
-              });
-          });
-          
-          // Enhanced carousel functionality
-          document.querySelectorAll('[data-carousel]').forEach(carousel => {
-              const slides = carousel.querySelectorAll('[data-slide]');
-              const prevBtn = carousel.querySelector('[data-carousel-prev]');
-              const nextBtn = carousel.querySelector('[data-carousel-next]');
-              
-              if (slides.length > 0 && prevBtn && nextBtn) {
-                  let current = 0, interval = null, isPaused = false;
-                  const slideCount = slides.length;
-                  
-                  // Initialize first slide
-                  slides[0].classList.remove('hidden');
-                  slides[0].classList.add('active-slide');
-                  
-                  // Create indicators if needed
-                  const indicatorsContainer = carousel.querySelector('[data-carousel-indicators]');
-                  
-                  if (indicatorsContainer) {
-                      for (let i = 0; i < slideCount; i++) {
-                          const indicator = document.createElement('button');
-                          indicator.setAttribute('data-indicator', i.toString());
-                          indicator.setAttribute('aria-label', `Slide ${i + 1}`);
-                          indicator.className = i === 0 ? 'w-3 h-3 rounded-full bg-primary-600 mx-1' : 'w-3 h-3 rounded-full bg-gray-300 mx-1';
-                          indicator.addEventListener('click', () => {
-                              goToSlide(i);
-                              restartInterval();
-                          });
-                          indicatorsContainer.appendChild(indicator);
-                      }
-                  }
-                  
-                  // Update indicators based on current slide
-                 const updateIndicators = () => {
-    carousel.querySelectorAll('[data-indicator]').forEach((ind, i) => {
-      ind.classList.remove('bg-primary-600', 'bg-gray-300');
-      ind.classList.add(i === current ? 'bg-primary-600' : 'bg-gray-300');
-    });
-  };
-  
-  // Go to specific slide with animation
-  const goToSlide = (index) => {
-    // Hide current slide with fade out
-    slides[current].classList.add('fade-out');
-    
-    setTimeout(() => {
-      // After fade out, hide slide completely
-      slides[current].classList.add('hidden');
-      slides[current].classList.remove('active-slide', 'fade-out');
-      
-      // Show new slide and fade in
-      current = index;
-      slides[current].classList.remove('hidden');
-      setTimeout(() => slides[current].classList.add('active-slide'), 50);
-      
-      updateIndicators();
-    }, 300);
-  };
-  
-  // Next button
-  nextBtn.addEventListener('click', () => {
-    goToSlide((current + 1) % slideCount);
-    restartInterval();
-  });
-  
-  // Previous button
-  prevBtn.addEventListener('click', () => {
-    goToSlide((current - 1 + slideCount) % slideCount);
-    restartInterval();
-  });
-  
-  // Start/restart autoplay interval
-  const restartInterval = () => {
-    if (interval) {
-      clearInterval(interval);
-      interval = null;
-    }
-    
-    if (!isPaused && carousel.hasAttribute('data-auto')) {
-      interval = setInterval(() => {
-        goToSlide((current + 1) % slideCount);
-      }, 5000);
-    }
-  };
-  
-  // Pause on hover/touch
-  carousel.addEventListener('mouseenter', () => {
-    isPaused = true;
-    if (interval) {
-      clearInterval(interval);
-      interval = null;
-    }
-  });
-  
-  // Resume on mouse leave
-  carousel.addEventListener('mouseleave', () => {
-    isPaused = false;
-    restartInterval();
-  });
-  
-  // Swipe support for touch devices
-  let touchStartX = 0;
-  let touchEndX = 0;
-  
-  carousel.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-  
-  carousel.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-  
-  const handleSwipe = () => {
-    const threshold = 50;
-    if (touchEndX < touchStartX - threshold) {
-      // Swipe left, go to next
-      nextBtn.click();
-    } else if (touchEndX > touchStartX + threshold) {
-      // Swipe right, go to previous
-      prevBtn.click();
-    }
-  };
-  
-  // Keyboard navigation when carousel has focus
-  carousel.setAttribute('tabindex', '0');
-  carousel.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') {
-      prevBtn.click();
-    } else if (e.key === 'ArrowRight') {
-      nextBtn.click();
-    }
-  });
-  
-  // Initialize autoplay
-  restartInterval();
-}
-});
-
-// Initialize counters for stats sections
-document.querySelectorAll('[data-counter]').forEach(counter => {
-  const target = parseInt(counter.getAttribute('data-counter') || '0', 10);
-  const duration = 2000; // Animation duration in ms
-  const frameDuration = 1000 / 60; // 60fps
-  const totalFrames = Math.ceil(duration / frameDuration);
-  
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-        
-        let frame = 0;
-        const countUp = () => {
-          frame++;
-          // Use easing function for more natural counting
-          const progress = frame / totalFrames;
-          const easedProgress = progress < 0.5 
-            ? 2 * progress * progress 
-            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-          
-          const currentCount = Math.ceil(easedProgress * target);
-          counter.textContent = currentCount.toString().replace(/B(?=(d{3})+(?!d))/g, ',');
-          
-          if (frame < totalFrames) {
-            requestAnimationFrame(countUp);
-          }
-        };
-        
-        requestAnimationFrame(countUp);
-      }
-    });
-  }, { threshold: 0.25 });
-  
-  observer.observe(counter);
-});
-
-// Parallax effect for background images
-document.querySelectorAll('[data-parallax]').forEach(element => {
-  const speed = parseFloat(element.getAttribute('data-parallax') || '0.2');
-  let offsetY = 0;
-  
-  const updateParallax = () => {
-    const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      offsetY = (window.innerHeight - rect.top) * speed;
-      element.style.backgroundPositionY = `${offsetY}px`;
-    }
-  };
-  
-  window.addEventListener('scroll', updateParallax, { passive: true });
-  window.addEventListener('resize', updateParallax, { passive: true });
-  updateParallax();
-});
-
-// Handle video modal/lightbox if present
-document.querySelectorAll('[data-video-modal]').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const videoId = trigger.getAttribute('data-video-modal');
-    const videoSrc = trigger.getAttribute('data-video-src');
-    
-    if (videoId && videoSrc) {
-      // Create modal container
-      const modal = document.createElement('div');
-      modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75';
-      modal.id = videoId + '-modal';
-      
-      // Create close button
-      const closeBtn = document.createElement('button');
-      closeBtn.className = 'absolute top-6 right-6 text-white text-3xl';
-      closeBtn.innerHTML = '&times;';
-      closeBtn.setAttribute('aria-label', 'Close video');
-      
-      // Create video wrapper
-      const videoWrapper = document.createElement('div');
-      videoWrapper.className = 'relative w-full max-w-4xl mx-auto aspect-video';
-      
-      // Create iframe
-      const iframe = document.createElement('iframe');
-      iframe.className = 'absolute w-full h-full';
-      iframe.src = videoSrc;
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allowfullscreen', 'true');
-      iframe.setAttribute('allow', 'autoplay; encrypted-media');
-      
-      // Assemble modal
-      videoWrapper.appendChild(iframe);
-      modal.appendChild(closeBtn);
-      modal.appendChild(videoWrapper);
-      document.body.appendChild(modal);
-      document.body.classList.add('overflow-hidden');
-      
-      // Close modal functionality
-      const closeModal = () => {
-        document.body.removeChild(modal);
-        document.body.classList.remove('overflow-hidden');
-      };
-      
-      closeBtn.addEventListener('click', closeModal);
-      
-      // Close on click outside video
-      modal.addEventListener('click', e => {
-        if (e.target === modal) closeModal();
-      });
-      
-      // Close on escape key
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeModal();
-      }, { once: true });
-    }
-  });
-});
-
-// Image lightbox gallery functionality
-document.querySelectorAll('[data-lightbox]').forEach(image => {
-  image.addEventListener('click', () => {
-    const src = image.getAttribute('src');
-    const alt = image.getAttribute('alt') || 'Image';
-    const gallery = image.getAttribute('data-lightbox');
-    
-    // Create modal container
-    const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4';
-    
-    // Create close button
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'absolute top-6 right-6 text-white text-3xl z-10';
-    closeBtn.innerHTML = '&times;';
-    closeBtn.setAttribute('aria-label', 'Close lightbox');
-    
-    // Create image container
-    const imgContainer = document.createElement('div');
-    imgContainer.className = 'relative max-w-5xl max-h-full flex items-center justify-center';
-    
-    // Create image
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = alt;
-    img.className = 'max-w-full max-h-[90vh] object-contain';
-    
-    // Add navigation if part of a gallery
-    if (gallery) {
-      const galleryImages = Array.from(document.querySelectorAll(`[data-lightbox="${gallery}"]`));
-      const currentIndex = galleryImages.indexOf(image);
-      
-      if (galleryImages.length > 1) {
-        // Create caption
-        const caption = document.createElement('div');
-        caption.className = 'absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 text-center';
-        caption.textContent = `${alt} (${currentIndex + 1} of ${galleryImages.length})`;
-        
-        // Create prev/next buttons
-        const prevBtn = document.createElement('button');
-        prevBtn.className = 'absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2';
-        prevBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
-        prevBtn.setAttribute('aria-label', 'Previous image');
-        
-        const nextBtn = document.createElement('button');
-        nextBtn.className = 'absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2';
-        nextBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
-        nextBtn.setAttribute('aria-label', 'Next image');
-        
-        // Navigation functionality
-        prevBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-          const prevSrc = galleryImages[prevIndex].getAttribute('src');
-          const prevAlt = galleryImages[prevIndex].getAttribute('alt') || 'Image';
-          
-          img.src = prevSrc;
-          img.alt = prevAlt;
-          caption.textContent = `${prevAlt} (${prevIndex + 1} of ${galleryImages.length})`;
-        });
-        
-        nextBtn.addEventListener('click', e => {
-          e.stopPropagation();
-          const nextIndex = (currentIndex + 1) % galleryImages.length;
-          const nextSrc = galleryImages[nextIndex].getAttribute('src');
-          const nextAlt = galleryImages[nextIndex].getAttribute('alt') || 'Image';
-          
-          img.src = nextSrc;
-          img.alt = nextAlt;
-          caption.textContent = `${nextAlt} (${nextIndex + 1} of ${galleryImages.length})`;
-        });
-        
-        // Add keyboard navigation
-        const keyHandler = e => {
-          if (e.key === 'ArrowLeft') prevBtn.click();
-          else if (e.key === 'ArrowRight') nextBtn.click();
-        };
-        
-        document.addEventListener('keydown', keyHandler);
-        
-        // Add elements to DOM
-        imgContainer.appendChild(prevBtn);
-        imgContainer.appendChild(nextBtn);
-        imgContainer.appendChild(caption);
-      }
-    }
-    
-    // Assemble modal
-    imgContainer.appendChild(img);
-    modal.appendChild(closeBtn);
-    modal.appendChild(imgContainer);
-    document.body.appendChild(modal);
-    document.body.classList.add('overflow-hidden');
-    
-    // Close modal functionality
-    const closeModal = () => {
-      document.body.removeChild(modal);
-      document.body.classList.remove('overflow-hidden');
-      
-      // Remove keyboard event listener
-      document.removeEventListener('keydown', keyHandler);
-    };
-    
-    closeBtn.addEventListener('click', closeModal);
-    
-    // Close on click outside image
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeModal();
-    });
-    
-    // Close on escape key
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    }, { once: true });
-  });
-});
-        }
+    <script>
+        document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
     </script>
+</footer>
+<!-- END SECTION: FOOTER -->
+
+  <!-- AI is expected to include necessary JS for interactivity within its generated sections -->
 </body>
 </html>

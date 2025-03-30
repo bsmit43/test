@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <title>About - test</title>
+  <title>Login - test</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Website for test, specializing in Test Preparation">
@@ -97,76 +97,75 @@
 </header>
 
   <main>
-    <!-- START MAIN CONTENT for about -->
-    <main class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-
-  <section class="mb-12" data-animate="fade-in">
-    <h1 class="text-4xl font-extrabold text-gray-900 text-center mb-6">About Test Preparation</h1>
-    <div class="md:flex md:items-center md:justify-between">
-      <div class="md:w-1/2 mb-6 md:mb-0">
-        <img src="/api/placeholder/600/400" alt="Team working together" class="rounded-lg shadow-lg">
+    <!-- START MAIN CONTENT for login -->
+    <main class="bg-gray-100 py-12 lg:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-lg mx-auto bg-white rounded-lg shadow-xl overflow-hidden" data-animate="fade-in">
+      <div class="bg-gray-50 py-4 px-6 border-b border-gray-200">
+        <h2 class="text-2xl font-semibold text-gray-800">Login to Test Prep</h2>
       </div>
-      <div class="md:w-1/2 md:pl-8">
-        <p class="text-lg text-gray-700 leading-relaxed mb-4">At Test Preparation, we believe everyone deserves the opportunity to achieve their academic and professional goals. Founded in 2015 by a group of passionate educators, we set out to create a more effective, accessible, and engaging test preparation experience.</p>
-        <p class="text-lg text-gray-700 leading-relaxed">We've helped thousands of students just like you excel on standardized tests, gain admission to top universities, and launch successful careers. Our commitment to excellence and student success drives everything we do.</p>
+
+      <div class="p-6">
+        <form id="loginForm">
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your email"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required>
+          </div>
+
+          <div class="mb-6">
+            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              required>
+            <a href="#" class="text-sm text-blue-500 hover:text-blue-700">Forgot Password?</a>
+          </div>
+
+          <div id="errorMessage" class="text-red-500 text-sm mb-4 hidden">
+            Invalid email or password. Please try again.
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              Login
+            </button>
+            <a href="#" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-700">
+              Create an Account
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-gray-50 py-3 px-6 border-t border-gray-200 text-center">
+        <p class="text-gray-600 text-sm">
+          &copy; 2024 Test Prep. All rights reserved.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="mb-12" data-animate="fade-in">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Mission</h2>
-    <p class="text-lg text-gray-700 leading-relaxed">Our mission is to empower students with the knowledge, skills, and confidence they need to succeed on standardized tests and achieve their full potential. We strive to provide the highest quality test preparation resources, personalized support, and innovative learning tools.</p>
-  </section>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
 
-  <section class="mb-12" data-animate="fade-in">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Values</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
-        <p class="text-gray-700 leading-relaxed">We are committed to providing the highest quality test preparation resources and services.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
-        <p class="text-gray-700 leading-relaxed">We are constantly seeking new and innovative ways to improve our programs and help students succeed.</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Student Success</h3>
-        <p class="text-gray-700 leading-relaxed">Our top priority is helping our students achieve their academic and professional goals.</p>
-      </div>
-    </div>
-  </section>
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
 
-  <section class="mb-12" data-animate="fade-in">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-4">Meet the Team</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/api/placeholder/200/200" alt="Team Member 1" class="rounded-full mx-auto mb-4">
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-2">John Smith</h3>
-        <p class="text-gray-700 text-center">CEO & Founder</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/api/placeholder/200/200" alt="Team Member 2" class="rounded-full mx-auto mb-4">
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-2">Jane Doe</h3>
-        <p class="text-gray-700 text-center">Head of Curriculum</p>
-      </div>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <img src="/api/placeholder/200/200" alt="Team Member 3" class="rounded-full mx-auto mb-4">
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-2">David Lee</h3>
-        <p class="text-gray-700 text-center">Lead Instructor</p>
-      </div>
-    </div>
-  </section>
-
-  <section data-animate="fade-in">
-      <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">Contact Us</h2>
-      <div class="text-center">
-          <p class="text-lg text-gray-700 leading-relaxed mb-4">Have questions? We'd love to hear from you!</p>
-          <a href="/contact" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md">Get in Touch</a>
-      </div>
-  </section>
-
+      // Basic validation (replace with actual authentication logic)
+      if (email === 'test@example.com' && password === 'password') {
+        // Redirect to dashboard or desired page
+        window.location.href = '/dashboard'; // Replace '/dashboard' with the actual URL
+      } else {
+        // Display error message
+        errorMessage.classList.remove('hidden');
+      }
+    });
+  </script>
 </main>
-    <!-- END MAIN CONTENT for about -->
+    <!-- END MAIN CONTENT for login -->
   </main>
 
   <footer class="bg-gray-100 py-12 border-t border-gray-200" data-animate="fade-in">
